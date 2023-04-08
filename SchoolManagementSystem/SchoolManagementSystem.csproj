@@ -97,9 +97,9 @@
   <ItemGroup>
     <Folder Include="Commands\" />
     <Folder Include="Enums\" />
-    <Folder Include="Images\Implementations\" />
-    <Folder Include="Images\Interfaces\" />
-    <Folder Include="Mappers\" />
+    <Folder Include="Images\" />
+    <Folder Include="Mappers\Implementations\" />
+    <Folder Include="Mappers\Interfaces\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModels\UserControls\" />
     <Folder Include="ViewModels\Windows\" />
