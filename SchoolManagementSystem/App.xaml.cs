@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolManagementSystem.Views.Windows;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,11 @@ namespace SchoolManagementSystem
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            DashboardWindow dashboardWindow = new DashboardWindow();
+            MainWindow = dashboardWindow;
+            MainWindow.Show();
+        }
     }
 }
