@@ -44,13 +44,17 @@
         <Border Grid.Column="0" Background="#34495e">
             <StackPanel>
                 <TextBlock Text="Menu" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
-                <Button Style="{StaticResource btnDashBoard}" Name="btnStudents" Content="Students"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnStudents" Content="Students" Command="{Binding Path=OpenStudents}"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnTeachers" Content="Teachers"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnExam" Content="Exam"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnSchadule" Content="Schadule"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnSubject" Content="Subject"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnClass" Content="Class"/>
             </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1">
+            <Grid Name="grdMain"/>
         </Border>
     </Grid>
 </Window>

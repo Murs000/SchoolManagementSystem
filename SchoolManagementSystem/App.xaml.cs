@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.Views.Windows;
+﻿using SchoolManagementSystem.ViewModels.Windows;
+using SchoolManagementSystem.Views.Windows;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,6 +18,11 @@ namespace SchoolManagementSystem
         public App()
         {
             DashboardWindow dashboardWindow = new DashboardWindow();
+            DashboardViewModel dashboardViewModel = new DashboardViewModel();
+
+            dashboardWindow.DataContext = dashboardViewModel;
+            dashboardViewModel.MainGrind = dashboardWindow.grdMain;
+
             MainWindow = dashboardWindow;
             MainWindow.Show();
         }
