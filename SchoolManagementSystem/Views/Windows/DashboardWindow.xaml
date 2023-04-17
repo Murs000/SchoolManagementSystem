@@ -6,7 +6,51 @@
         xmlns:local="clr-namespace:SchoolManagementSystem"
         mc:Ignorable="d"
         Title="DashboardWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="btnDashBoard">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="22"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="FontWeight" Value="ExtraBold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#34495e">
+            <StackPanel>
+                <TextBlock Text="Menu" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnStudents" Content="Students"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnTeachers" Content="Teachers"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnExam" Content="Exam"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnSchadule" Content="Schadule"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnSubject" Content="Subject"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnClass" Content="Class"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

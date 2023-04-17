@@ -1,8 +1,7 @@
 ﻿<Application x:Class="SchoolManagementSystem.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:SchoolManagementSystem"
-             StartupUri="DashboardWindow.xaml">
+             xmlns:local="clr-namespace:SchoolManagementSystem">
     <Application.Resources>
          
     </Application.Resources>
