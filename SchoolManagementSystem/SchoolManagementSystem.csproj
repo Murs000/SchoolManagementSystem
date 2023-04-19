@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserControls\TeacherControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\DashboardWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,10 +72,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\Dashboard\OpenStudentComand.cs" />
+    <Compile Include="Commands\Dashboard\OpenTeacherComand.cs" />
     <Compile Include="ViewModels\UserControls\StudentViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\TeacherViewModel.cs" />
     <Compile Include="ViewModels\Windows\DashboardViewModel.cs" />
     <Compile Include="Views\UserControls\StudentControl.xaml.cs">
       <DependentUpon>StudentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\TeacherControl.xaml.cs">
+      <DependentUpon>TeacherControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\DashboardWindow.xaml.cs">
       <DependentUpon>DashboardWindow.xaml</DependentUpon>

@@ -13,5 +13,6 @@ namespace SchoolManagementSystem.ViewModels.Windows
         public Grid MainGrind { get; set; }
 
         public OpenStudentsComand OpenStudents => new OpenStudentsComand(this);
+        public OpenTeacherComand OpenTeacher => new OpenTeacherComand(this);
     }
 }

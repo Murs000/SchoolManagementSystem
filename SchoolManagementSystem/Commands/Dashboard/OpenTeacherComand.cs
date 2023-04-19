@@ -10,27 +10,26 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Dashboard
 {
-    internal class OpenStudentsComand : ICommand
+    internal class OpenTeacherComand : ICommand
     {
+        public event EventHandler CanExecuteChanged;
         private readonly DashboardViewModel _mainViewModel;
 
-        public event EventHandler CanExecuteChanged;
-
+        public OpenTeacherComand(DashboardViewModel mainViewModel)
+        {
+            _mainViewModel = mainViewModel;
+        }
         public bool CanExecute(object parameter)
         {
             return true;
         }
-        public OpenStudentsComand(DashboardViewModel mainViewModel)
-        {
-            _mainViewModel = mainViewModel;
-        }
 
         public void Execute(object parameter)
         {
-            StudentControl control = new StudentControl();
-            StudentViewModel controlViewModel = new StudentViewModel();
+            TeacherControl control = new TeacherControl();
+            TeacherViewModel viewModel = new TeacherViewModel();
 
-            control.DataContext = controlViewModel;
+            control.DataContext = _mainViewModel;
 
             _mainViewModel.MainGrind.Children.Clear();
             _mainViewModel.MainGrind.Children.Add(control);
