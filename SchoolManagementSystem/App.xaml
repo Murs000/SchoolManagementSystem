@@ -30,97 +30,71 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
-        <Style TargetType="Button" BasedOn="{StaticResource baseBtn}" x:Key="btnAdd">
-            <Setter Property="Command" Value="{Binding Add}"/>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseBtn}" x:Key="btnAdd">
             <Setter Property="Content" Value="Add"/>
+            <Setter Property="Command" Value="{Binding Add}"/>
+            <Setter Property="IsEnabled" Value="True"/>
+            <Setter Property="Visibility" Value="Visible"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Default">
-                    <Setter Property="Visibility" Value="Visible"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Add">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
                     <Setter Property="Visibility" Value="Collapsed"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Edit">
-                    <Setter Property="Visibility" Value="Collapsed"/>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                    <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Selected">
-                    <Setter Property="Visibility" Value="Collapsed"/>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
+                    <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-        
-        <Style TargetType="Button" BasedOn="{StaticResource baseBtn}" x:Key="btnEdit">
-            <Setter Property="Command" Value="{Binding Edit}"/>
-            <Setter Property="Content" Value="Edit"/>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseBtn}" x:Key="btnSave">
+            <Setter Property="Content" Value="Save"/>
+            <Setter Property="Command" Value="{Binding Save}"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Default">
-                    <Setter Property="IsEnabled" Value="False"/>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                    <Setter Property="Visibility" Value="Visible"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Add">
-                    <Setter Property="IsEnabled" Value="False"/>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
+                    <Setter Property="Visibility" Value="Visible"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Edit">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Selected">
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseBtn}" x:Key="btnEdit">
+            <Setter Property="Content" Value="Edit"/>
+            <Setter Property="Command" Value="{Binding Edit}"/>
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="Visibility" Value="Visible"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
                     <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
-            </Style.Triggers>
-        </Style>
-        
-        <Style TargetType="Button" BasedOn="{StaticResource baseBtn}" x:Key="btnSave">
-            <Setter Property="Command" Value="{Binding Save}"/>
-            <Setter Property="Content" Value="Save"/>
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Default">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
                     <Setter Property="Visibility" Value="Collapsed"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Add">
-                    <Setter Property="Visibility" Value="Visible"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Edit">
-                    <Setter Property="Visibility" Value="Visible"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Selected">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
             </Style.Triggers>
         </Style>
 
-        <Style TargetType="Button" BasedOn="{StaticResource baseBtn}" x:Key="btnCancel">
-            <Setter Property="Command" Value="{Binding Cancel}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseBtn}" x:Key="btnCancel">
             <Setter Property="Content" Value="Cancel"/>
+            <Setter Property="Command" Value="{Binding Cancel}"/>
+            <Setter Property="IsEnabled" Value="True"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Default">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
                     <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Add">
-                    <Setter Property="Visibility" Value="Visible"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Edit">
-                    <Setter Property="Visibility" Value="Visible"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Selected">
-                    <Setter Property="Visibility" Value="Visible"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
 
-        <Style TargetType="Button" BasedOn="{StaticResource baseBtn}" x:Key="btnDelete">
-            <Setter Property="Command" Value="{Binding Delete}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseBtn}" x:Key="btnDelete">
             <Setter Property="Content" Value="Delete"/>
+            <Setter Property="Command" Value="{Binding Delete}"/>
+            <Setter Property="IsEnabled" Value="False"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Default">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="Add">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Edit">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituatin}" Value="Selected">
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
                     <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
             </Style.Triggers>
