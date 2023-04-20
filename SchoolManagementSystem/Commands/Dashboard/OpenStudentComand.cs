@@ -28,7 +28,7 @@ namespace SchoolManagementSystem.Commands.Dashboard
         public void Execute(object parameter)
         {
             StudentControl control = new StudentControl();
-            StudentViewModel controlViewModel = new StudentViewModel();
+            StudentControlViewModel controlViewModel = new StudentControlViewModel();
 
             control.DataContext = controlViewModel;
 

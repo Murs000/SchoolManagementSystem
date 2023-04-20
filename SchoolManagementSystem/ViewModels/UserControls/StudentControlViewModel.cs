@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.ViewModels.UserControls
 {
-    internal class TeacherViewModel
+    internal class StudentControlViewModel
     {
     }
 }

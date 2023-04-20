@@ -73,8 +73,14 @@
     </Compile>
     <Compile Include="Commands\Dashboard\OpenStudentComand.cs" />
     <Compile Include="Commands\Dashboard\OpenTeacherComand.cs" />
-    <Compile Include="ViewModels\UserControls\StudentViewModel.cs" />
-    <Compile Include="ViewModels\UserControls\TeacherViewModel.cs" />
+    <Compile Include="Commands\Teachers\AddTeachersComand.cs" />
+    <Compile Include="Commands\Teachers\DeleteTeachersComand.cs" />
+    <Compile Include="Commands\Teachers\EditTeachersComand.cs" />
+    <Compile Include="Commands\Teachers\RejectTeachersComand.cs" />
+    <Compile Include="Commands\Teachers\SaveTeachersComand.cs" />
+    <Compile Include="Enums\Situation.cs" />
+    <Compile Include="ViewModels\UserControls\StudentControlViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\TeacherControlViewModel.cs" />
     <Compile Include="ViewModels\Windows\DashboardViewModel.cs" />
     <Compile Include="Views\UserControls\StudentControl.xaml.cs">
       <DependentUpon>StudentControl.xaml</DependentUpon>
@@ -114,7 +120,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Enums\" />
     <Folder Include="Images\" />
     <Folder Include="Mappers\Implementations\" />
     <Folder Include="Mappers\Interfaces\" />
