@@ -41,7 +41,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0" Background="#34495e">
+        <Border Grid.Column="0" Background="#34495e" BorderThickness="0">
             <StackPanel>
                 <TextBlock Text="Menu" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnStudents" Content="Students" Command="{Binding Path=OpenStudents}"/>

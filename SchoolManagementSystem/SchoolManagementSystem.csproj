@@ -76,7 +76,7 @@
     <Compile Include="Commands\Teachers\AddTeachersComand.cs" />
     <Compile Include="Commands\Teachers\DeleteTeachersComand.cs" />
     <Compile Include="Commands\Teachers\EditTeachersComand.cs" />
-    <Compile Include="Commands\Teachers\RejectTeachersComand.cs" />
+    <Compile Include="Commands\Teachers\CancelTeachersComand.cs" />
     <Compile Include="Commands\Teachers\SaveTeachersComand.cs" />
     <Compile Include="Enums\Situation.cs" />
     <Compile Include="ViewModels\UserControls\StudentControlViewModel.cs" />

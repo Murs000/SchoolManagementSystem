@@ -33,7 +33,7 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         public AddTeachersComand Add => new AddTeachersComand(this);
         public DeleteTeachersComand Delete => new DeleteTeachersComand();
         public EditTeachersComand Edit => new EditTeachersComand();
-        public RejectTeachersComand Cancel => new RejectTeachersComand();
+        public CancelTeachersComand Cancel => new CancelTeachersComand(this);
         public SaveTeachersComand Save => new SaveTeachersComand();
     }
 }

@@ -23,10 +23,13 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="FontSize" Value="22"/>
+                    <Setter Property="Background" Value="#34495e"/>
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="FontWeight" Value="ExtraBold"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#7f8c8d"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -34,22 +37,15 @@
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseBtn}" x:Key="btnAdd">
             <Setter Property="Content" Value="Add"/>
             <Setter Property="Command" Value="{Binding Add}"/>
+            <Setter Property="IsEnabled" Value="False"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
                     <Setter Property="Visibility" Value="Visible"/>
                     <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                    <Setter Property="Visibility" Value="Collapsed"/>
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
-                    <Setter Property="Visibility" Value="Hidden"/>
-                    <Setter Property="IsEnabled" Value="False"/>
+                    <Setter Property="Visibility" Value="Visible"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -59,21 +55,11 @@
             <Setter Property="Command" Value="{Binding Save}"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
-                        <Setter Property="Visibility" Value="Collapsed"/>
-                        <Setter Property="IsEnabled" Value="False"/>
-                    </DataTrigger>
-                    <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
-                        <Setter Property="Visibility" Value="Visible"/>
-                        <Setter Property="IsEnabled" Value="True"/>
-                    </DataTrigger>
-                    <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                        <Setter Property="Visibility" Value="Visible"/>
-                        <Setter Property="IsEnabled" Value="True"/>
-                    </DataTrigger>
-                    <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
-                        <Setter Property="Visibility" Value="Collapsed"/>
-                        <Setter Property="IsEnabled" Value="False"/>
-                    </DataTrigger>
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
                 </Style.Triggers>
         </Style>
 
@@ -82,20 +68,13 @@
             <Setter Property="Command" Value="{Binding Edit}"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
-                    <Setter Property="Visibility" Value="Hidden"/>
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
-                    <Setter Property="Visibility" Value="Hidden"/>
                     <Setter Property="IsEnabled" Value="False"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                    <Setter Property="Visibility" Value="Hidden"/>
                     <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
-                    <Setter Property="Visibility" Value="Visible"/>
-                    <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -105,20 +84,7 @@
             <Setter Property="Command" Value="{Binding Cancel}"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
-                    <Setter Property="Visibility" Value="Hidden"/>
                     <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
-                    <Setter Property="Visibility" Value="Visible"/>
-                    <Setter Property="IsEnabled" Value="True"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                    <Setter Property="Visibility" Value="Visible"/>
-                    <Setter Property="IsEnabled" Value="True"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
-                    <Setter Property="Visibility" Value="Visible"/>
-                    <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -126,21 +92,9 @@
         <Style TargetType="Button" BasedOn="{StaticResource baseBtn}" x:Key="btnDelete">
             <Setter Property="Content" Value="Delete"/>
             <Setter Property="Command" Value="{Binding Delete}"/>
+            <Setter Property="IsEnabled" Value="False"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
-                    <Setter Property="Visibility" Value="Hidden"/>
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
-                    <Setter Property="Visibility" Value="Hidden"/>
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                    <Setter Property="Visibility" Value="Hidden"/>
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
-                    <Setter Property="Visibility" Value="Visible"/>
                     <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
             </Style.Triggers>

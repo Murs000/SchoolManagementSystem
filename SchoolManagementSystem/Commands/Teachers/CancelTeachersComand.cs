@@ -1,5 +1,6 @@
 ﻿using SchoolManagementSystem.Enums;
 using SchoolManagementSystem.ViewModels.UserControls;
+using SchoolManagementSystem.ViewModels.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,12 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Teachers
 {
-    internal class AddTeachersComand : ICommand
+    internal class CancelTeachersComand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
         private readonly TeacherControlViewModel _viewModel;
-        public AddTeachersComand(TeacherControlViewModel viewModel)
+        public CancelTeachersComand(TeacherControlViewModel viewModel) 
         {
             _viewModel = viewModel;
         }
@@ -25,7 +26,7 @@ namespace SchoolManagementSystem.Commands.Teachers
 
         public void Execute(object parameter)
         {
-            _viewModel.CurrentSituation = (int)Situation.Add;
+            _viewModel.CurrentSituation = (int)Situation.Default;
         }
     }
 }
