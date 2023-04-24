@@ -1,0 +1,19 @@
+﻿<Window x:Class="SchoolManagementSystem.Views.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolManagementSystem.Views.Windows"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="450">
+    <StackPanel Background="#bdc3c7">
+        <TextBlock Text="School Management" FontSize="30" FontWeight="DemiBold" Margin="0,20,0,0" Foreground="#2c3e50"/>
+        <TextBlock Text="System" FontSize="30" FontWeight="DemiBold" Margin="10,0,0,20" Foreground="#2c3e50"/>
+        <TextBlock Text="Login" FontSize="20" FontWeight="Medium" Foreground="#2c3e50" Margin="5,0,5,0"/>
+        <TextBox Background="Transparent" BorderBrush="#2c3e50" BorderThickness="0,0,0,2" Margin="5,0,5,0"/>
+        <TextBlock Text="Password" FontSize="20" FontWeight="Medium" Foreground="#2c3e50" Margin="5,0,5,0"/>
+        <TextBox Background="Transparent" BorderBrush="#2c3e50" BorderThickness="0,0,0,2" Margin="5,0,5,0"/>
+        <TextBlock Text="Login or password is wrong" Foreground="Red" FontSize="20" FontWeight="Medium" Visibility="Hidden" Margin="5,0,5,0"/>
+        <Button Height="30" Width="80" Content="Sing in" Background="#ecf0f1" Foreground="#2c3e50" FontWeight="Bold" Command="{Binding SingIn}"/>
+    </StackPanel>
+</Window>

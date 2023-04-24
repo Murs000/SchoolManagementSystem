@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\SingInComand.cs" />
+    <Compile Include="ViewModels\Windows\LoginViewModel.cs" />
+    <Compile Include="Views\Windows\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\UserControls\StudentControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +97,10 @@
       <DependentUpon>DashboardWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Windows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -125,6 +134,12 @@
     <Folder Include="Mappers\Interfaces\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Componets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolCore\SchoolCore.csproj">
+      <Project>{81b410a4-c1f9-4f3a-826c-4f913414df59}</Project>
+      <Name>SchoolCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,7 +53,7 @@
             </StackPanel>
         </Border>
 
-        <Border Grid.Column="1">
+        <Border Grid.Column="1" BorderThickness="0">
             <Grid Name="grdMain"/>
         </Border>
     </Grid>

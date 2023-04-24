@@ -17,13 +17,12 @@ namespace SchoolManagementSystem
     {
         public App()
         {
-            DashboardWindow dashboardWindow = new DashboardWindow();
-            DashboardViewModel dashboardViewModel = new DashboardViewModel();
+            LoginWindow loginWindow = new LoginWindow();
+            LoginViewModel loginViewModel = new LoginViewModel(loginWindow);
 
-            dashboardWindow.DataContext = dashboardViewModel;
-            dashboardViewModel.MainGrind = dashboardWindow.grdMain;
+            loginWindow.DataContext = loginViewModel;
 
-            MainWindow = dashboardWindow;
+            MainWindow = loginWindow;
             MainWindow.Show();
         }
     }
