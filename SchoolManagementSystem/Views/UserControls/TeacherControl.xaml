@@ -6,6 +6,20 @@
              xmlns:local="clr-namespace:SchoolManagementSystem.Views.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -19,8 +33,48 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Name"/>
+                <TextBlock Text="Surname"/>
+                <TextBlock Text="Father Name"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox/>
+                <TextBox/>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Birth Date"/>
+                <TextBlock Text="Gender"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3">
+                <DatePicker Margin="5"/>
+                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White"/>
+                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White"/>
+            </StackPanel>
+            <StackPanel Grid.Column="4">
+                <TextBlock Text="Email"/>
+                <TextBlock Text="Phone Number"/>
+            </StackPanel>
             <StackPanel Grid.Column="5">
+                <TextBox/>
+                <TextBox/>
+            </StackPanel>
+            <StackPanel Grid.Column="6">
+                <TextBlock Text="Subject"/>
+                <TextBlock Text="Expirience"/>
+                <TextBlock Text="Position"/>
+            </StackPanel>
+            <StackPanel Grid.Column="7">
+                <ComboBox Margin="5"/>
+                <ComboBox Margin="5"/>
+                <ComboBox Margin="5"/>
+            </StackPanel>
+            <StackPanel Grid.Column="8">
                 <Button Style="{StaticResource btnAdd}"/>
                 <Button Style="{StaticResource btnSave}"/>
                 <Button Style="{StaticResource btnEdit}"/>
@@ -29,7 +83,7 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <ScrollViewer>
+            <ScrollViewer  VerticalScrollBarVisibility="Auto">
                 <ListView>
 
                 </ListView>
