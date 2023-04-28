@@ -1,4 +1,6 @@
 ﻿using SchoolManagementSystem.Commands.Dashboard;
+using SchoolManagementSystem.Services.Implimentations;
+using SchoolManagementSystem.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +13,12 @@ namespace SchoolManagementSystem.ViewModels.Windows
 {
     internal class DashboardViewModel : INotifyPropertyChanged
     {
+        private readonly ITeacherService _teacherService;
+        public DashboardViewModel(ITeacherService teacherService)
+        {
+            _teacherService = teacherService;
+        }
+
         public Grid MainGrind { get; set; }
 
         public OpenStudentsComand OpenStudents => new OpenStudentsComand(this);

@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.ViewModels.Windows;
+﻿using SchoolManagementSystem.Services.Interface;
+using SchoolManagementSystem.ViewModels.Windows;
 using SchoolManagementSystem.Views.Windows;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,11 @@ namespace SchoolManagementSystem.Commands
     internal class SingInComand : ICommand
     {
         private readonly LoginViewModel _loginViewModel;
-        public SingInComand(LoginViewModel loginViewModel)
+        private readonly ITeacherService _teacherService;
+        public SingInComand(LoginViewModel loginViewModel,ITeacherService teacherService)
         {
             _loginViewModel = loginViewModel;
-
+            _teacherService = teacherService;
             
         }
 
@@ -29,7 +31,7 @@ namespace SchoolManagementSystem.Commands
         public void Execute(object parameter)
         {
             DashboardWindow dashboardWindow = new DashboardWindow();
-            DashboardViewModel dashboardViewModel = new DashboardViewModel();
+            DashboardViewModel dashboardViewModel = new DashboardViewModel(_teacherService);
 
             dashboardWindow.DataContext = dashboardViewModel;
             dashboardViewModel.MainGrind = dashboardWindow.grdMain;

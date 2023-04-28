@@ -60,6 +60,8 @@
     <Compile Include="Mappers\Implimentations\TeacherMapper.cs" />
     <Compile Include="Mappers\Interfaces\ITeacherMapper.cs" />
     <Compile Include="Models\TeacherModel.cs" />
+    <Compile Include="Services\Implimentations\TeacherService.cs" />
+    <Compile Include="Services\Interfaces\ITeacherService.cs" />
     <Compile Include="ViewModels\Windows\LoginViewModel.cs" />
     <Compile Include="Views\Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -134,7 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Services\" />
     <Folder Include="Views\Componets\" />
   </ItemGroup>
   <ItemGroup>

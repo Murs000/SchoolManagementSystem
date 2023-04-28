@@ -1,4 +1,5 @@
 ﻿using SchoolManagementSystem.Commands;
+using SchoolManagementSystem.Services.Interface;
 using SchoolManagementSystem.Views.Windows;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,13 @@ namespace SchoolManagementSystem.ViewModels.Windows
 {
     internal class LoginViewModel
     {
-        public SingInComand SingIn => new SingInComand(this);
-        public LoginWindow LoginWindow { get; set; }
-        public LoginViewModel(LoginWindow loginWindow) 
+        private readonly ITeacherService _teacherService;
+        public LoginViewModel(ITeacherService teacherService, LoginWindow loginWindow)
         {
+            _teacherService = teacherService;
             LoginWindow = loginWindow;
         }
+        public SingInComand SingIn => new SingInComand(this,_teacherService);
+        public LoginWindow LoginWindow { get;}
     }
 }
