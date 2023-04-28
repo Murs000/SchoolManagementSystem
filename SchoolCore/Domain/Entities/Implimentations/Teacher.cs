@@ -22,7 +22,7 @@ namespace SchoolCore.Domain.Entities.Implimentations
         public DateTime CreationDate { get; set; }
         public DateTime ModifiedDate { get; set; }
         public int CreatorId => Creator?.Id ?? 0;
-        public int ModifierID => Modifier?.Id ?? 0;
+        public int ModifierId => Modifier?.Id ?? 0;
         public User Creator { get; set; }
         public User Modifier { get; set; }
     }

@@ -57,6 +57,9 @@
     </ApplicationDefinition>
     <Compile Include="Commands\SingInComand.cs" />
     <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Mappers\Implimentations\TeacherMapper.cs" />
+    <Compile Include="Mappers\Interfaces\ITeacherMapper.cs" />
+    <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="ViewModels\Windows\LoginViewModel.cs" />
     <Compile Include="Views\Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -131,9 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Mappers\Implementations\" />
-    <Folder Include="Mappers\Interfaces\" />
-    <Folder Include="Models\" />
+    <Folder Include="Services\" />
     <Folder Include="Views\Componets\" />
   </ItemGroup>
   <ItemGroup>
