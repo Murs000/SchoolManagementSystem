@@ -7,6 +7,143 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="StudentControl" FontSize="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#2c3e50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="76*"/>
+                <ColumnDefinition Width="91*"/>
+                <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Height="25" FontSize="20" Margin="5 5" FontFamily="Times New Roman" Foreground="White" >Name</TextBlock>
+                <TextBlock Height="25" FontSize="20" Margin="5 5" FontFamily="Times New Roman" Foreground="White">Surname</TextBlock>
+                <TextBlock Height="25" FontSize="20" Margin="5 5" Foreground="White" FontFamily="Times New Roman">FatherName</TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.ColumnSpan="2" Margin="133,0,0,0">
+                <TextBox FontSize="15" Height="25" Margin="5 5" Text="{Binding CurrentValue.Name,Mode=TwoWay}"/>
+                <TextBox FontSize="15" Height="25" Margin="5 5" Text="{Binding CurrentValue.Surname,Mode=TwoWay}"/>
+                <TextBox FontSize="15" Height="25" Margin="5 5" Text="{Binding CurrentValue.Fathername,Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.ColumnSpan="3" Margin="133,0,133,0">
+                <TextBlock Height="25" FontSize="20" Margin="5 5" FontFamily="Times New Roman" Foreground="White" >BirthDate</TextBlock>
+                <TextBlock Height="25" FontSize="20" Margin="5 5" FontFamily="Times New Roman" Foreground="White">Gender</TextBlock>
+                <TextBlock Height="25" FontSize="20" Margin="5 5" Foreground="White" FontFamily="Times New Roman">Email</TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="121" Width="108">
+                <DatePicker Margin="5" Height="32" RenderTransformOrigin="0.522,0.457" Width="98"/>
+                <RadioButton Content="Woman" Foreground="White" Height="14"/>
+                <RadioButton Content="Man" Foreground="White" Height="18"/>
+                <TextBox FontSize="15" Height="21" Margin="5 5" Text="{Binding CurrentValue.Email,Mode=TwoWay}" RenderTransformOrigin="0.489,1.08"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="4" Margin="11,0,4,0">
+                <TextBlock Height="25" FontSize="20" Margin="5 5" FontFamily="Times New Roman" Foreground="White" >Phone</TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Column="4" Margin="70,0,100,0" Grid.ColumnSpan="3">
+                <TextBox FontSize="15" Height="25" Margin="5 5" Text="{Binding CurrentValue.Phone,Mode=TwoWay}" Width="81"/>
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Column="6" HorizontalAlignment="Center" Width="100">
+                <Button Style="{StaticResource btnAdd}"/>
+                <Button Style="{StaticResource btnSave}"/>
+                <Button Style="{StaticResource btnEdit}"/>
+                <Button Style="{StaticResource btnCancel}"/>
+                <Button Style="{StaticResource btnDelete}"/>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto">
+                <ListView>
+
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <ListView x:Name="MainList" Grid.Row="1" Style="{StaticResource listViewCustom}"
+                      ItemsSource="{Binding Values}"
+                      SelectedItem="{Binding SelectedValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=No}" Header="No" Width="Auto"/>
+                            <GridViewColumn Header="Name" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Name}" Style="{StaticResource gridViewTextColumn}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="FatherName" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=FatherName}" Style="{StaticResource gridViewTextColumn}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="BirthDate" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=BirthDate, StringFormat='dd.MM.yyyy'}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Gender" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Gender}" Style="{StaticResource gridViewTextColumn}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Email" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=v}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Phone" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Phone}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Subject" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Subject}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Position" Width="Auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Position}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </UserControl>

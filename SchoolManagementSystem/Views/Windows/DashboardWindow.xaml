@@ -34,6 +34,9 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        
+        <!--<BitmapImage x:Key="LogoSource" UriSource="/Images/Mekteb.png"/>-->
+
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -56,5 +59,11 @@
         <Border Grid.Column="1" BorderThickness="0">
             <Grid Name="grdMain"/>
         </Border>
+
+        <!--<Border Grid.Column="2">
+            <Grid  Margin="0,0,0,0" Background="#f2f2f2" Name="grdCenter">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{StaticResource LogoSource}"/>
+            </Grid>
+        </Border>-->
     </Grid>
 </Window>

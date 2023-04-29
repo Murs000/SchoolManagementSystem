@@ -34,6 +34,53 @@
             </Style.Triggers>
         </Style>
 
+        <Style TargetType="{x:Type ListViewItem}"  x:Key="listViewItemCustom">
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Grid Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" >
+                            <GridViewRowPresenter Content="{TemplateBinding Content}" Margin="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex"  Value="1">
+                    <Setter Property="Background" Value="LightGray" />
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#5DADE2"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <Style TargetType="{x:Type ListView}" x:Key="listViewCustom">
+            <Setter Property="IsEnabled" Value="True"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="ItemContainerStyle" Value="{StaticResource listViewItemCustom}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="4">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource baseBtn}" x:Key="btnAdd">
             <Setter Property="Content" Value="Add"/>
             <Setter Property="Command" Value="{Binding Add}"/>
@@ -99,5 +146,11 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        
+        <Style TargetType="TextBlock" x:Key="gridViewTextColumn">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="15,0"/>
+        </Style>
+
     </Application.Resources>
 </Application>

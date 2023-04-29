@@ -59,11 +59,21 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\SingInComand.cs" />
+    <Compile Include="Commands\Students\AddStudentsComand.cs" />
+    <Compile Include="Commands\Students\CancelStudentsComand.cs" />
+    <Compile Include="Commands\Students\DeleteStudentsComand.cs" />
+    <Compile Include="Commands\Students\EditStudentsComand.cs" />
+    <Compile Include="Commands\Students\SaveStudentsComand.cs" />
     <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Mappers\Implimentations\StudentMapper.cs" />
     <Compile Include="Mappers\Implimentations\TeacherMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IStudentMapper.cs" />
     <Compile Include="Mappers\Interfaces\ITeacherMapper.cs" />
+    <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
+    <Compile Include="Services\Implimentations\StudentService.cs" />
     <Compile Include="Services\Implimentations\TeacherService.cs" />
+    <Compile Include="Services\Interfaces\IStudentService.cs" />
     <Compile Include="Services\Interfaces\ITeacherService.cs" />
     <Compile Include="ViewModels\Windows\LoginViewModel.cs" />
     <Compile Include="Views\Windows\LoginWindow.xaml.cs">
@@ -139,7 +149,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Views\Componets\" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +156,9 @@
       <Project>{81b410a4-c1f9-4f3a-826c-4f913414df59}</Project>
       <Name>SchoolCore</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Mekteb.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

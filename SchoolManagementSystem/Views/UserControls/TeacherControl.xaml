@@ -84,7 +84,7 @@
         </Grid>
         <Grid Grid.Row="1">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
-                <ListView>
+                <ListView SelectionChanged="ListView_SelectionChanged">
 
                 </ListView>
             </ScrollViewer>
