@@ -29,20 +29,20 @@ namespace SchoolManagementSystem.Mappers.Implimentations
             return teacherModel;
         }
 
-        public Teacher Map(TeacherModel authorModel)
+        public Teacher Map(TeacherModel teacherModel)
         {
             Teacher teacher = new Teacher();
 
-            teacher.Id = authorModel.Id;
-            teacher.Name = authorModel.Name;
-            teacher.Surname= authorModel.Surname;
-            teacher.BirthDate = authorModel.BirthDate;
-            teacher.Gender = authorModel.Gender;
-            teacher.Email = authorModel.Email;
-            teacher.PhoneNumber = authorModel.PhoneNumber;
-            teacher.Subject = authorModel.Subject;
-            teacher.Expirience= authorModel.Expirience;
-            teacher.Position = authorModel.Position;
+            teacher.Id = teacherModel.Id;
+            teacher.Name = teacherModel.Name;
+            teacher.Surname= teacherModel.Surname;
+            teacher.BirthDate = teacherModel.BirthDate;
+            teacher.Gender = teacherModel.Gender;
+            teacher.Email = teacherModel.Email;
+            teacher.PhoneNumber = teacherModel.PhoneNumber;
+            teacher.Subject = teacherModel.Subject;
+            teacher.Expirience= teacherModel.Expirience;
+            teacher.Position = teacherModel.Position;
 
             return teacher;
         }

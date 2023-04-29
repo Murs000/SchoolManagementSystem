@@ -146,11 +146,12 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-        
+
+
         <Style TargetType="TextBlock" x:Key="gridViewTextColumn">
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Padding" Value="15,0"/>
         </Style>
-
+        
     </Application.Resources>
 </Application>
