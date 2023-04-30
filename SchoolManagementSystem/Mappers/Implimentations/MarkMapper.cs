@@ -1,0 +1,47 @@
+﻿using SchoolCore.Domain.Entities.Implimentations;
+using SchoolManagementSystem.Mappers.Interfaces;
+using SchoolManagementSystem.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SchoolManagementSystem.Mappers.Implimentations
+{
+    public class MarkMapper : IMarkMapper
+    {
+        public MarkModel Map(Mark mark)
+        {
+            MarkModel markmodel = new MarkModel();
+
+            markmodel.Id = markmodel.Id;
+            markmodel.Name = markmodel.Name;
+            markmodel.Surname = markmodel.Surname;
+            markmodel.FatherName = markmodel.FatherName;
+            markmodel.BirthDate = markmodel.BirthDate;
+            markmodel.Email = markmodel.Email;
+            markmodel.PhoneNumber = markmodel.PhoneNumber;
+
+
+
+            return markmodel;
+        }
+
+        public Mark Map(MarkModel markmodel)
+        {
+            Mark mark = new Mark();
+
+            mark.Id = markmodel.Id;
+            mark.Name = markmodel.Name;
+            mark.Surname = markmodel.Surname;
+            mark.BirthDate = markmodel.BirthDate;
+            mark.Gender = markmodel.Gender;
+            mark.Email = markmodel.Email;
+            mark.PhoneNumber = markmodel.PhoneNumber;
+
+            return mark;
+        }
+
+    }
+}

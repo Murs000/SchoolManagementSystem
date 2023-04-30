@@ -68,13 +68,13 @@
 
         </Grid>
 
-        <Grid Grid.Row="1">
+        <!--<Grid Grid.Row="1">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
                 <ListView>
 
                 </ListView>
             </ScrollViewer>
-        </Grid>
+        </Grid>-->
 
         <Grid Grid.Row="1">
             <ScrollViewer>

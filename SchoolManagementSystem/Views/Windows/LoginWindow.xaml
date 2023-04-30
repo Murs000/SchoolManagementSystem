@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:SchoolManagementSystem.Views.Windows"
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="450">
-    <StackPanel Background="#bdc3c7">
+    <StackPanel Background="DeepSkyBlue">
         <TextBlock Text="School Management" FontSize="30" FontWeight="DemiBold" Margin="0,20,0,0" Foreground="#2c3e50"/>
-        <TextBlock Text="System" FontSize="30" FontWeight="DemiBold" Margin="10,0,0,20" Foreground="#2c3e50"/>
+        <TextBlock Text="System" FontSize="30" FontWeight="DemiBold" Margin=".0,0,0,20" Foreground="#2c3e50"/>
         <TextBlock Text="Login" FontSize="20" FontWeight="Medium" Foreground="#2c3e50" Margin="5,0,5,0"/>
         <TextBox Background="Transparent" BorderBrush="#2c3e50" BorderThickness="0,0,0,2" Margin="5,0,5,0"/>
         <TextBlock Text="Password" FontSize="20" FontWeight="Medium" Foreground="#2c3e50" Margin="5,0,5,0"/>

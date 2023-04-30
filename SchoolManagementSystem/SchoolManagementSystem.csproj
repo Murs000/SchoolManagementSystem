@@ -58,6 +58,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Dashboard\OpenMarkComand.cs" />
+    <Compile Include="Commands\Marks\AddMarksComnad.cs" />
+    <Compile Include="Commands\Marks\CancelMarksComand.cs" />
+    <Compile Include="Commands\Marks\DeleteMarksComand.cs" />
+    <Compile Include="Commands\Marks\EditMarksComand.cs" />
+    <Compile Include="Commands\Marks\SaveMarksComand.cs" />
     <Compile Include="Commands\SingInComand.cs" />
     <Compile Include="Commands\Students\AddStudentsComand.cs" />
     <Compile Include="Commands\Students\CancelStudentsComand.cs" />
@@ -65,20 +71,33 @@
     <Compile Include="Commands\Students\EditStudentsComand.cs" />
     <Compile Include="Commands\Students\SaveStudentsComand.cs" />
     <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Mappers\Implimentations\MarkMapper.cs" />
     <Compile Include="Mappers\Implimentations\StudentMapper.cs" />
     <Compile Include="Mappers\Implimentations\TeacherMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IMarkMapper.cs" />
     <Compile Include="Mappers\Interfaces\IStudentMapper.cs" />
     <Compile Include="Mappers\Interfaces\ITeacherMapper.cs" />
+    <Compile Include="Models\MarkModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
+    <Compile Include="Services\Implimentations\MarkService.cs" />
     <Compile Include="Services\Implimentations\StudentService.cs" />
     <Compile Include="Services\Implimentations\TeacherService.cs" />
+    <Compile Include="Services\Interfaces\IMarkService.cs" />
     <Compile Include="Services\Interfaces\IStudentService.cs" />
     <Compile Include="Services\Interfaces\ITeacherService.cs" />
+    <Compile Include="ViewModels\UserControls\MarkControlViewModel.cs" />
     <Compile Include="ViewModels\Windows\LoginViewModel.cs" />
+    <Compile Include="Views\UserControls\MarkControl.xaml.cs">
+      <DependentUpon>MarkControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\UserControls\MarkControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserControls\StudentControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
