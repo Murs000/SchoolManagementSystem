@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SchoolManagementSystem.Commands.Students
+namespace SchoolManagementSystem.Commands.Marks
 {
     internal class AddMarksComand : ICommand
     {

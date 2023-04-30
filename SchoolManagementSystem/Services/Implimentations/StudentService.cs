@@ -1,4 +1,5 @@
 ﻿using SchoolCore.DataAccess.Interfaces;
+using SchoolCore.Domain.Entities.Implimentations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
@@ -24,7 +25,7 @@ namespace SchoolManagementSystem.Services.Implimentations
             throw new NotImplementedException();
         }
 
-        public List<TeacherModel> GetAll()
+        public List<StudentModel> GetAll()
         {
             throw new NotImplementedException();
         }
@@ -43,5 +44,8 @@ namespace SchoolManagementSystem.Services.Implimentations
         {
             throw new NotImplementedException();
         }
+
+     
+
     }
 }
