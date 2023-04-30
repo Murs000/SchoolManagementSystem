@@ -7,7 +7,6 @@ namespace SchoolCore.DataAccess.Interfaces
     public interface IUnitOfWork
     {
         ITeacherRepository TeacherRepository { get; }
-        IStudentRepository StudentRepository { get; }
 
     }
 }

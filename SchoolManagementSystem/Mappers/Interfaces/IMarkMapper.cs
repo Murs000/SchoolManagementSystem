@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Mappers.Interfaces
 {
-    internal interface IMarkMapper
+    public interface IMarkMapper
     {
         MarkModel Map(Mark mark);
         Mark Map(MarkModel markmodel);
