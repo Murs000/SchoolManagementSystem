@@ -33,16 +33,16 @@
                 <TextBlock Text="Father Name" Style="{StaticResource baseTxtBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <TextBox Style="{StaticResource baseTxtBox}"/>
-                <TextBox Style="{StaticResource baseTxtBox}"/>
-                <TextBox Style="{StaticResource baseTxtBox}"/>
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Name,Mode=TwoWay}"/>
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Surname,Mode=TwoWay}"/>
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.FatherName,Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Grid.Column="2">
                 <TextBlock Text="Birth Date" Style="{StaticResource baseTxtBlock}"/>
                 <TextBlock Text="Gender" Style="{StaticResource baseTxtBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="3">
-                <DatePicker Margin="5"/>
+                <DatePicker Margin="5" DataContext="{Binding CurrentValue.BirthDate}"/>
                 <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White"/>
                 <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White"/>
             </StackPanel>
@@ -51,8 +51,8 @@
                 <TextBlock Text="Phone Number" Style="{StaticResource baseTxtBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="5">
-                <TextBox Style="{StaticResource baseTxtBox}"/>
-                <TextBox Style="{StaticResource baseTxtBox}"/>
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Email,Mode=TwoWay}"/>
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.PhoneNumber,Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Grid.Column="6">
                 <TextBlock Text="Subject" Style="{StaticResource baseTxtBlock}"/>
@@ -90,6 +90,12 @@
                             <GridViewColumn Header="Position" Width="auto" DisplayMemberBinding="{Binding Position}"/>
                         </GridView>
                     </ListView.View>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                        <Setter Property="IsEnabled" Value="False"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                        <Setter Property="IsEnabled" Value="False"/>
+                    </DataTrigger>
                 </ListView>
             </ScrollViewer>
         </Grid>
