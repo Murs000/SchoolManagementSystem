@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SchoolManagementSystem.Commands.Teachers
+namespace SchoolManagementSystem.Commands
 {
-    internal class DeleteTeachersComand : ICommand
+    internal abstract class BaseComand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
@@ -16,9 +16,6 @@ namespace SchoolManagementSystem.Commands.Teachers
             return true;
         }
 
-        public void Execute(object parameter)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Execute(object parameter);
     }
 }

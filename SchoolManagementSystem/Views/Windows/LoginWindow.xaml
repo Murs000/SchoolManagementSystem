@@ -12,9 +12,12 @@
         <TextBlock Text="Login" FontSize="20" FontWeight="Medium" Foreground="#2c3e50" Margin="5,0,5,0"/>
         <TextBox Background="Transparent" BorderBrush="#2c3e50" BorderThickness="0,0,0,2" Margin="5,0,5,0"/>
         <TextBlock Text="Password" FontSize="20" FontWeight="Medium" Foreground="#2c3e50" Margin="5,0,5,0"/>
-        <PasswordBox Background="Transparent" BorderBrush="#2c3e50" BorderThickness="0,0,0,2" Margin="5,0,5,0"/>
+        <PasswordBox Background="Transparent" BorderBrush="#2c3e50" BorderThickness="0,0,0,2" Margin="5,0,5,0">
+            <PasswordBox.InputBindings>
+                <KeyBinding Command="{Binding Path = SingIn}" CommandParameter="{Binding ElementName = PasswordTxt}" Key="Enter"/>
+            </PasswordBox.InputBindings>
+        </PasswordBox>
         <TextBlock Text="Login or password is wrong" Foreground="Red" FontSize="20" FontWeight="Medium" Visibility="Hidden" Margin="5,0,5,0"/>
         <Button Height="30" Width="80" Content="Sing in" Background="#ecf0f1" Foreground="#2c3e50" FontWeight="Bold" Command="{Binding SingIn}"/>
-        
     </StackPanel>
 </Window>

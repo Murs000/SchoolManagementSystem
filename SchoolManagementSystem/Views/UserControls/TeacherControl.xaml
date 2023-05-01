@@ -7,17 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Margin" Value="5"/>
-        </Style>
+        
         
     </UserControl.Resources>
     <Grid>
@@ -38,18 +28,18 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <TextBlock Text="Name"/>
-                <TextBlock Text="Surname"/>
-                <TextBlock Text="Father Name"/>
+                <TextBlock Text="Name" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Surname" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Father Name" Style="{StaticResource baseTxtBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <TextBox/>
-                <TextBox/>
-                <TextBox/>
+                <TextBox Style="{StaticResource baseTxtBox}"/>
+                <TextBox Style="{StaticResource baseTxtBox}"/>
+                <TextBox Style="{StaticResource baseTxtBox}"/>
             </StackPanel>
             <StackPanel Grid.Column="2">
-                <TextBlock Text="Birth Date"/>
-                <TextBlock Text="Gender"/>
+                <TextBlock Text="Birth Date" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Gender" Style="{StaticResource baseTxtBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="3">
                 <DatePicker Margin="5"/>
@@ -57,17 +47,17 @@
                 <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White"/>
             </StackPanel>
             <StackPanel Grid.Column="4">
-                <TextBlock Text="Email"/>
-                <TextBlock Text="Phone Number"/>
+                <TextBlock Text="Email" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Phone Number" Style="{StaticResource baseTxtBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="5">
-                <TextBox/>
-                <TextBox/>
+                <TextBox Style="{StaticResource baseTxtBox}"/>
+                <TextBox Style="{StaticResource baseTxtBox}"/>
             </StackPanel>
             <StackPanel Grid.Column="6">
-                <TextBlock Text="Subject"/>
-                <TextBlock Text="Expirience"/>
-                <TextBlock Text="Position"/>
+                <TextBlock Text="Subject" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Expirience" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Position" Style="{StaticResource baseTxtBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="7">
                 <ComboBox Margin="5"/>
@@ -84,8 +74,22 @@
         </Grid>
         <Grid Grid.Row="1">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
-                <ListView SelectionChanged="ListView_SelectionChanged">
-
+                <ListView BorderThickness="0" ItemsSource="{Binding Teachers}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="No" Width="auto" DisplayMemberBinding="{Binding No}"/>
+                            <GridViewColumn Header="Name" Width="auto" DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Header="Surname" Width="auto" DisplayMemberBinding="{Binding Surname}"/>
+                            <GridViewColumn Header="Father Name" Width="auto" DisplayMemberBinding="{Binding FatherName}"/>
+                            <GridViewColumn Header="Birth Date" Width="auto" DisplayMemberBinding="{Binding BirthDate}"/>
+                            <GridViewColumn Header="Gender" Width="auto" DisplayMemberBinding="{Binding Gender}"/>
+                            <GridViewColumn Header="Email" Width="auto" DisplayMemberBinding="{Binding Email}"/>
+                            <GridViewColumn Header="PhoneNumber" Width="auto" DisplayMemberBinding="{Binding PhoneNumber}"/>
+                            <GridViewColumn Header="Subject" Width="auto" DisplayMemberBinding="{Binding Subject}"/>
+                            <GridViewColumn Header="Expirience" Width="auto" DisplayMemberBinding="{Binding Expirience}"/>
+                            <GridViewColumn Header="Position" Width="auto" DisplayMemberBinding="{Binding Position}"/>
+                        </GridView>
+                    </ListView.View>
                 </ListView>
             </ScrollViewer>
         </Grid>

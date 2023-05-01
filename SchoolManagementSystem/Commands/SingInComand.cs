@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands
 {
-    internal class SingInComand : ICommand
+    internal class SingInComand : BaseComand
     {
         private readonly LoginViewModel _loginViewModel;
         private readonly ITeacherService _teacherService;
@@ -21,14 +21,7 @@ namespace SchoolManagementSystem.Commands
             
         }
 
-        public event EventHandler CanExecuteChanged;
-
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
-
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             DashboardWindow dashboardWindow = new DashboardWindow();
             DashboardViewModel dashboardViewModel = new DashboardViewModel(_teacherService);

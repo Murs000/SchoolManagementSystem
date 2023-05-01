@@ -1,4 +1,5 @@
 ﻿using SchoolCore.DataAccess.Interfaces;
+using SchoolCore.Domain.Entities.Implimentations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
@@ -19,24 +20,61 @@ namespace SchoolManagementSystem.Services.Implimentations
             _db = db;
             _teacherMapper = teacherMapper;
         }
-        public bool Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<TeacherModel> GetAll()
         {
-            throw new NotImplementedException();
-        }
+            List<TeacherModel> teacherModels = new List<TeacherModel>();
+            List<Teacher> teachers = _db.TeacherRepository.GetAll();
 
-        public bool IsValid(TeacherModel teacherModel)
-        {
-            throw new NotImplementedException();
+            int no = 1;
+
+            foreach (var teacher in teachers)
+            {
+                TeacherModel teacherModel = _teacherMapper.Map(teacher);
+
+                teacherModel.No = no++;
+
+                teacherModels.Add(teacherModel);
+            }
+
+            return teacherModels;
         }
 
         public int Save(TeacherModel teacherModel)
         {
-            throw new NotImplementedException();
+            Teacher willSavedTeacher = _teacherMapper.Map(teacherModel);
+
+            willSavedTeacher.Modifier = new User { Id = 1 };
+            willSavedTeacher.ModifiedDate = DateTime.Now;
+
+            if (willSavedTeacher.Id == 0)
+            {
+                willSavedTeacher.CreationDate = DateTime.Now;
+                willSavedTeacher.Creator = new User() { Id = 1 };
+
+                return _db.TeacherRepository.Insert(willSavedTeacher);
+            }
+            else
+            {
+                var existingAuthor = _db.TeacherRepository.GetById(teacherModel.Id);
+
+                willSavedTeacher.CreationDate = existingAuthor.CreationDate;
+                willSavedTeacher.Creator = existingAuthor.Creator;
+
+                _db.TeacherRepository.Update(willSavedTeacher);
+
+                return willSavedTeacher.Id;
+            }
+        }
+
+        public bool Delete(int id)
+        {
+            Teacher teacher = _db.TeacherRepository.GetById(id);
+
+            teacher.IsDeleted = true;
+            teacher.ModifiedDate = DateTime.Now;
+            teacher.Modifier = new User { Id = 1 };
+
+            return _db.TeacherRepository.Update(teacher);
         }
     }
 }

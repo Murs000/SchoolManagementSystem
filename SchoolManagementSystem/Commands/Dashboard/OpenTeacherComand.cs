@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.ViewModels.UserControls;
+﻿using SchoolManagementSystem.Services.Interface;
+using SchoolManagementSystem.ViewModels.UserControls;
 using SchoolManagementSystem.ViewModels.Windows;
 using SchoolManagementSystem.Views.UserControls;
 using System;
@@ -14,10 +15,12 @@ namespace SchoolManagementSystem.Commands.Dashboard
     {
         public event EventHandler CanExecuteChanged;
         private readonly DashboardViewModel _mainViewModel;
+        private readonly ITeacherService _teacherService;
 
-        public OpenTeacherComand(DashboardViewModel mainViewModel)
+        public OpenTeacherComand(DashboardViewModel mainViewModel,ITeacherService teacherService)
         {
             _mainViewModel = mainViewModel;
+            _teacherService = teacherService;
         }
         public bool CanExecute(object parameter)
         {
@@ -27,7 +30,7 @@ namespace SchoolManagementSystem.Commands.Dashboard
         public void Execute(object parameter)
         {
             TeacherControl control = new TeacherControl();
-            TeacherControlViewModel viewModel = new TeacherControlViewModel();
+            TeacherControlViewModel viewModel = new TeacherControlViewModel(_teacherService);
 
             control.DataContext = viewModel;
 
