@@ -20,5 +20,7 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
             _connectionString = builder.ConnectionString;
         }
         public ITeacherRepository TeacherRepository => new SqlTeacherRepository(_connectionString);
+        public IStudentRepository StudentRepository => new SqlStudentRepository(_connectionString);
+
     }
 }

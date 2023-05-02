@@ -116,7 +116,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Commands\Dashboard\OpenStudentComand.cs" />
+    <Compile Include="Commands\Dashboard\OpenStudentsComand.cs" />
     <Compile Include="Commands\Dashboard\OpenTeacherComand.cs" />
     <Compile Include="Commands\Teachers\AddTeachersCommand.cs" />
     <Compile Include="Commands\Teachers\DeleteTeachersCommand.cs" />

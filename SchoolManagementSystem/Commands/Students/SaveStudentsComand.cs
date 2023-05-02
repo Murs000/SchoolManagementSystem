@@ -1,5 +1,9 @@
-﻿using System;
+﻿using SchoolManagementSystem.Models;
+using SchoolManagementSystem.Services.Interface;
+using SchoolManagementSystem.ViewModels.UserControls;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,18 +11,31 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Students
 {
-    internal class SaveStudentsComand : ICommand
+    internal class SaveStudentsComand : BaseComand
     {
-        public event EventHandler CanExecuteChanged;
+        private readonly StudentControlViewModel _viewModel;
+        private readonly IStudentService _studentService;
 
-        public bool CanExecute(object parameter)
+        public SaveStudentsComand()
         {
-            return true;
         }
 
-        public void Execute(object parameter)
+        public SaveStudentsComand(StudentControlViewModel viewModel, IStudentService studentService)
         {
-            throw new NotImplementedException();
+            _viewModel = viewModel;
+            _studentService = studentService;
+        }
+
+        public override void Execute(object parameter)
+        {
+            _studentService.Save(_viewModel.CurrentValue);
+
+            List<StudentModel> studentModels = _studentService.GetAll();
+
+            _viewModel.Students = new ObservableCollection<StudentModel>(studentModels);
+
+            _viewModel.SetDefaultValues();
+
         }
     }
 }

@@ -33,6 +33,8 @@ namespace SchoolManagementSystem.ViewModels.UserControls
                 OnPropertyChanged(nameof(CurrentSituation));
             }
         }
+
+
         private ObservableCollection<TeacherModel> _teachers;
         public ObservableCollection<TeacherModel> Teachers
         {
