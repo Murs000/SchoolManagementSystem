@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Teachers
 {
-    internal class SaveUsersComand : ICommand
+    internal class EditUsersCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 

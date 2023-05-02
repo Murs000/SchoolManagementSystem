@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Teachers
 {
-    internal class DeleteUsersComand : ICommand
+    internal class DeleteUsersCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
