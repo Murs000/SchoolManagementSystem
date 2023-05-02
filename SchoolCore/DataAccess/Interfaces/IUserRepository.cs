@@ -8,8 +8,8 @@ namespace SchoolCore.DataAccess.Interfaces
     public interface IUserRepository
     {
         List<User> GetAll();
-        Teacher GetById(int id);
-        int Insert(USer user);
+        User GetById(int id);
+        int Insert(User user);
         bool Update(User user);
         bool Delete(int id);
     }

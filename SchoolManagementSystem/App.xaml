@@ -163,5 +163,16 @@
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Margin" Value="0,5,0,5"/>
         </Style>
+
+        <Style TargetType="{x:Type ListView}" x:Key="myListView">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

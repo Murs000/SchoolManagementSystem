@@ -76,7 +76,7 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
 
                 using (SqlCommand cmd = new SqlCommand(cmdText, connection))
                 {
-                    AddParameters(teacher, cmd);
+                    AddParameters(user, cmd);
 
                     return (int)cmd.ExecuteScalar();
                 }
@@ -130,7 +130,6 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
             user.Name = reader.GetString(reader.GetOrdinal("Name"));
             user.Surname = reader.GetString(reader.GetOrdinal("Surname"));
             user.Email = reader.GetString(reader.GetOrdinal("Email"));
-            user.PhoneNumber = reader.GetString(reader.GetOrdinal("Phone"));
             user.IsDeleted = reader.GetBoolean(reader.GetOrdinal("IsDeleted"));
             user.CreationDate = reader.GetDateTime(reader.GetOrdinal("CreationDate"));
             user.ModifiedDate = reader.GetDateTime(reader.GetOrdinal("ModifiedDate"));
@@ -152,9 +151,7 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
         {
             command.Parameters.AddWithValue("@name", user.Name);
             command.Parameters.AddWithValue("@surname", user.Surname);
-            command.Parameters.AddWithValue("@fatherName", user.FatherName);
             command.Parameters.AddWithValue("@email", user.Email);
-            command.Parameters.AddWithValue("@phone", user.PhoneNumber);
             command.Parameters.AddWithValue("@isDeleted", user.IsDeleted);
             command.Parameters.AddWithValue("@creationDate", user.CreationDate);
             command.Parameters.AddWithValue("@modifiedDate", user.ModifiedDate);

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,7 +75,40 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             }
         }
 
+        private bool _isMan;
+        public bool IsMan
+        {
+            get => _isMan;
+            set
+            {
+                CurrentValue.Gender = (int)Gender.Man;
+            }
+        }
+
+        private bool _isWoman;
+        public bool IsWoman
+        {
+            get => _isWoman;
+            set
+            {
+                CurrentValue.Gender = (int)Gender.Woman;
+            }
+        }
+
+        private List<string> _positions;
+        public List<string> Positions
+        {
+            get
+            {
+                _positions.Add("Director");
+                _positions.Add("Head Teacher");
+                _positions.Add("Teacher");
+                return _positions;
+            }
+        }
         #endregion
+
+
 
         #region commands
         public AddTeachersCommand Add => new AddTeachersCommand(this);

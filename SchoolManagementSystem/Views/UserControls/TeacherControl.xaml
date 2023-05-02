@@ -43,8 +43,8 @@
             </StackPanel>
             <StackPanel Grid.Column="3">
                 <DatePicker Margin="5" DataContext="{Binding CurrentValue.BirthDate}"/>
-                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White"/>
-                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White"/>
+                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" Checked="{Binding IsWoman}"/>
+                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" Checked="{Binding IsMan}"/>
             </StackPanel>
             <StackPanel Grid.Column="4">
                 <TextBlock Text="Email" Style="{StaticResource baseTxtBlock}"/>
@@ -62,7 +62,7 @@
             <StackPanel Grid.Column="7">
                 <ComboBox Margin="5"/>
                 <ComboBox Margin="5"/>
-                <ComboBox Margin="5"/>
+                <ComboBox Margin="5" ItemsSource="{Binding Positions}"/>
             </StackPanel>
             <StackPanel Grid.Column="8">
                 <Button Style="{StaticResource btnAdd}"/>
@@ -74,7 +74,7 @@
         </Grid>
         <Grid Grid.Row="1">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
-                <ListView BorderThickness="0" ItemsSource="{Binding Teachers}">
+                <ListView BorderThickness="0" ItemsSource="{Binding Teachers}" Style="{StaticResource myListView}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="No" Width="auto" DisplayMemberBinding="{Binding No}"/>
@@ -90,12 +90,6 @@
                             <GridViewColumn Header="Position" Width="auto" DisplayMemberBinding="{Binding Position}"/>
                         </GridView>
                     </ListView.View>
-                    <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
-                        <Setter Property="IsEnabled" Value="False"/>
-                    </DataTrigger>
-                    <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
-                        <Setter Property="IsEnabled" Value="False"/>
-                    </DataTrigger>
                 </ListView>
             </ScrollViewer>
         </Grid>
