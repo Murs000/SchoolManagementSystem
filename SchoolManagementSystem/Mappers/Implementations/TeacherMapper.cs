@@ -37,13 +37,14 @@ namespace SchoolManagementSystem.Mappers.Implementations
             teacher.Id = teacherModel.Id;
             teacher.Name = teacherModel.Name;
             teacher.Surname= teacherModel.Surname;
+            teacher.FatherName = teacherModel.FatherName;
             teacher.BirthDate = teacherModel.BirthDate;
             teacher.Gender = teacherModel.Gender;
             teacher.Email = teacherModel.Email;
             teacher.PhoneNumber = teacherModel.PhoneNumber;
-            teacher.Subject = (int)teacherModel.Subject;
+            teacher.Subject = (byte)teacherModel.Subject;
             teacher.Expirience= teacherModel.Expirience;
-            teacher.Position = (int)teacherModel.Position;
+            teacher.Position = (byte)teacherModel.Position;
 
             return teacher;
         }

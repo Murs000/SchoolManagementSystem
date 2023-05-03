@@ -83,7 +83,10 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             get => CurrentValue?.Gender == (int)Gender.Man;
             set
             {
-                CurrentValue.Gender = (int)Gender.Man;
+                if (value)
+                {
+                    CurrentValue.Gender = (int)Gender.Man;
+                }
             }
         }
 
@@ -92,7 +95,10 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             get => CurrentValue?.Gender == (int)Gender.Woman;
             set
             {
-                CurrentValue.Gender = (int)Gender.Woman;
+                if (value)
+                {
+                    CurrentValue.Gender = (int)Gender.Woman;
+                }
             }
         }
 

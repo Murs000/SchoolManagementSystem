@@ -24,10 +24,5 @@ namespace SchoolManagementSystem.Views.UserControls
         {
             InitializeComponent();
         }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
