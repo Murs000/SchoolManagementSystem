@@ -15,9 +15,9 @@ namespace SchoolCore.Domain.Entities.Implimentations
         public int Gender { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public int Subject { get; set; }
+        public byte Subject { get; set; }
         public byte Expirience { get; set; }
-        public int Position { get; set; }
+        public byte Position { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreationDate { get; set; }
         public DateTime ModifiedDate { get; set; }

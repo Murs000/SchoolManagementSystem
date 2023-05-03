@@ -71,8 +71,8 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
                 connection.Open();
 
                 string cmdText = @"Insert into Teachers output inserted.id values(@name, @surname,
-                                   @fatherName, @birthDate,@gender,@email,@phone,@subject,@position,
-                                   @isDeleted, @creationDate, @modifiedDate,@creatorId, @modifierId )";
+                                   @fatherName, @birthDate,@gender,@email,@phone,@subject,@expirience,@position,
+                                   @isDeleted, @creationDate, @modifiedDate,@creatorId, @modifierId)";
 
                 using (SqlCommand cmd = new SqlCommand(cmdText, connection))
                 {
@@ -107,22 +107,6 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
             }
         }
 
-        public bool Delete(int id)
-        {
-            using(SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                connection.Open();
-
-                string cmdText = @"delete from Teachers where id = @id";
-                using (SqlCommand cmd = new SqlCommand(cmdText, connection))
-                {
-                    cmd.Parameters.AddWithValue("id", id);
-
-                    return cmd.ExecuteNonQuery() == 1;
-                }
-            }
-        }
-
         private Teacher GetFromReader(SqlDataReader reader)
         {
             Teacher teacher = new Teacher();
@@ -132,12 +116,12 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
             teacher.Surname = reader.GetString(reader.GetOrdinal("Surname"));
             teacher.FatherName = reader.GetString(reader.GetOrdinal("FatherName"));
             teacher.BirthDate = reader.GetDateTime(reader.GetOrdinal("Birthdate"));
-            teacher.Gender = reader.GetInt32(reader.GetOrdinal("Gender"));
+            teacher.Gender = reader.GetByte(reader.GetOrdinal("Gender"));
             teacher.Email = reader.GetString(reader.GetOrdinal("Email"));
             teacher.PhoneNumber = reader.GetString(reader.GetOrdinal("Phone"));
-            teacher.Subject = reader.GetInt32(reader.GetOrdinal("Subject"));
+            teacher.Subject = reader.GetByte(reader.GetOrdinal("Subject"));
             teacher.Expirience = reader.GetByte(reader.GetOrdinal("Expirience"));
-            teacher.Position = reader.GetInt32(reader.GetOrdinal("Position"));
+            teacher.Position = reader.GetByte(reader.GetOrdinal("Position"));
             teacher.IsDeleted = reader.GetBoolean(reader.GetOrdinal("IsDeleted"));
             teacher.CreationDate = reader.GetDateTime(reader.GetOrdinal("CreationDate"));
             teacher.ModifiedDate = reader.GetDateTime(reader.GetOrdinal("ModifiedDate"));
