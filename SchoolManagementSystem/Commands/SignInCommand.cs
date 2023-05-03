@@ -10,11 +10,11 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands
 {
-    internal class SingInComand : BaseComand
+    internal class SignInCommand : BaseComand
     {
         private readonly LoginViewModel _loginViewModel;
         private readonly ITeacherService _teacherService;
-        public SingInComand(LoginViewModel loginViewModel,ITeacherService teacherService)
+        public SignInCommand(LoginViewModel loginViewModel,ITeacherService teacherService)
         {
             _loginViewModel = loginViewModel;
             _teacherService = teacherService;

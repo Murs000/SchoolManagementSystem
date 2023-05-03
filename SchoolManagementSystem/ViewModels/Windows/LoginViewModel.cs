@@ -17,7 +17,7 @@ namespace SchoolManagementSystem.ViewModels.Windows
             _teacherService = teacherService;
             LoginWindow = loginWindow;
         }
-        public SingInComand SingIn => new SingInComand(this,_teacherService);
+        public SignInCommand SingIn => new SignInCommand(this,_teacherService);
         public LoginWindow LoginWindow { get;}
     }
 }

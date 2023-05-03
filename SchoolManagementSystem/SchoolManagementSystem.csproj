@@ -65,24 +65,30 @@
     <Compile Include="Commands\Marks\DeleteMarksComand.cs" />
     <Compile Include="Commands\Marks\EditMarksComand.cs" />
     <Compile Include="Commands\Marks\SaveMarksComand.cs" />
-    <Compile Include="Commands\SingInComand.cs" />
+    <Compile Include="Commands\SignInCommand.cs" />
     <Compile Include="Commands\Students\AddStudentsComand.cs" />
     <Compile Include="Commands\Students\CancelStudentsComand.cs" />
     <Compile Include="Commands\Students\DeleteStudentsComand.cs" />
     <Compile Include="Commands\Students\EditStudentsComand.cs" />
     <Compile Include="Commands\Students\SaveStudentsComand.cs" />
+    <Compile Include="Commands\Users\AddUsersCommand.cs" />
+    <Compile Include="Commands\Users\CancelUsersComand.cs" />
+    <Compile Include="Commands\Users\DeleteUsersCommand.cs" />
+    <Compile Include="Commands\Users\EditUsersCommand.cs" />
+    <Compile Include="Commands\Users\SaveUsersCommand.cs" />
     <Compile Include="Enums\Gender.cs" />
-    <Compile Include="Enums\Position.cs" />
-    <Compile Include="Enums\Subject.cs" />
-    <Compile Include="Mappers\Implimentations\MarkMapper.cs" />
-    <Compile Include="Mappers\Implimentations\StudentMapper.cs" />
-    <Compile Include="Mappers\Implimentations\TeacherMapper.cs" />
+    <Compile Include="Mappers\Implementations\MarkMapper.cs" />
+    <Compile Include="Mappers\Implementations\StudentMapper.cs" />
+    <Compile Include="Mappers\Implementations\TeacherMapper.cs" />
+    <Compile Include="Mappers\Implementations\UserMapper.cs" />
     <Compile Include="Mappers\Interfaces\IMarkMapper.cs" />
     <Compile Include="Mappers\Interfaces\IStudentMapper.cs" />
     <Compile Include="Mappers\Interfaces\ITeacherMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IUserMapper.cs" />
     <Compile Include="Models\MarkModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Services\Implimentations\MarkService.cs" />
     <Compile Include="Services\Implimentations\StudentService.cs" />
     <Compile Include="Services\Implimentations\TeacherService.cs" />
@@ -91,9 +97,13 @@
     <Compile Include="Services\Interfaces\ITeacherService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\UserControls\MarkControlViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\UserControlViewModel.cs" />
     <Compile Include="ViewModels\Windows\LoginViewModel.cs" />
     <Compile Include="Views\UserControls\MarkControl.xaml.cs">
       <DependentUpon>MarkControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\UsersControl.xaml.cs">
+      <DependentUpon>UsersControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -110,6 +120,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserControls\UsersControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Windows\DashboardWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,7 +132,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Commands\Dashboard\OpenStudentComand.cs" />
+    <Compile Include="Commands\Dashboard\OpenStudentsComand.cs" />
     <Compile Include="Commands\Dashboard\OpenTeacherComand.cs" />
     <Compile Include="Commands\Teachers\AddTeachersCommand.cs" />
     <Compile Include="Commands\Teachers\DeleteTeachersCommand.cs" />

@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Dashboard
 {
-    internal class OpenMarksComand : ICommand
+    internal class OpenMarkComand : ICommand
     {
         private readonly DashboardViewModel _mainViewModel;
 
@@ -20,20 +20,20 @@ namespace SchoolManagementSystem.Commands.Dashboard
         {
             return true;
         }
-        public OpenMarksComand(DashboardViewModel mainViewModel)
+        public OpenMarkComand(DashboardViewModel mainViewModel)
         {
             _mainViewModel = mainViewModel;
         }
 
         public void Execute(object parameter)
         {
-            MarkControl markControl = new MarkControl();
-            MarksControlViewModel MarkcontrolViewModel = new MarksControlViewModel();
+            MarkControl control = new MarkControl();
+            MarksControlViewModel controlViewModel = new MarksControlViewModel();
 
-            markControl.DataContext = MarkcontrolViewModel;
+            control.DataContext = controlViewModel;
 
             _mainViewModel.MainGrind.Children.Clear();
-            _mainViewModel.MainGrind.Children.Add(markControl);
+            _mainViewModel.MainGrind.Children.Add(control);
         }
     }
 }

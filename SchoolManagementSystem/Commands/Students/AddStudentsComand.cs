@@ -9,21 +9,15 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Students
 {
-    internal class AddStudentsComand : ICommand
+    internal class AddStudentsComand : BaseComand
     {
-        public event EventHandler CanExecuteChanged;
-
         private readonly StudentControlViewModel _viewModel;
         public AddStudentsComand(StudentControlViewModel viewModel)
         {
             _viewModel = viewModel;
         }
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
 
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             _viewModel.CurrentSituation = (int)Situation.Add;
         }

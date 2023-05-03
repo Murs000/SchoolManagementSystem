@@ -1,14 +1,8 @@
-﻿
-using SchoolCore.Domain.Entities.Implimentations;
+﻿using SchoolCore.Domain.Entities.Implimentations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.Mappers.Implimentations
+namespace SchoolManagementSystem.Mappers.Implementations
 {
     public class MarkMapper : IMarkMapper
     {

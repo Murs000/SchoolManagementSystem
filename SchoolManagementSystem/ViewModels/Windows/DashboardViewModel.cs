@@ -19,10 +19,17 @@ namespace SchoolManagementSystem.ViewModels.Windows
             _teacherService = teacherService;
         }
 
+        private readonly IStudentService _studentService;
+        public DashboardViewModel(IStudentService studentService)
+        {
+            _studentService = studentService;
+        }
+
         public Grid MainGrind { get; set; }
 
-        public OpenStudentsComand OpenStudents => new OpenStudentsComand(this);
-        public OpenTeacherComand OpenTeacher => new OpenTeacherComand(this,_teacherService);
+        public OpenStudentsComand OpenStudents => new OpenStudentsComand(this, _studentService);
+        public OpenTeacherComand OpenTeacher => new OpenTeacherComand(this, _teacherService);
+        public OpenMarkComand OpenMark => new OpenMarkComand(this);
 
         public event PropertyChangedEventHandler PropertyChanged;
         

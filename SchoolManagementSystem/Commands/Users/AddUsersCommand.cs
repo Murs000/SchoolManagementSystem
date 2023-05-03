@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SchoolManagementSystem.Commands.Teachers
+namespace SchoolManagementSystem.Commands.Users
 {
-    internal class AddUserComand : ICommand
+    internal class AddUsersCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
         private readonly UserControlViewModel _viewModel;
-        public AddUserComand(UserControlViewModel viewModel)
+        public AddUsersCommand(UserControlViewModel viewModel)
         {
             _viewModel = viewModel;
         }

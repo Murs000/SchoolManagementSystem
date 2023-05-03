@@ -18,9 +18,9 @@ namespace SchoolManagementSystem.Views.UserControls
     /// <summary>
     /// Interaction logic for StudentControl.xaml
     /// </summary>
-    public partial class UserControl : UserControl
+    public partial class UsersControl : UserControl
     {
-        public UserControl()
+        public UsersControl()
         {
             InitializeComponent();
         }

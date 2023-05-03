@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.Mappers.Implimentations
+namespace SchoolManagementSystem.Mappers.Implementations
 {
     public class TeacherMapper :ITeacherMapper
     {

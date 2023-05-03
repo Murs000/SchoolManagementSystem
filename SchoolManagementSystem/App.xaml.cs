@@ -1,6 +1,6 @@
 ﻿using SchoolCore.DataAccess.Implimentations.SqlServer;
 using SchoolCore.DataAccess.Interfaces;
-using SchoolManagementSystem.Mappers.Implimentations;
+using SchoolManagementSystem.Mappers.Implementations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Services.Implimentations;
 using SchoolManagementSystem.Services.Interface;

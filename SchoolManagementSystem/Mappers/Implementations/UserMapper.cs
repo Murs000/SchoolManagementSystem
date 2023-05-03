@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.Mappers.Implimentations
+namespace SchoolManagementSystem.Mappers.Implementations
 {
     public class UserMapper : IUserMapper
     {
@@ -18,31 +18,19 @@ namespace SchoolManagementSystem.Mappers.Implimentations
             userModel.Id = user.Id;
             userModel.Name = user.Name;
             userModel.Surname = user.Surname;
-            userModel.FatherName = user.FatherName;
-            userModel.BirthDate = user.BirthDate;
             userModel.Email = user.Email;
-            userModel.PhoneNumber = user.PhoneNumber;
-            userModel.Subject = user.Subject;
-            userModel.Expirience = user.Expirience;
-            userModel.Position = user.Position;
 
             return userModel;
         }
 
         public User Map(UserModel userModel)
         {
-            User user = new Teacher();
+            User user = new User();
 
             user.Id = userModel.Id;
             user.Name = userModel.Name;
             user.Surname = userModel.Surname;
-            user.BirthDate = userModel.BirthDate;
-            user.Gender = userModel.Gender;
             user.Email = userModel.Email;
-            user.PhoneNumber = userModel.PhoneNumber;
-            user.Subject = userModel.Subject;
-            user.Expirience = userModel.Expirience;
-            user.Position = userModel.Position;
 
             return user;
         }

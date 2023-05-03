@@ -89,7 +89,7 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
             {
                 connection.Open();
 
-                string cmdText = @"update Authors set Name = @name,Surname= @surname,
+                string cmdText = @"update Teachers set Name = @name,Surname= @surname,
                                    FatherName=@fatherName,BirthDate= @birthDate,Gender=@gender,Email=@email,Phone=@phone,Subject=@subject,Position=@position,
                                    IsDeleted = @isDeleted, CreationDate = @creationDate,
                                    ModifiedDate = @modifiedDate,CreatorId = @creatorId,
