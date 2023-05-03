@@ -4,11 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchoolManagementSystem.Views.UserControls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:Enum ="clr-namespace:SchoolManagementSystem.Enums"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        
-        
+        <ObjectDataProvider x:Key="subjectEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Enum:Subject"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="positionEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Enum:Position"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -43,8 +53,8 @@
             </StackPanel>
             <StackPanel Grid.Column="3">
                 <DatePicker Margin="5" DataContext="{Binding CurrentValue.BirthDate}"/>
-                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" Checked="{Binding IsWoman}"/>
-                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" Checked="{Binding IsMan}"/>
+                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" IsChecked="{Binding IsWoman,Mode=TwoWay}"/>
+                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" IsChecked="{Binding IsMan,Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Grid.Column="4">
                 <TextBlock Text="Email" Style="{StaticResource baseTxtBlock}"/>
@@ -55,14 +65,14 @@
                 <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.PhoneNumber,Mode=TwoWay}"/>
             </StackPanel>
             <StackPanel Grid.Column="6">
-                <TextBlock Text="Subject" Style="{StaticResource baseTxtBlock}"/>
                 <TextBlock Text="Expirience" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Subject" Style="{StaticResource baseTxtBlock}"/>
                 <TextBlock Text="Position" Style="{StaticResource baseTxtBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="7">
-                <ComboBox Margin="5"/>
-                <ComboBox Margin="5"/>
-                <ComboBox Margin="5" ItemsSource="{Binding Positions}"/>
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Email,Mode=TwoWay}" Margin="5"/>
+                <ComboBox Margin="5" ItemsSource="{Binding Source={StaticResource subjectEnum}}" SelectedItem="{Binding CurrentValue.Subject}"/>
+                <ComboBox Margin="5" ItemsSource="{Binding Source={StaticResource positionEnum}}" SelectedItem="{Binding CurrentValue.Position}"/>
             </StackPanel>
             <StackPanel Grid.Column="8">
                 <Button Style="{StaticResource btnAdd}"/>

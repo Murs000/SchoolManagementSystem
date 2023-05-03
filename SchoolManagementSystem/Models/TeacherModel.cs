@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolManagementSystem.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,9 @@ namespace SchoolManagementSystem.Models
         public int Gender { get; set; } 
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public int Subject { get; set; }
-        public int Expirience { get; set; }
-        public int Position { get; set; }
+        public Subject Subject { get; set; }
+        public byte Expirience { get; set; }
+        public Position Position { get; set; }
 
         public TeacherModel Clone()
         {

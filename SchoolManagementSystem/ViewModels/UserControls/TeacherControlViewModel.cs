@@ -19,6 +19,7 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         public TeacherControlViewModel(ITeacherService teacherService)
         {
             _service = teacherService;
+            SetDefaultValues();
         }
 
         #region properties
@@ -75,40 +76,25 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             }
         }
 
-        private bool _isMan;
         public bool IsMan
         {
-            get => _isMan;
+            get => CurrentValue?.Gender == (int)Gender.Man;
             set
             {
                 CurrentValue.Gender = (int)Gender.Man;
             }
         }
 
-        private bool _isWoman;
         public bool IsWoman
         {
-            get => _isWoman;
+            get => CurrentValue?.Gender == (int)Gender.Woman;
             set
             {
                 CurrentValue.Gender = (int)Gender.Woman;
             }
         }
 
-        private List<string> _positions;
-        public List<string> Positions
-        {
-            get
-            {
-                _positions.Add("Director");
-                _positions.Add("Head Teacher");
-                _positions.Add("Teacher");
-                return _positions;
-            }
-        }
         #endregion
-
-
 
         #region commands
         public AddTeachersCommand Add => new AddTeachersCommand(this);

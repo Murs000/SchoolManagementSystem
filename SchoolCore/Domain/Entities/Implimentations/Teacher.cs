@@ -16,7 +16,7 @@ namespace SchoolCore.Domain.Entities.Implimentations
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public int Subject { get; set; }
-        public int Expirience { get; set; }
+        public byte Expirience { get; set; }
         public int Position { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreationDate { get; set; }

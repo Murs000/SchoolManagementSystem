@@ -72,6 +72,8 @@
     <Compile Include="Commands\Students\EditStudentsComand.cs" />
     <Compile Include="Commands\Students\SaveStudentsComand.cs" />
     <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\Position.cs" />
+    <Compile Include="Enums\Subject.cs" />
     <Compile Include="Mappers\Implimentations\MarkMapper.cs" />
     <Compile Include="Mappers\Implimentations\StudentMapper.cs" />
     <Compile Include="Mappers\Implimentations\TeacherMapper.cs" />

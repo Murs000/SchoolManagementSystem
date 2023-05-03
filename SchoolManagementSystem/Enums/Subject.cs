@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Enums
 {
-    public enum Gender
+    public enum Subject
     {
-        Man = 10,
-        Woman = 20
+        Math = 10,
+        MotherLanguace = 20,
+        ForeignLanguace = 30,
+        Chemistry = 40,
+        Physics = 50,
+        Biology = 60
     }
 }

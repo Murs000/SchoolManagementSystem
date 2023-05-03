@@ -136,7 +136,7 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
             teacher.Email = reader.GetString(reader.GetOrdinal("Email"));
             teacher.PhoneNumber = reader.GetString(reader.GetOrdinal("Phone"));
             teacher.Subject = reader.GetInt32(reader.GetOrdinal("Subject"));
-            teacher.Expirience = reader.GetInt32(reader.GetOrdinal("Expirience"));
+            teacher.Expirience = reader.GetByte(reader.GetOrdinal("Expirience"));
             teacher.Position = reader.GetInt32(reader.GetOrdinal("Position"));
             teacher.IsDeleted = reader.GetBoolean(reader.GetOrdinal("IsDeleted"));
             teacher.CreationDate = reader.GetDateTime(reader.GetOrdinal("CreationDate"));

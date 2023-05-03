@@ -1,4 +1,5 @@
 ﻿using SchoolCore.Domain.Entities.Implimentations;
+using SchoolManagementSystem.Enums;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using System;
@@ -22,9 +23,9 @@ namespace SchoolManagementSystem.Mappers.Implimentations
             teacherModel.BirthDate = teacher.BirthDate;
             teacherModel.Email = teacher.Email;
             teacherModel.PhoneNumber = teacher.PhoneNumber;
-            teacherModel.Subject = teacher.Subject;
+            teacherModel.Subject = (Subject)teacher.Subject;
             teacherModel.Expirience = teacher.Expirience;
-            teacherModel.Position = teacher.Position;
+            teacherModel.Position = (Position)teacher.Position;
 
             return teacherModel;
         }
@@ -40,9 +41,9 @@ namespace SchoolManagementSystem.Mappers.Implimentations
             teacher.Gender = teacherModel.Gender;
             teacher.Email = teacherModel.Email;
             teacher.PhoneNumber = teacherModel.PhoneNumber;
-            teacher.Subject = teacherModel.Subject;
+            teacher.Subject = (int)teacherModel.Subject;
             teacher.Expirience= teacherModel.Expirience;
-            teacher.Position = teacherModel.Position;
+            teacher.Position = (int)teacherModel.Position;
 
             return teacher;
         }
