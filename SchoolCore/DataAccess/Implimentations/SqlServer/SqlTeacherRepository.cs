@@ -90,7 +90,8 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
                 connection.Open();
 
                 string cmdText = @"update Teachers set Name = @name,Surname= @surname,
-                                   FatherName=@fatherName,BirthDate= @birthDate,Gender=@gender,Email=@email,Phone=@phone,Subject=@subject,Position=@position,
+                                   FatherName=@fatherName,BirthDate= @birthDate,Gender=@gender,Email=@email,Phone=@phone,
+                                   Subject=@subject,Position=@position,Expirience=@expirience,
                                    IsDeleted = @isDeleted, CreationDate = @creationDate,
                                    ModifiedDate = @modifiedDate,CreatorId = @creatorId,
                                    ModifierId = @modifierId
