@@ -12,5 +12,6 @@ namespace SchoolManagementSystem.Services.Interface
         List<TeacherModel> GetAll();
         int Save(TeacherModel teacherModel);
         bool Delete(int id);
+        void Exel();
     }
 }

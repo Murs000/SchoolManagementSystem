@@ -140,16 +140,24 @@
             <Setter Property="Command" Value="{Binding Delete}"/>
             <Setter Property="IsEnabled" Value="False"/>
             <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="3">
                     <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
 
-
-        <Style TargetType="TextBlock" x:Key="gridViewTextColumn">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Padding" Value="15,0"/>
+        <Style TargetType="Button" BasedOn="{StaticResource baseBtn}" x:Key="btnExel">
+            <Setter Property="Content" Value="Exel"/>
+            <Setter Property="Command" Value="{Binding Exel}"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="0">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
 
         <Style TargetType="TextBlock" x:Key="baseTxtBlock">
@@ -158,10 +166,21 @@
             <Setter Property="Margin" Value="5"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="IsEnabled" Value="False"/>
         </Style>
+        
         <Style TargetType="TextBox" x:Key="baseTxtBox">
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Margin" Value="0,5,0,5"/>
+            <Setter Property="IsEnabled" Value="False"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
 
         <Style TargetType="{x:Type ListView}" x:Key="myListView">
@@ -171,6 +190,42 @@
                 </DataTrigger>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
                     <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="RadioButton" x:Key="myRadioButton">
+            <Setter Property="IsEnabled" Value="False"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ComboBox" x:Key="myComboBox">
+            <Setter Property="IsEnabled" Value="False"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="DatePicker" x:Key="myDatePicker">
+            <Setter Property="IsEnabled" Value="False"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CurrentSituation}" Value="2">
+                    <Setter Property="IsEnabled" Value="True"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>

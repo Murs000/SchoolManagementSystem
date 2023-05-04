@@ -20,6 +20,8 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         {
             _service = teacherService;
             SetDefaultValues();
+
+            _teachers = new ObservableCollection<TeacherModel>(teacherService.GetAll());
         }
 
         #region properties
@@ -80,24 +82,24 @@ namespace SchoolManagementSystem.ViewModels.UserControls
 
         public bool IsMan
         {
-            get => CurrentValue?.Gender == (int)Gender.Man;
+            get => CurrentValue?.Gender == Gender.Man;
             set
             {
                 if (value)
                 {
-                    CurrentValue.Gender = (int)Gender.Man;
+                    CurrentValue.Gender = Gender.Man;
                 }
             }
         }
 
         public bool IsWoman
         {
-            get => CurrentValue?.Gender == (int)Gender.Woman;
+            get => CurrentValue?.Gender == Gender.Woman;
             set
             {
                 if (value)
                 {
-                    CurrentValue.Gender = (int)Gender.Woman;
+                    CurrentValue.Gender = Gender.Woman;
                 }
             }
         }
@@ -110,8 +112,11 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         public EditTeachersCommand Edit => new EditTeachersCommand(this);
         public CancelTeachersCommand Cancel => new CancelTeachersCommand(this);
         public SaveTeachersCommand Save => new SaveTeachersCommand(this, _service);
+
+        public ExelTeachersCommand Exel => new ExelTeachersCommand(this, _service);
         #endregion
 
+        #region metods
         public void SetDefaultValues()
         {
             CurrentSituation = (int)Situation.Default;
@@ -125,6 +130,6 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             _selectedValue = teacherModel;
             OnPropertyChanged(nameof(SelectedValue));
         }
-
+        #endregion
     }
 }

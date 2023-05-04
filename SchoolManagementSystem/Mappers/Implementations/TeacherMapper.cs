@@ -21,6 +21,7 @@ namespace SchoolManagementSystem.Mappers.Implementations
             teacherModel.Surname = teacher.Surname;
             teacherModel.FatherName = teacher.FatherName;
             teacherModel.BirthDate = teacher.BirthDate;
+            teacherModel.Gender = (Gender)teacher.Gender;
             teacherModel.Email = teacher.Email;
             teacherModel.PhoneNumber = teacher.PhoneNumber;
             teacherModel.Subject = (Subject)teacher.Subject;
@@ -39,7 +40,7 @@ namespace SchoolManagementSystem.Mappers.Implementations
             teacher.Surname= teacherModel.Surname;
             teacher.FatherName = teacherModel.FatherName;
             teacher.BirthDate = teacherModel.BirthDate;
-            teacher.Gender = teacherModel.Gender;
+            teacher.Gender = (byte)teacherModel.Gender;
             teacher.Email = teacherModel.Email;
             teacher.PhoneNumber = teacherModel.PhoneNumber;
             teacher.Subject = (byte)teacherModel.Subject;

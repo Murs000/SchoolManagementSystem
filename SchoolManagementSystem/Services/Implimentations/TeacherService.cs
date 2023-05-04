@@ -1,10 +1,12 @@
 ﻿using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implimentations;
+using SchoolManagementSystem.Enums;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,6 +77,41 @@ namespace SchoolManagementSystem.Services.Implimentations
             teacher.Modifier = new User { Id = 4 };
 
             return _db.TeacherRepository.Update(teacher);
+        }
+
+        public void Exel()
+        {
+            List<TeacherModel> teacherModels = new List<TeacherModel>(GetAll());
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("No",typeof(int));
+            dataTable.Columns.Add("Name", typeof(string));
+            dataTable.Columns.Add("Surname", typeof(string));
+            dataTable.Columns.Add("Father Name", typeof(string));
+            dataTable.Columns.Add("Birth Date", typeof(DateTime));
+            dataTable.Columns.Add("Email", typeof(string));
+            dataTable.Columns.Add("Phone Number", typeof(string));
+            dataTable.Columns.Add("Subject", typeof(Subject));
+            dataTable.Columns.Add("Expirience", typeof(byte));
+            dataTable.Columns.Add("Position", typeof(Position));
+
+            foreach (TeacherModel model in teacherModels)
+            {
+                DataRow row = dataTable.NewRow();
+                row["No"] = model.No;
+                row["Name"] = model.Name;
+                row["Surname"] = model.Surname;
+                row["Father Name"] = model.FatherName;
+                row["Birth Date"] = model.BirthDate;
+                row["Email"] = model.Email;
+                row["Phone Number"] = model.PhoneNumber;
+                row["Subject"] = model.Subject;
+                row["Expirience"] = model.Expirience;
+                row["Position"] = model.Position;
+
+                dataTable.Rows.Add(row);
+            }
+            
         }
     }
 }

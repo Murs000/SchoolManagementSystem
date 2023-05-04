@@ -71,6 +71,7 @@
     <Compile Include="Commands\Students\DeleteStudentsComand.cs" />
     <Compile Include="Commands\Students\EditStudentsComand.cs" />
     <Compile Include="Commands\Students\SaveStudentsComand.cs" />
+    <Compile Include="Commands\Teachers\ExelTeachersCommand.cs" />
     <Compile Include="Commands\Users\AddUsersCommand.cs" />
     <Compile Include="Commands\Users\CancelUsersComand.cs" />
     <Compile Include="Commands\Users\DeleteUsersCommand.cs" />

@@ -52,9 +52,9 @@
                 <TextBlock Text="Gender" Style="{StaticResource baseTxtBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="3">
-                <DatePicker Margin="5" SelectedDate="{Binding CurrentValue.BirthDate}"/>
-                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" IsChecked="{Binding IsWoman,Mode=TwoWay}"/>
-                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" IsChecked="{Binding IsMan,Mode=TwoWay}"/>
+                <DatePicker Margin="5" SelectedDate="{Binding CurrentValue.BirthDate}" Style="{StaticResource myDatePicker}"/>
+                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" IsChecked="{Binding IsWoman,Mode=TwoWay}" Style="{StaticResource myRadioButton}"/>
+                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" IsChecked="{Binding IsMan,Mode=TwoWay}" Style="{StaticResource myRadioButton}"/>
             </StackPanel>
             <StackPanel Grid.Column="4">
                 <TextBlock Text="Email" Style="{StaticResource baseTxtBlock}"/>
@@ -71,8 +71,8 @@
             </StackPanel>
             <StackPanel Grid.Column="7">
                 <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Expirience,Mode=TwoWay}" Margin="5"/>
-                <ComboBox Margin="5" ItemsSource="{Binding Source={StaticResource subjectEnum}}" SelectedItem="{Binding CurrentValue.Subject}"/>
-                <ComboBox Margin="5" ItemsSource="{Binding Source={StaticResource positionEnum}}" SelectedItem="{Binding CurrentValue.Position}"/>
+                <ComboBox Margin="5" ItemsSource="{Binding Source={StaticResource subjectEnum}}" SelectedItem="{Binding CurrentValue.Subject}" Style="{StaticResource myComboBox}"/>
+                <ComboBox Margin="5" ItemsSource="{Binding Source={StaticResource positionEnum}}" SelectedItem="{Binding CurrentValue.Position}" Style="{StaticResource myComboBox}"/>
             </StackPanel>
             <StackPanel Grid.Column="8">
                 <Button Style="{StaticResource btnAdd}"/>
@@ -80,11 +80,12 @@
                 <Button Style="{StaticResource btnEdit}"/>
                 <Button Style="{StaticResource btnCancel}"/>
                 <Button Style="{StaticResource btnDelete}"/>
+                <Button Style="{StaticResource btnExel}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
-                <ListView BorderThickness="0" ItemsSource="{Binding Teachers}" Style="{StaticResource myListView}">
+                <ListView BorderThickness="0" ItemsSource="{Binding Teachers}" Style="{StaticResource myListView}" SelectedItem="{Binding SelectedValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="No" Width="auto" DisplayMemberBinding="{Binding No}"/>
