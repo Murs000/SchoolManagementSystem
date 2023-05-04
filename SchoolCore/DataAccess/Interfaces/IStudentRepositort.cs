@@ -11,6 +11,6 @@ namespace SchoolCore.DataAccess.Interfaces
         Student GetById(int id);
         int Insert(Student student);
         bool Update(Student student);
-        bool Delete(int id);
+        //bool Delete(int id);
     }
 }

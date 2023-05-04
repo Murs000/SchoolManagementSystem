@@ -1,6 +1,5 @@
 ﻿using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implimentations;
-using SchoolManagementSystem.Mappers.Implementations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
@@ -21,7 +20,6 @@ namespace SchoolManagementSystem.Services.Implimentations
             _db = db;
             _studentMapper = studentMapper;
         }
-
         public List<StudentModel> GetAll()
         {
             List<StudentModel> studentModels = new List<StudentModel>();
@@ -45,13 +43,13 @@ namespace SchoolManagementSystem.Services.Implimentations
         {
             Student willSavedStudent = _studentMapper.Map(studentModel);
 
-            willSavedStudent.Modifier = new User { Id = 1 };
+            willSavedStudent.Modifier = new User { Id = 4 };
             willSavedStudent.ModifiedDate = DateTime.Now;
 
             if (willSavedStudent.Id == 0)
             {
                 willSavedStudent.CreationDate = DateTime.Now;
-                willSavedStudent.Creator = new User() { Id = 1 };
+                willSavedStudent.Creator = new User() { Id = 4 };
 
                 return _db.StudentRepository.Insert(willSavedStudent);
             }
@@ -74,12 +72,9 @@ namespace SchoolManagementSystem.Services.Implimentations
 
             student.IsDeleted = true;
             student.ModifiedDate = DateTime.Now;
-            student.Modifier = new User { Id = 1 };
+            student.Modifier = new User { Id = 4 };
 
             return _db.StudentRepository.Update(student);
         }
-
-
-
     }
 }

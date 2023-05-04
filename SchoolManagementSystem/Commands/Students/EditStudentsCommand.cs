@@ -9,17 +9,17 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Students
 {
-    internal class AddStudentsComand : BaseComand
+    internal class EditStudentsCommand : BaseComand
     {
-        private readonly StudentControlViewModel _viewModel;
-        public AddStudentsComand(StudentControlViewModel viewModel)
+        private StudentControlViewModel _viewModel;
+        public EditStudentsCommand(StudentControlViewModel viewModel)
         {
             _viewModel = viewModel;
         }
 
         public override void Execute(object parameter)
         {
-            _viewModel.CurrentSituation = (int)Situation.Add;
+            _viewModel.CurrentSituation = (int)Situation.Edit;
         }
     }
 }

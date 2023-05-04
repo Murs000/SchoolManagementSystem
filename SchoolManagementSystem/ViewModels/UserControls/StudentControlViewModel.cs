@@ -1,4 +1,5 @@
 ﻿using SchoolManagementSystem.Commands.Students;
+using SchoolManagementSystem.Commands.Teachers;
 using SchoolManagementSystem.Enums;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
@@ -76,23 +77,27 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             }
         }
 
-        private bool _isMan;
         public bool IsMan
         {
-            get => _isMan;
+            get => CurrentValue?.Gender == (int)Gender.Man;
             set
             {
-                CurrentValue.Gender = (int)Gender.Man;
+                if (value)
+                {
+                    CurrentValue.Gender = (int)Gender.Man;
+                }
             }
         }
 
-        private bool _isWoman;
         public bool IsWoman
         {
-            get => _isWoman;
+            get => CurrentValue?.Gender == (int)Gender.Woman;
             set
             {
-                CurrentValue.Gender = (int)Gender.Woman;
+                if (value)
+                {
+                    CurrentValue.Gender = (int)Gender.Woman;
+                }
             }
         }
 
@@ -102,11 +107,11 @@ namespace SchoolManagementSystem.ViewModels.UserControls
 
 
         #region commands
-        public AddStudentsComand Add => new AddStudentsComand(this);
-        public DeleteStudensComand Delete => new DeleteStudensComand();
-        public EditStudentsComand Edit => new EditStudentsComand();
-        public CancelStudentsComand Cancel => new CancelStudentsComand(this);
-        public SaveStudentsComand Save => new SaveStudentsComand();
+        public AddStudentsCommand Add => new AddStudentsCommand(this);
+        public DeleteStudentsCommand Delete => new DeleteStudentsCommand(this, _service);
+        public EditStudentsCommand Edit => new EditStudentsCommand(this);
+        public CancelStudentsCommand Cancel => new CancelStudentsCommand(this);
+        public SaveStudentsCommand Save => new SaveStudentsCommand(this, _service);
         #endregion
 
         public void SetDefaultValues()
