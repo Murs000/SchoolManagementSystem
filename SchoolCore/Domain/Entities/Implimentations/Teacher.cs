@@ -12,7 +12,7 @@ namespace SchoolCore.Domain.Entities.Implimentations
         public string Surname { get; set; }
         public string FatherName { get; set; }
         public DateTime BirthDate { get; set; }
-        public int Gender { get; set; }
+        public byte Gender { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public byte Subject { get; set; }
