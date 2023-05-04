@@ -11,16 +11,16 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Students
 {
-    internal class SaveStudentsComand : BaseComand
+    internal class SaveStudentsCommand : BaseComand
     {
         private readonly StudentControlViewModel _viewModel;
         private readonly IStudentService _studentService;
 
-        public SaveStudentsComand()
+        public SaveStudentsCommand()
         {
         }
 
-        public SaveStudentsComand(StudentControlViewModel viewModel, IStudentService studentService)
+        public SaveStudentsCommand(StudentControlViewModel viewModel, IStudentService studentService)
         {
             _viewModel = viewModel;
             _studentService = studentService;

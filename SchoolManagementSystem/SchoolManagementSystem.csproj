@@ -66,11 +66,11 @@
     <Compile Include="Commands\Marks\EditMarksComand.cs" />
     <Compile Include="Commands\Marks\SaveMarksComand.cs" />
     <Compile Include="Commands\SignInCommand.cs" />
-    <Compile Include="Commands\Students\AddStudentsComand.cs" />
-    <Compile Include="Commands\Students\CancelStudentsComand.cs" />
-    <Compile Include="Commands\Students\DeleteStudentsComand.cs" />
-    <Compile Include="Commands\Students\EditStudentsComand.cs" />
-    <Compile Include="Commands\Students\SaveStudentsComand.cs" />
+    <Compile Include="Commands\Students\AddStudentsCommand.cs" />
+    <Compile Include="Commands\Students\CancelStudentsCommand.cs" />
+    <Compile Include="Commands\Students\DeleteStudentsCommand.cs" />
+    <Compile Include="Commands\Students\EditStudentsCommand.cs" />
+    <Compile Include="Commands\Students\SaveStudentsCommand.cs" />
     <Compile Include="Commands\Users\AddUsersCommand.cs" />
     <Compile Include="Commands\Users\CancelUsersComand.cs" />
     <Compile Include="Commands\Users\DeleteUsersCommand.cs" />

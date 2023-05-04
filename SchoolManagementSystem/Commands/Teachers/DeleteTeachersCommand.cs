@@ -15,10 +15,10 @@ namespace SchoolManagementSystem.Commands.Teachers
     {
         private readonly TeacherControlViewModel _viewModel;
         private readonly ITeacherService _teacherService;
-        public DeleteTeachersCommand(TeacherControlViewModel viewModel, ITeacherService authorService)
+        public DeleteTeachersCommand(TeacherControlViewModel viewModel, ITeacherService teacherService)
         {
             _viewModel = viewModel;
-            _teacherService = authorService;
+            _teacherService = teacherService;
         }
 
         public override void Execute(object parameter)

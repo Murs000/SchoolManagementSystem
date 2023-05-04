@@ -10,21 +10,14 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Students
 {
-    internal class CancelStudentsComand : ICommand
+    internal class CancelStudentsCommand : BaseComand
     {
-        public event EventHandler CanExecuteChanged;
-
         private readonly StudentControlViewModel _viewModel;
-        public CancelStudentsComand(StudentControlViewModel viewModel)
+        public CancelStudentsCommand(StudentControlViewModel viewModel)
         {
             _viewModel = viewModel;
         }
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
-
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             _viewModel.CurrentSituation = (int)Situation.Default;
         }
