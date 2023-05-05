@@ -4,21 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchoolManagementSystem.Views.UserControls"
-             xmlns:System="clr-namespace:System;assembly=mscorlib"
-             xmlns:Enum ="clr-namespace:SchoolManagementSystem.Enums"
+             xmlns:converters="clr-namespace:SchoolManagementSystem.Converters"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:enum ="clr-namespace:SchoolCore.Domain.Enums;assembly=SchoolCore"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <ObjectDataProvider x:Key="subjectEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+        <ObjectDataProvider x:Key="subjectEnum" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="Enum:Subject"/>
+                <x:Type TypeName="enum:Subject"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-        <ObjectDataProvider x:Key="positionEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+        <ObjectDataProvider x:Key="positionEnum" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="Enum:Position"/>
+                <x:Type TypeName="enum:Position"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+        <converters:RadioButtonToEnumConverter x:Key="RdbEnumConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -53,8 +55,12 @@
             </StackPanel>
             <StackPanel Grid.Column="3">
                 <DatePicker Margin="5" SelectedDate="{Binding CurrentValue.BirthDate}" Style="{StaticResource myDatePicker}"/>
-                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" IsChecked="{Binding IsWoman,Mode=TwoWay}" Style="{StaticResource myRadioButton}"/>
-                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" IsChecked="{Binding IsMan,Mode=TwoWay}" Style="{StaticResource myRadioButton}"/>
+                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" 
+                             IsChecked="{Binding Path=CurrentValue.Gender, Converter={StaticResource RdbEnumConverter}, ConverterParameter={x:Static enum:Gender.Woman}}"
+                             Style="{StaticResource myRadioButton}"/>
+                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" 
+                             IsChecked="{Binding Path=CurrentValue.Gender, Converter={StaticResource RdbEnumConverter}, ConverterParameter={x:Static enum:Gender.Man}}"
+                             Style="{StaticResource myRadioButton}"/>
             </StackPanel>
             <StackPanel Grid.Column="4">
                 <TextBlock Text="Email" Style="{StaticResource baseTxtBlock}"/>

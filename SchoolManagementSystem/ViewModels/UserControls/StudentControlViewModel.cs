@@ -1,4 +1,5 @@
-﻿using SchoolManagementSystem.Commands.Students;
+﻿using SchoolCore.Domain.Enums;
+using SchoolManagementSystem.Commands.Students;
 using SchoolManagementSystem.Commands.Teachers;
 using SchoolManagementSystem.Enums;
 using SchoolManagementSystem.Models;

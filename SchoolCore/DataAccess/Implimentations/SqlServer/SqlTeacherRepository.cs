@@ -1,5 +1,6 @@
 ﻿using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implimentations;
+using SchoolCore.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -118,12 +119,12 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
             teacher.Surname = reader.GetString(reader.GetOrdinal("Surname"));
             teacher.FatherName = reader.GetString(reader.GetOrdinal("FatherName"));
             teacher.BirthDate = reader.GetDateTime(reader.GetOrdinal("Birthdate"));
-            teacher.Gender = reader.GetByte(reader.GetOrdinal("Gender"));
+            teacher.Gender = (Gender) reader.GetByte(reader.GetOrdinal("Gender"));
             teacher.Email = reader.GetString(reader.GetOrdinal("Email"));
             teacher.PhoneNumber = reader.GetString(reader.GetOrdinal("Phone"));
-            teacher.Subject = reader.GetByte(reader.GetOrdinal("Subject"));
+            teacher.Subject = (Subject) reader.GetByte(reader.GetOrdinal("Subject"));
             teacher.Expirience = reader.GetByte(reader.GetOrdinal("Expirience"));
-            teacher.Position = reader.GetByte(reader.GetOrdinal("Position"));
+            teacher.Position = (Position) reader.GetByte(reader.GetOrdinal("Position"));
             teacher.IsDeleted = reader.GetBoolean(reader.GetOrdinal("IsDeleted"));
             teacher.CreationDate = reader.GetDateTime(reader.GetOrdinal("CreationDate"));
             teacher.ModifiedDate = reader.GetDateTime(reader.GetOrdinal("ModifiedDate"));

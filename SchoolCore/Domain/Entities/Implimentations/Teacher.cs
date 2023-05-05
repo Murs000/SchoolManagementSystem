@@ -1,4 +1,5 @@
 ﻿using SchoolCore.Domain.Entities.Interfaces;
+using SchoolCore.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,12 +13,12 @@ namespace SchoolCore.Domain.Entities.Implimentations
         public string Surname { get; set; }
         public string FatherName { get; set; }
         public DateTime BirthDate { get; set; }
-        public byte Gender { get; set; }
+        public Gender Gender { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public byte Subject { get; set; }
+        public Subject Subject { get; set; }
         public byte Expirience { get; set; }
-        public byte Position { get; set; }
+        public Position Position { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreationDate { get; set; }
         public DateTime ModifiedDate { get; set; }

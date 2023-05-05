@@ -78,9 +78,7 @@
     <Compile Include="Commands\Users\DeleteUsersCommand.cs" />
     <Compile Include="Commands\Users\EditUsersCommand.cs" />
     <Compile Include="Commands\Users\SaveUsersCommand.cs" />
-    <Compile Include="Enums\Gender.cs" />
-    <Compile Include="Enums\Position.cs" />
-    <Compile Include="Enums\Subject.cs" />
+    <Compile Include="Converters\RadioButtonToEnumConverter.cs" />
     <Compile Include="Mappers\Implementations\MarkMapper.cs" />
     <Compile Include="Mappers\Implementations\StudentMapper.cs" />
     <Compile Include="Mappers\Implementations\TeacherMapper.cs" />

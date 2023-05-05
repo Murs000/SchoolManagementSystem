@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.Enums
+namespace SchoolCore.Domain.Enums
 {
     public enum Subject
     {

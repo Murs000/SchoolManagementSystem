@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.Enums
+namespace SchoolCore.Domain.Enums
 {
-    public enum Position
+    public enum Gender
     {
-        Director = 10,
-        HeadTeacher = 20,
-        Teacher = 30
+        Man = 1,
+        Woman = 2
     }
 }
