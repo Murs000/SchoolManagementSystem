@@ -14,11 +14,12 @@ namespace SchoolManagementSystem.Services.Implimentations
     {
         private readonly IUnitOfWork _db;
         private readonly IUserMapper _userMapper;
-        public TeacherService(IUnitOfWork db, IUserMapper userMapper)
+        public UserService(IUnitOfWork db, IUserMapper userMapper)
         {
             _db = db;
             _userMapper = userMapper;
         }
+
         public bool Delete(int id)
         {
             throw new NotImplementedException();

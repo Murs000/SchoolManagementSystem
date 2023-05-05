@@ -72,11 +72,6 @@
     <Compile Include="Commands\Students\DeleteStudentsCommand.cs" />
     <Compile Include="Commands\Students\EditStudentsCommand.cs" />
     <Compile Include="Commands\Students\SaveStudentsCommand.cs" />
-    <Compile Include="Commands\Students\AddStudentsComand.cs" />
-    <Compile Include="Commands\Students\CancelStudentsComand.cs" />
-    <Compile Include="Commands\Students\DeleteStudentsComand.cs" />
-    <Compile Include="Commands\Students\EditStudentsComand.cs" />
-    <Compile Include="Commands\Students\SaveStudentsComand.cs" />
     <Compile Include="Commands\Teachers\ExelTeachersCommand.cs" />
     <Compile Include="Commands\Users\AddUsersCommand.cs" />
     <Compile Include="Commands\Users\CancelUsersComand.cs" />
@@ -113,8 +108,8 @@
     <Compile Include="Views\UserControls\MarkControl.xaml.cs">
       <DependentUpon>MarkControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserControls\UsersControl.xaml.cs">
-      <DependentUpon>UsersControl.xaml</DependentUpon>
+    <Compile Include="Views\UserControls\AppUserControl.xaml.cs">
+      <DependentUpon>AppUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -131,7 +126,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UserControls\UsersControl.xaml">
+    <Page Include="Views\UserControls\AppUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

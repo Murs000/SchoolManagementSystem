@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Dashboard
@@ -27,7 +28,7 @@ namespace SchoolManagementSystem.Commands.Dashboard
 
         public void Execute(object parameter)
         {
-            UserControl control = new UserControl();
+            AppUserControl control = new AppUserControl();
             UserControlViewModel controlViewModel = new UserControlViewModel();
 
             control.DataContext = controlViewModel;
