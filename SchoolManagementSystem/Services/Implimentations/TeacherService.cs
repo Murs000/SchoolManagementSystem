@@ -1,4 +1,6 @@
-﻿using SchoolCore.DataAccess.Interfaces;
+﻿using ClosedXML.Excel;
+using Microsoft.Win32;
+using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implimentations;
 using SchoolCore.Domain.Enums;
 using SchoolManagementSystem.Mappers.Interfaces;
@@ -7,6 +9,7 @@ using SchoolManagementSystem.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,13 +48,13 @@ namespace SchoolManagementSystem.Services.Implimentations
         {
             Teacher willSavedTeacher = _teacherMapper.Map(teacherModel);
 
-            willSavedTeacher.Modifier = new User { Id = 1 };
+            willSavedTeacher.Modifier = new User { Id = 4 };
             willSavedTeacher.ModifiedDate = DateTime.Now;
 
             if (willSavedTeacher.Id == 0)
             {
                 willSavedTeacher.CreationDate = DateTime.Now;
-                willSavedTeacher.Creator = new User() { Id = 1 };
+                willSavedTeacher.Creator = new User() { Id = 4 };
 
                 return _db.TeacherRepository.Insert(willSavedTeacher);
             }
@@ -83,7 +86,15 @@ namespace SchoolManagementSystem.Services.Implimentations
         {
             List<TeacherModel> teacherModels = new List<TeacherModel>(GetAll());
 
+            SaveFileDialog fileDialog = new SaveFileDialog()
+            {
+                AddExtension = true,
+                DefaultExt = "xlsx"
+            };
+            fileDialog.ShowDialog();
+
             DataTable dataTable = new DataTable();
+
             dataTable.Columns.Add("No",typeof(int));
             dataTable.Columns.Add("Name", typeof(string));
             dataTable.Columns.Add("Surname", typeof(string));
@@ -91,9 +102,9 @@ namespace SchoolManagementSystem.Services.Implimentations
             dataTable.Columns.Add("Birth Date", typeof(DateTime));
             dataTable.Columns.Add("Email", typeof(string));
             dataTable.Columns.Add("Phone Number", typeof(string));
-            dataTable.Columns.Add("Subject", typeof(Subject));
+            dataTable.Columns.Add("Subject", typeof(string));
             dataTable.Columns.Add("Expirience", typeof(byte));
-            dataTable.Columns.Add("Position", typeof(Position));
+            dataTable.Columns.Add("Position", typeof(string));
 
             foreach (TeacherModel model in teacherModels)
             {
@@ -105,13 +116,19 @@ namespace SchoolManagementSystem.Services.Implimentations
                 row["Birth Date"] = model.BirthDate;
                 row["Email"] = model.Email;
                 row["Phone Number"] = model.PhoneNumber;
-                row["Subject"] = model.Subject;
+                row["Subject"] = model.Subject.ToString();
                 row["Expirience"] = model.Expirience;
                 row["Position"] = model.Position;
 
                 dataTable.Rows.Add(row);
             }
-            
+
+            XLWorkbook workbook = new XLWorkbook();
+            workbook.Worksheets.Add(dataTable,"Data");
+            workbook.SaveAs(fileDialog.FileName);
+
+            Process.Start(fileDialog.FileName);
+
         }
     }
 }

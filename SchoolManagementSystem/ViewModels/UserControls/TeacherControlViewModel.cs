@@ -22,7 +22,6 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             _service = teacherService;
             SetDefaultValues();
 
-            _teachers = new ObservableCollection<TeacherModel>(teacherService.GetAll());
         }
 
         #region properties
@@ -77,30 +76,6 @@ namespace SchoolManagementSystem.ViewModels.UserControls
                 {
                     CurrentValue = SelectedValue.Clone();
                     CurrentSituation = (int)Situation.Selected;
-                }
-            }
-        }
-
-        public bool IsMan
-        {
-            get => CurrentValue?.Gender == Gender.Man;
-            set
-            {
-                if (value)
-                {
-                    CurrentValue.Gender = Gender.Man;
-                }
-            }
-        }
-
-        public bool IsWoman
-        {
-            get => CurrentValue?.Gender == Gender.Woman;
-            set
-            {
-                if (value)
-                {
-                    CurrentValue.Gender = Gender.Woman;
                 }
             }
         }

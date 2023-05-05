@@ -1,9 +1,11 @@
-﻿using SchoolManagementSystem.Services.Interface;
+﻿using SchoolManagementSystem.Models;
+using SchoolManagementSystem.Services.Interface;
 using SchoolManagementSystem.ViewModels.UserControls;
 using SchoolManagementSystem.ViewModels.Windows;
 using SchoolManagementSystem.Views.UserControls;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +33,10 @@ namespace SchoolManagementSystem.Commands.Dashboard
         {
             TeacherControl control = new TeacherControl();
             TeacherControlViewModel viewModel = new TeacherControlViewModel(_teacherService);
+
+            List<TeacherModel> model = _teacherService.GetAll();
+
+            viewModel.Teachers = new ObservableCollection<TeacherModel>(model);
 
             control.DataContext = viewModel;
 
