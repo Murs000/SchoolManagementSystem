@@ -88,7 +88,6 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         public EditTeachersCommand Edit => new EditTeachersCommand(this);
         public CancelTeachersCommand Cancel => new CancelTeachersCommand(this);
         public SaveTeachersCommand Save => new SaveTeachersCommand(this, _service);
-
         public ExelTeachersCommand Exel => new ExelTeachersCommand(this, _service);
         #endregion
 

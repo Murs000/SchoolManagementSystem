@@ -1,10 +1,14 @@
-﻿using SchoolCore.DataAccess.Interfaces;
+﻿using ClosedXML.Excel;
+using Microsoft.Win32;
+using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implimentations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -76,5 +80,50 @@ namespace SchoolManagementSystem.Services.Implimentations
 
             return _db.StudentRepository.Update(student);
         }
+
+
+        public void Exel()
+        {
+            List<StudentModel> studentModels = new List<StudentModel>(GetAll());
+
+            SaveFileDialog fileDialog = new SaveFileDialog()
+            {
+                AddExtension = true,
+                DefaultExt = "xlsx"
+            };
+            fileDialog.ShowDialog();
+
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.Add("No", typeof(int));
+            dataTable.Columns.Add("Name", typeof(string));
+            dataTable.Columns.Add("Surname", typeof(string));
+            dataTable.Columns.Add("Father Name", typeof(string));
+            dataTable.Columns.Add("Birth Date", typeof(DateTime));
+            dataTable.Columns.Add("Email", typeof(string));
+            dataTable.Columns.Add("Phone Number", typeof(string));
+    
+            foreach (StudentModel model in studentModels)
+            {
+                DataRow row = dataTable.NewRow();
+                row["No"] = model.No;
+                row["Name"] = model.Name;
+                row["Surname"] = model.Surname;
+                row["Father Name"] = model.FatherName;
+                row["Birth Date"] = model.BirthDate;
+                row["Email"] = model.Email;
+                row["Phone Number"] = model.PhoneNumber;
+        
+                dataTable.Rows.Add(row);
+            }
+
+            XLWorkbook workbook = new XLWorkbook();
+            workbook.Worksheets.Add(dataTable, "Data");
+            workbook.SaveAs(fileDialog.FileName);
+
+            Process.Start(fileDialog.FileName);
+
+        }
     }
 }
+

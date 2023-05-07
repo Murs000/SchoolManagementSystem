@@ -76,70 +76,20 @@
             </ScrollViewer>
         </Grid>-->
 
+
         <Grid Grid.Row="1">
-            <ScrollViewer>
-                <ListView x:Name="MainList" Grid.Row="1" Style="{StaticResource listViewCustom}"
-                      ItemsSource="{Binding Values}"
-                      SelectedItem="{Binding SelectedValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+            <ScrollViewer  VerticalScrollBarVisibility="Auto">
+                <ListView BorderThickness="0" ItemsSource="{Binding Students}" Style="{StaticResource myListView}" SelectedItem="{Binding SelectedValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                     <ListView.View>
-                        <GridView >
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=No}" Header="No" Width="Auto"/>
-                            <GridViewColumn Header="Name" Width="Auto">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=Name}" Style="{StaticResource gridViewTextColumn}"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="FatherName" Width="Auto">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=FatherName}" Style="{StaticResource gridViewTextColumn}"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="BirthDate" Width="Auto">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=BirthDate, StringFormat='dd.MM.yyyy'}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="Gender" Width="Auto">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=Gender}" Style="{StaticResource gridViewTextColumn}"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="Email" Width="Auto">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=v}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="Phone" Width="Auto">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=Phone}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="Subject" Width="Auto">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=Subject}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Header="Position" Width="Auto">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=Position}" Style="{StaticResource gridViewTextColumn}" HorizontalAlignment="Center"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
+                        <GridView>
+                            <GridViewColumn Header="No" Width="auto" DisplayMemberBinding="{Binding No}"/>
+                            <GridViewColumn Header="Name" Width="auto" DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Header="Surname" Width="auto" DisplayMemberBinding="{Binding Surname}"/>
+                            <GridViewColumn Header="Father Name" Width="auto" DisplayMemberBinding="{Binding FatherName}"/>
+                            <GridViewColumn Header="Birth Date" Width="auto" DisplayMemberBinding="{Binding BirthDate}"/>
+                            <GridViewColumn Header="Gender" Width="auto" DisplayMemberBinding="{Binding Gender}"/>
+                            <GridViewColumn Header="Email" Width="auto" DisplayMemberBinding="{Binding Email}"/>
+                            <GridViewColumn Header="PhoneNumber" Width="auto" DisplayMemberBinding="{Binding PhoneNumber}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>

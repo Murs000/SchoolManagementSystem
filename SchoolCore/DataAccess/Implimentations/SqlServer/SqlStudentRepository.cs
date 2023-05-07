@@ -1,5 +1,6 @@
 ﻿using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implimentations;
+using SchoolCore.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -132,7 +133,7 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
             student.Surname = reader.GetString(reader.GetOrdinal("Surname"));
             student.FatherName = reader.GetString(reader.GetOrdinal("FatherName"));
             student.BirthDate = reader.GetDateTime(reader.GetOrdinal("Birthdate"));
-            student.Gender = reader.GetInt32(reader.GetOrdinal("Gender"));
+            student.Gender = (Gender)reader.GetByte(reader.GetOrdinal("Gender"));
             student.Email = reader.GetString(reader.GetOrdinal("Email"));
             student.PhoneNumber = reader.GetString(reader.GetOrdinal("Phone"));
             student.IsDeleted = reader.GetBoolean(reader.GetOrdinal("IsDeleted"));

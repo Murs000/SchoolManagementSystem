@@ -91,6 +91,7 @@
     <Compile Include="Commands\Students\CancelStudentsCommand.cs" />
     <Compile Include="Commands\Students\DeleteStudentsCommand.cs" />
     <Compile Include="Commands\Students\EditStudentsCommand.cs" />
+    <Compile Include="Commands\Students\ExelStudentsComand.cs" />
     <Compile Include="Commands\Students\SaveStudentsCommand.cs" />
     <Compile Include="Commands\Teachers\ExelTeachersCommand.cs" />
     <Compile Include="Commands\Users\AddUsersCommand.cs" />
