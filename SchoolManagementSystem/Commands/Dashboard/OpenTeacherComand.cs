@@ -13,9 +13,8 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Dashboard
 {
-    internal class OpenTeacherComand : ICommand
+    internal class OpenTeacherComand : BaseComand
     {
-        public event EventHandler CanExecuteChanged;
         private readonly DashboardViewModel _mainViewModel;
         private readonly ITeacherService _teacherService;
 
@@ -24,12 +23,8 @@ namespace SchoolManagementSystem.Commands.Dashboard
             _mainViewModel = mainViewModel;
             _teacherService = teacherService;
         }
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
 
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             TeacherControl control = new TeacherControl();
             TeacherControlViewModel viewModel = new TeacherControlViewModel(_teacherService);

@@ -30,6 +30,7 @@ namespace SchoolManagementSystem.ViewModels.Windows
         public OpenStudentsComand OpenStudents => new OpenStudentsComand(this, _studentService);
         public OpenTeacherComand OpenTeacher => new OpenTeacherComand(this, _teacherService);
         public OpenMarkComand OpenMark => new OpenMarkComand(this);
+        public OpenClassesCommand OpenClasses => new OpenClassesCommand(this, _studentService);
 
         public event PropertyChangedEventHandler PropertyChanged;
         

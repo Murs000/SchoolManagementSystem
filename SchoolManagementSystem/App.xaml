@@ -183,7 +183,26 @@
             </Style.Triggers>
         </Style>
 
+        <Style TargetType="{x:Type ListViewItem}" x:Key="myListViewItem">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <GridViewRowPresenter Content="{TemplateBinding Content}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#2980b9"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
         <Style TargetType="{x:Type ListView}" x:Key="myListView">
+            <Setter Property="ItemContainerStyle" Value="{StaticResource myListViewItem}"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding CurrentSituation}" Value="1">
                     <Setter Property="IsEnabled" Value="False"/>

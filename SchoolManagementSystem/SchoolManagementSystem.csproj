@@ -79,6 +79,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\BaseComand.cs" />
+    <Compile Include="Commands\Dashboard\OpenClassesCommand.cs" />
     <Compile Include="Commands\Dashboard\OpenMarkComand.cs" />
     <Compile Include="Commands\Dashboard\OpenUserComand.cs" />
     <Compile Include="Commands\Marks\AddMarksComnad.cs" />
