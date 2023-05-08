@@ -36,6 +36,7 @@ namespace SchoolManagementSystem.Commands.Dashboard
 
             List<TeacherModel> model = _teacherService.GetAll();
 
+            viewModel.AllTeachers = model;
             viewModel.Teachers = new ObservableCollection<TeacherModel>(model);
 
             control.DataContext = viewModel;

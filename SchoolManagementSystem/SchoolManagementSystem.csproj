@@ -123,6 +123,9 @@
     <Compile Include="ViewModels\UserControls\MarkControlViewModel.cs" />
     <Compile Include="ViewModels\UserControls\UserControlViewModel.cs" />
     <Compile Include="ViewModels\Windows\LoginViewModel.cs" />
+    <Compile Include="Views\Components\SearchControl.xaml.cs">
+      <DependentUpon>SearchControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\MarkControl.xaml.cs">
       <DependentUpon>MarkControl.xaml</DependentUpon>
     </Compile>
@@ -132,6 +135,10 @@
     <Compile Include="Views\Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Components\SearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserControls\MarkControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -209,9 +216,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Componets\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SchoolCore\SchoolCore.csproj">
       <Project>{81b410a4-c1f9-4f3a-826c-4f913414df59}</Project>

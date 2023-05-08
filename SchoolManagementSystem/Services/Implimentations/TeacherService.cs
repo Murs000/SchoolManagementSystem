@@ -116,7 +116,7 @@ namespace SchoolManagementSystem.Services.Implimentations
                 row["Birth Date"] = model.BirthDate;
                 row["Email"] = model.Email;
                 row["Phone Number"] = model.PhoneNumber;
-                row["Subject"] = model.Subject.ToString();
+                row["Subject"] = model.Subject;
                 row["Expirience"] = model.Expirience;
                 row["Position"] = model.Position;
 

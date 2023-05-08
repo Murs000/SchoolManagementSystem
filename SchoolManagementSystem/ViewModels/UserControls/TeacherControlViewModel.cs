@@ -22,6 +22,7 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             _service = teacherService;
             SetDefaultValues();
 
+            AllTeachers = new List<TeacherModel>();
         }
 
         #region properties
@@ -48,6 +49,8 @@ namespace SchoolManagementSystem.ViewModels.UserControls
                 OnPropertyChanged(nameof(Teachers));
             }
         }
+
+        public List<TeacherModel> AllTeachers { get; set; }
 
         private TeacherModel _currentValue;
         public TeacherModel CurrentValue
@@ -80,6 +83,27 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             }
         }
 
+        private string _searchedValue;
+        public string SearchedValue
+        {
+            get => _searchedValue;
+            set
+            {
+                _searchedValue = value;
+                OnPropertyChanged(nameof(SearchedValue));
+
+                if (string.IsNullOrWhiteSpace(SearchedValue))
+                {
+                    Teachers = new ObservableCollection<TeacherModel>(AllTeachers);
+                }
+                else
+                {
+                    var filteredResult = Teachers.Where(x => x.Name.StartsWith(SearchedValue) || x.Surname.StartsWith(SearchedValue));
+
+                    Teachers = new ObservableCollection<TeacherModel>(filteredResult);
+                }
+            }
+        }
         #endregion
 
         #region commands
