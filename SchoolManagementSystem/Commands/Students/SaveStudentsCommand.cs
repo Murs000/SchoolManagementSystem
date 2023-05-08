@@ -16,9 +16,6 @@ namespace SchoolManagementSystem.Commands.Students
         private readonly StudentControlViewModel _viewModel;
         private readonly IStudentService _studentService;
 
-        public SaveStudentsCommand()
-        {
-        }
 
         public SaveStudentsCommand(StudentControlViewModel viewModel, IStudentService studentService)
         {

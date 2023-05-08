@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Mappers.Interfaces
 {
-    public interface IStudentMapper
+    internal interface IStudentMapper
     {
         StudentModel Map(Student student);
         Student Map(StudentModel studentModel);

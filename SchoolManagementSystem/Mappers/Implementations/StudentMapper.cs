@@ -1,4 +1,5 @@
 ﻿using SchoolCore.Domain.Entities.Implimentations;
+using SchoolCore.Domain.Enums;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using System;
@@ -20,9 +21,10 @@ namespace SchoolManagementSystem.Mappers.Implementations
             studentmodel.Surname = student.Surname;
             studentmodel.FatherName = student.FatherName;
             studentmodel.BirthDate = student.BirthDate;
+            studentmodel.Gender = (Gender)student.Gender;
             studentmodel.Email = student.Email;
             studentmodel.PhoneNumber = student.PhoneNumber;
- 
+            
 
 
             return studentmodel;

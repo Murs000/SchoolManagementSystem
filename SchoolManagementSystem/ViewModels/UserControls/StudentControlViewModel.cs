@@ -1,6 +1,6 @@
-﻿using SchoolCore.Domain.Enums;
+﻿using SchoolCore.Domain.Entities.Implimentations;
+using SchoolCore.Domain.Enums;
 using SchoolManagementSystem.Commands.Students;
-using SchoolManagementSystem.Commands.Teachers;
 using SchoolManagementSystem.Enums;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
@@ -36,13 +36,13 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         }
 
 
-        private ObservableCollection<StudentModel> students;
+        private ObservableCollection<StudentModel> _students;
         public ObservableCollection<StudentModel> Students
         {
-            get => students ?? (students = new ObservableCollection<StudentModel>());
+            get => _students ?? (_students = new ObservableCollection<StudentModel>());
             set
             {
-                students = value;
+                _students = value;
                 OnPropertyChanged(nameof(Students));
             }
         }
@@ -78,34 +78,7 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             }
         }
 
-        public bool IsMan
-        {
-            get => CurrentValue?.Gender == (int)Gender.Man;
-            set
-            {
-                if (value)
-                {
-                    CurrentValue.Gender = (int)Gender.Man;
-                }
-            }
-        }
-
-        public bool IsWoman
-        {
-            get => CurrentValue?.Gender == (int)Gender.Woman;
-            set
-            {
-                if (value)
-                {
-                    CurrentValue.Gender = (int)Gender.Woman;
-                }
-            }
-        }
-
-
         #endregion
-
-
 
         #region commands
         public AddStudentsCommand Add => new AddStudentsCommand(this);
@@ -113,7 +86,11 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         public EditStudentsCommand Edit => new EditStudentsCommand(this);
         public CancelStudentsCommand Cancel => new CancelStudentsCommand(this);
         public SaveStudentsCommand Save => new SaveStudentsCommand(this, _service);
+        public ExelStudentsCommand Exel => new ExelStudentsCommand(this, _service);
+
         #endregion
+
+        #region Methods
 
         public void SetDefaultValues()
         {
@@ -128,6 +105,6 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             _selectedValue = studentModel;
             OnPropertyChanged(nameof(SelectedValue));
         }
-
+        #endregion
     }
 }
