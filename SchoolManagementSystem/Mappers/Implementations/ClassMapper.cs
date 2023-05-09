@@ -21,6 +21,7 @@ namespace SchoolManagementSystem.Mappers.Implementations
         {
             ClassModel model = new ClassModel();
 
+            model.Id = classEntity.Id;
             model.Name = classEntity.Name;
             model.Grade = classEntity.Grade;
             model.Teacher = _teacherMapper.Map(classEntity.Teacher);
@@ -32,6 +33,7 @@ namespace SchoolManagementSystem.Mappers.Implementations
         {
             Class classEntity = new Class();
 
+            classEntity.Id = classModel.Id;
             classEntity.Name = classModel.Name;
             classEntity.Grade = classModel.Grade;
             classEntity.Teacher = _teacherMapper.Map(classModel.Teacher);

@@ -48,7 +48,7 @@ namespace SchoolCore.DataAccess.Implementations.SqlServer
             {
                 connection.Open();
 
-                string cmdText = @"select * from Teachers where id = @id and isdeleted = 0";
+                string cmdText = @"select * from Classes where id = @id and isdeleted = 0";
 
                 using (SqlCommand cmd = new SqlCommand(cmdText, connection))
                 {
@@ -88,7 +88,7 @@ namespace SchoolCore.DataAccess.Implementations.SqlServer
             {
                 connection.Open();
 
-                string cmdText = @"update Teachers set Name = @name,Grade=@grade,TeacherId=@teacherId,
+                string cmdText = @"update Classes set Name = @name,Grade=@grade,TeacherId=@teacherId,
                                    IsDeleted = @isDeleted, CreationDate = @creationDate,
                                    ModifiedDate = @modifiedDate,CreatorId = @creatorId,
                                    ModifierId = @modifierId
@@ -139,8 +139,8 @@ namespace SchoolCore.DataAccess.Implementations.SqlServer
             command.Parameters.AddWithValue("@grade", clas.Grade);
             command.Parameters.AddWithValue("@teacherId", clas.TeacherId);
             command.Parameters.AddWithValue("@isDeleted", clas.IsDeleted);
-            command.Parameters.AddWithValue("@creationTime", clas.CreationDate);
-            command.Parameters.AddWithValue("@modifiedTime", clas.ModifiedDate);
+            command.Parameters.AddWithValue("@creationDate", clas.CreationDate);
+            command.Parameters.AddWithValue("@modifiedDate", clas.ModifiedDate);
             command.Parameters.AddWithValue("@creatorId", clas.CreatorId);
             command.Parameters.AddWithValue("@modifierId", clas.ModifierId);
         }

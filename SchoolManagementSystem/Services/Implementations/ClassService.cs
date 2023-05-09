@@ -52,7 +52,7 @@ namespace SchoolManagementSystem.Services.Implementations
             }
             else
             {
-                var existingAuthor = _db.TeacherRepository.GetById(classModel.Id);
+                var existingAuthor = _db.ClassRepository.GetById(classModel.Id);
 
                 willSavedClass.CreationDate = existingAuthor.CreationDate;
                 willSavedClass.Creator = existingAuthor.Creator;

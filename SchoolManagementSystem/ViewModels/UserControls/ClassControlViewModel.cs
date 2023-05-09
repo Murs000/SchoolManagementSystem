@@ -125,9 +125,9 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             SetSelectedValue(null);
         }
 
-        private void SetSelectedValue(ClassModel teacherModel)
+        private void SetSelectedValue(ClassModel classModel)
         {
-            _selectedValue = teacherModel;
+            _selectedValue = classModel;
             OnPropertyChanged(nameof(SelectedValue));
         }
         #endregion

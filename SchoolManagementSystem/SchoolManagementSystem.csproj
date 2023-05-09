@@ -80,12 +80,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\BaseComand.cs" />
-    <Compile Include="Commands\Classes\AddTeachersCommand.cs" />
-    <Compile Include="Commands\Classes\CancelTeachersCommand.cs" />
-    <Compile Include="Commands\Classes\DeleteTeachersCommand.cs" />
-    <Compile Include="Commands\Classes\EditTeachersCommand.cs" />
-    <Compile Include="Commands\Classes\ExelTeachersCommand.cs" />
-    <Compile Include="Commands\Classes\SaveTeachersCommand.cs" />
+    <Compile Include="Commands\Classes\AddClassCommand.cs" />
+    <Compile Include="Commands\Classes\CancelClassCommand.cs" />
+    <Compile Include="Commands\Classes\DeleteClassCommand.cs" />
+    <Compile Include="Commands\Classes\EditClassCommand.cs" />
+    <Compile Include="Commands\Classes\ExelClassCommand.cs" />
+    <Compile Include="Commands\Classes\SaveClassCommand.cs" />
     <Compile Include="Commands\Dashboard\OpenClassesCommand.cs" />
     <Compile Include="Commands\Dashboard\OpenMarkComand.cs" />
     <Compile Include="Commands\Dashboard\OpenUserComand.cs" />
