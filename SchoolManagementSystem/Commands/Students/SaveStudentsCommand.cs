@@ -27,13 +27,11 @@ namespace SchoolManagementSystem.Commands.Students
         {
             _studentService.Save(_viewModel.CurrentValue);
 
-            List<StudentModel> studentModels = _studentService.GetAll();
 
-            _viewModel.Students = new ObservableCollection<StudentModel>(studentModels);
+            _viewModel.Students = new ObservableCollection<StudentModel>(_studentService.GetAll());
 
             _viewModel.SetDefaultValues();
 
         }
     }
 }
-

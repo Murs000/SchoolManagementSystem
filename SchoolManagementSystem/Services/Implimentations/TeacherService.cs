@@ -48,13 +48,13 @@ namespace SchoolManagementSystem.Services.Implimentations
         {
             Teacher willSavedTeacher = _teacherMapper.Map(teacherModel);
 
-            willSavedTeacher.Modifier = new User { Id = 4 };
+            willSavedTeacher.Modifier = new User { Id =1};
             willSavedTeacher.ModifiedDate = DateTime.Now;
 
             if (willSavedTeacher.Id == 0)
             {
                 willSavedTeacher.CreationDate = DateTime.Now;
-                willSavedTeacher.Creator = new User() { Id = 4 };
+                willSavedTeacher.Creator = new User() { Id = 1};
 
                 return _db.TeacherRepository.Insert(willSavedTeacher);
             }
@@ -77,7 +77,7 @@ namespace SchoolManagementSystem.Services.Implimentations
 
             teacher.IsDeleted = true;
             teacher.ModifiedDate = DateTime.Now;
-            teacher.Modifier = new User { Id = 4 };
+            teacher.Modifier = new User { Id = 1 };
 
             return _db.TeacherRepository.Update(teacher);
         }
