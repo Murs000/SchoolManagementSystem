@@ -52,18 +52,11 @@
                 <Button Style="{StaticResource btnDashBoard}" Name="btnExam" Content="Marks"        Command="{Binding Path=OpenMarks}"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnSchadule" Content="Schadule"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnSubject" Content="Users"/>
-                <Button Style="{StaticResource btnDashBoard}" Name="btnClass" Content="Class"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnClass" Content="Class" Command="{Binding Path=OpenClasses}"/>
             </StackPanel>
         </Border>
-
         <Border Grid.Column="1" BorderThickness="0">
             <Grid Name="grdMain"/>
         </Border>
-
-        <!--<Border Grid.Column="2">
-            <Grid  Margin="0,0,0,0" Background="#f2f2f2" Name="grdCenter">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{StaticResource LogoSource}"/>
-            </Grid>
-        </Border>-->
     </Grid>
 </Window>

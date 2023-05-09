@@ -4,9 +4,100 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchoolManagementSystem.Views.UserControls"
+             xmlns:converters="clr-namespace:SchoolManagementSystem.Converters"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:enum ="clr-namespace:SchoolCore.Domain.Enums;assembly=SchoolCore"
+             xmlns:components ="clr-namespace:SchoolManagementSystem.Views.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="GradeEnum" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enum:Grade"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#2c3e50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Name" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Grade" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Father Name" Style="{StaticResource baseTxtBlock}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Name,Mode=TwoWay}"/>
+                <ComboBox Margin="5" ItemsSource="{Binding Source={StaticResource GradeEnum}}" SelectedItem="{Binding CurrentValue.Grade}" Style="{StaticResource myComboBox}"/>
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.FatherName,Mode=TwoWay}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Birth Date" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Gender" Style="{StaticResource baseTxtBlock}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3">
+                <DatePicker Margin="5" SelectedDate="{Binding CurrentValue.BirthDate}" Style="{StaticResource myDatePicker}"/>
+                
+            </StackPanel>
+            <StackPanel Grid.Column="4">
+                <TextBlock Text="Email" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Phone Number" Style="{StaticResource baseTxtBlock}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="5">
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Email,Mode=TwoWay}"/>
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.PhoneNumber,Mode=TwoWay}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="6">
+                <TextBlock Text="Expirience" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Subject" Style="{StaticResource baseTxtBlock}"/>
+                <TextBlock Text="Position" Style="{StaticResource baseTxtBlock}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="7">
+                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Expirience,Mode=TwoWay}" Margin="5"/>
+            </StackPanel>
+            <StackPanel Grid.Column="8">
+                <Button Style="{StaticResource btnAdd}"/>
+                <Button Style="{StaticResource btnSave}"/>
+                <Button Style="{StaticResource btnEdit}"/>
+                <Button Style="{StaticResource btnCancel}"/>
+                <Button Style="{StaticResource btnDelete}"/>
+                <Button Style="{StaticResource btnExel}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto">
+                <ListView BorderThickness="0" ItemsSource="{Binding Teachers}" Style="{StaticResource myListView}" SelectedItem="{Binding SelectedValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="No" Width="auto" DisplayMemberBinding="{Binding No}"/>
+                            <GridViewColumn Header="Name" Width="auto" DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Header="Surname" Width="auto" DisplayMemberBinding="{Binding Surname}"/>
+                            <GridViewColumn Header="Father Name" Width="auto" DisplayMemberBinding="{Binding FatherName}"/>
+                            <GridViewColumn Header="Birth Date" Width="auto" DisplayMemberBinding="{Binding BirthDate}"/>
+                            <GridViewColumn Header="Gender" Width="auto" DisplayMemberBinding="{Binding Gender}"/>
+                            <GridViewColumn Header="Email" Width="auto" DisplayMemberBinding="{Binding Email}"/>
+                            <GridViewColumn Header="PhoneNumber" Width="auto" DisplayMemberBinding="{Binding PhoneNumber}"/>
+                            <GridViewColumn Header="Subject" Width="auto" DisplayMemberBinding="{Binding Subject}"/>
+                            <GridViewColumn Header="Expirience" Width="auto" DisplayMemberBinding="{Binding Expirience}"/>
+                            <GridViewColumn Header="Position" Width="auto" DisplayMemberBinding="{Binding Position}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+            <components:SearchControl Height="50" VerticalAlignment="Bottom"/>
+        </Grid>
     </Grid>
 </UserControl>

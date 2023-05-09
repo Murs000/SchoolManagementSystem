@@ -1,5 +1,6 @@
 ﻿using SchoolManagementSystem.Services.Implimentations;
 using SchoolManagementSystem.Services.Interface;
+using SchoolManagementSystem.ViewModels.UserControls;
 using SchoolManagementSystem.ViewModels.Windows;
 using SchoolManagementSystem.Views.UserControls;
 using System;
@@ -22,6 +23,12 @@ namespace SchoolManagementSystem.Commands.Dashboard
         public override void Execute(object parameter)
         {
             ClassControl control = new ClassControl();
+            ClassControlViewModel contolViewModel = new ClassControlViewModel();
+
+            control.DataContext = contolViewModel;
+
+            _viewModel.MainGrind.Children.Clear();
+            _viewModel.MainGrind.Children.Add(control);
         }
     }
 }
