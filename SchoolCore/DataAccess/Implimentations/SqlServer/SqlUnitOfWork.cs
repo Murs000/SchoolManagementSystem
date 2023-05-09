@@ -9,15 +9,9 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
     public class SqlUnitOfWork : IUnitOfWork
     {
         private readonly string _connectionString;
-        public SqlUnitOfWork(string serverName, string dbName)
+        public SqlUnitOfWork(string connectionString)
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-
-            builder.DataSource = serverName;
-            builder.InitialCatalog = dbName;
-            builder.IntegratedSecurity = true;
-
-            _connectionString = builder.ConnectionString;
+            _connectionString = connectionString;
         }
         public ITeacherRepository TeacherRepository => new SqlTeacherRepository(_connectionString);
         public IStudentRepository StudentRepository => new SqlStudentRepository(_connectionString);

@@ -79,8 +79,7 @@ namespace SchoolCore.DataAccess.Implimentations.SqlServer
                 {
                     AddParameters(teacher, cmd);
 
-                    object v = cmd.ExecuteScalar();
-                    return (int)v;
+                    return (int)cmd.ExecuteScalar();
                 }
             }
         }
