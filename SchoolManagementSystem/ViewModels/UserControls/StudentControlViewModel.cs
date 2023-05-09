@@ -20,6 +20,8 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         public StudentControlViewModel(IStudentService studentService)
         {
             _service = studentService;
+
+            SetDefaultValues();
         }
 
         #region properties

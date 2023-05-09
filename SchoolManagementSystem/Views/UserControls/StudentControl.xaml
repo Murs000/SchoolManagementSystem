@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:SchoolManagementSystem.Views.UserControls" xmlns:components="clr-namespace:SchoolManagementSystem.Views.Components" xmlns:usercontrols="clr-namespace:SchoolManagementSystem.ViewModels.UserControls" d:DataContext="{d:DesignInstance Type=usercontrols:StudentControlViewModel}"
+             xmlns:local="clr-namespace:SchoolManagementSystem.Views.UserControls" 
+             xmlns:components="clr-namespace:SchoolManagementSystem.Views.Components" 
+             xmlns:usercontrols="clr-namespace:SchoolManagementSystem.ViewModels.UserControls"
+             xmlns:enum ="clr-namespace:SchoolCore.Domain.Enums;assembly=SchoolCore"
+             d:DataContext="{d:DesignInstance Type=usercontrols:StudentControlViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -37,12 +41,12 @@
             </StackPanel>
             <StackPanel Grid.Column="3">
                 <DatePicker Margin="5" SelectedDate="{Binding CurrentValue.BirthDate}" Style="{StaticResource myDatePicker}"/>
-                <!--<RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" 
+                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" 
                              IsChecked="{Binding Path=CurrentValue.Gender, Converter={StaticResource RdbEnumConverter}, ConverterParameter={x:Static enum:Gender.Woman}}"
                              Style="{StaticResource myRadioButton}"/>
                 <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" 
                              IsChecked="{Binding Path=CurrentValue.Gender, Converter={StaticResource RdbEnumConverter}, ConverterParameter={x:Static enum:Gender.Man}}"
-                             Style="{StaticResource myRadioButton}"/>-->
+                             Style="{StaticResource myRadioButton}"/>
             </StackPanel>
             <StackPanel Grid.Column="4">
                 <TextBlock Text="Email" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
@@ -62,7 +66,7 @@
             </StackPanel>
             
             <StackPanel Grid.Column="5">
-                <TextBox Style="{StaticResource baseTxtBox}" Margin="0,59,0,0" Width="111" Text="{Binding CurrentValue.Email,Mode=TwoWay}"/>
+                <TextBox Style="{StaticResource baseTxtBox}" Margin="0,59,0,0" Width="111" Text="{Binding CurrentValue.PhoneNumber,Mode=TwoWay}"/>
             </StackPanel>
             
             <StackPanel Grid.Column="8">

@@ -18,7 +18,7 @@ namespace SchoolManagementSystem.Commands
         private readonly IStudentService _studentService;
         private readonly IClassService _classService;
         public SignInCommand(LoginViewModel loginViewModel,ITeacherService teacherService, IClassService classService, IStudentService studentService)
-        {
+        
             _loginViewModel = loginViewModel;
             _teacherService = teacherService;
             _classService = classService;

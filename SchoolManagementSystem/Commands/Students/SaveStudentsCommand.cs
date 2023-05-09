@@ -16,7 +16,6 @@ namespace SchoolManagementSystem.Commands.Students
         private readonly StudentControlViewModel _viewModel;
         private readonly IStudentService _studentService;
 
-
         public SaveStudentsCommand(StudentControlViewModel viewModel, IStudentService studentService)
         {
             _viewModel = viewModel;
@@ -27,11 +26,9 @@ namespace SchoolManagementSystem.Commands.Students
         {
             _studentService.Save(_viewModel.CurrentValue);
 
-
             _viewModel.Students = new ObservableCollection<StudentModel>(_studentService.GetAll());
 
             _viewModel.SetDefaultValues();
-
         }
     }
 }
