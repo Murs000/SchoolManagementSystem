@@ -25,14 +25,17 @@ namespace SchoolManagementSystem
         public App()
         {
             IUnitOfWork db = new SqlUnitOfWork(ConfigurationManager.ConnectionStrings["Default"].ConnectionString);
+
             ITeacherMapper teacherMapper = new TeacherMapper();
             IClassMapper classMapper = new ClassMapper(teacherMapper);
+            IStudentMapper studentMapper = new StudentMapper();
 
             ITeacherService teacherService = new TeacherService(db,teacherMapper);
             IClassService classService = new ClassService(db,classMapper);
+            IStudentService studentService = new StudentService(db, studentMapper);
 
             LoginWindow loginWindow = new LoginWindow();
-            LoginViewModel loginViewModel = new LoginViewModel(teacherService,loginWindow,classService);
+            LoginViewModel loginViewModel = new LoginViewModel(loginWindow, teacherService, classService, studentService);
 
             loginWindow.DataContext = loginViewModel;
 

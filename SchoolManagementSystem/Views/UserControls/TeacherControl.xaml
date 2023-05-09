@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchoolManagementSystem.Views.UserControls"
-             xmlns:converters="clr-namespace:SchoolManagementSystem.Converters"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:enum ="clr-namespace:SchoolCore.Domain.Enums;assembly=SchoolCore"
              xmlns:components ="clr-namespace:SchoolManagementSystem.Views.Components"
@@ -21,7 +20,6 @@
                 <x:Type TypeName="enum:Position"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-        <converters:RadioButtonToEnumConverter x:Key="RdbEnumConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
