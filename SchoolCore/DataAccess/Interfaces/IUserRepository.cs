@@ -1,4 +1,4 @@
-using SchoolCore.Domain.Entities.Implimentations;
+using SchoolCore.Domain.Entities.Implementations;
 using System;
 using System.Collections.Generic;
 using System.Text;

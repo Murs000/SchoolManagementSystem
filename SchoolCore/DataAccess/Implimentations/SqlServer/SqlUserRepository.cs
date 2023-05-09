@@ -1,12 +1,12 @@
 using SchoolCore.DataAccess.Interfaces;
-using SchoolCore.Domain.Entities.Implimentations;
+using SchoolCore.Domain.Entities.Implementations;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Text;
 
-namespace SchoolCore.DataAccess.Implimentations.SqlServer
+namespace SchoolCore.DataAccess.Implementations.SqlServer
 {
     public class SqlUserRepository : IUserRepository
     {

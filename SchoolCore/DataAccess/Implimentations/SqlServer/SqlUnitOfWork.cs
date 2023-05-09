@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace SchoolCore.DataAccess.Implimentations.SqlServer
+namespace SchoolCore.DataAccess.Implementations.SqlServer
 {
     public class SqlUnitOfWork : IUnitOfWork
     {

@@ -1,19 +1,12 @@
-﻿using ClosedXML.Excel;
-using Microsoft.Win32;
-using SchoolCore.DataAccess.Interfaces;
-using SchoolCore.Domain.Entities.Implimentations;
+﻿using SchoolCore.DataAccess.Interfaces;
+using SchoolCore.Domain.Entities.Implementations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.Services.Implimentations
+namespace SchoolManagementSystem.Services.Implementations
 {
     internal class ClassService : IClassService
     {
@@ -83,7 +76,7 @@ namespace SchoolManagementSystem.Services.Implimentations
 
         public void Exel()
         {
-            
+
         }
     }
 }

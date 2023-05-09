@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SchoolCore.Domain.Entities.Implimentations
+namespace SchoolCore.Domain.Entities.Implementations
 {
     public class User : IEntity
     {

@@ -1,5 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Spreadsheet;
-using SchoolCore.Domain.Entities.Implimentations;
+using SchoolCore.Domain.Entities.Implementations;
 using SchoolCore.Domain.Enums;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using SchoolCore.Domain.Entities.Implimentations;
+﻿using SchoolCore.Domain.Entities.Implementations;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.ViewModels.UserControls;
 using System;

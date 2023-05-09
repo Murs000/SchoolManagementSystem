@@ -123,11 +123,11 @@
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="Models\UserModel.cs" />
-    <Compile Include="Services\Implimentations\ClassService.cs" />
-    <Compile Include="Services\Implimentations\MarkService.cs" />
-    <Compile Include="Services\Implimentations\StudentService.cs" />
-    <Compile Include="Services\Implimentations\TeacherService.cs" />
-    <Compile Include="Services\Implimentations\UserService.cs" />
+    <Compile Include="Services\Implementations\ClassService.cs" />
+    <Compile Include="Services\Implementations\MarkService.cs" />
+    <Compile Include="Services\Implementations\StudentService.cs" />
+    <Compile Include="Services\Implementations\TeacherService.cs" />
+    <Compile Include="Services\Implementations\UserService.cs" />
     <Compile Include="Services\Interfaces\IClassService.cs" />
     <Compile Include="Services\Interfaces\IMarkService.cs" />
     <Compile Include="Services\Interfaces\IStudentService.cs" />

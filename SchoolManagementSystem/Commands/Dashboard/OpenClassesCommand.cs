@@ -1,5 +1,5 @@
 ﻿using SchoolManagementSystem.Models;
-using SchoolManagementSystem.Services.Implimentations;
+using SchoolManagementSystem.Services.Implementations;
 using SchoolManagementSystem.Services.Interface;
 using SchoolManagementSystem.Services.Interfaces;
 using SchoolManagementSystem.ViewModels.UserControls;

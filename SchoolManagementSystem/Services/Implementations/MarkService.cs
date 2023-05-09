@@ -1,16 +1,11 @@
 ﻿using SchoolCore.DataAccess.Interfaces;
-using SchoolCore.Domain.Entities.Implimentations;
-using SchoolManagementSystem.Mappers.Implementations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.Services.Implimentations
+namespace SchoolManagementSystem.Services.Implementations
 {
     internal class MarkService : IMarkService
     {

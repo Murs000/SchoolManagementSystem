@@ -1,7 +1,7 @@
 ﻿using ClosedXML.Excel;
 using Microsoft.Win32;
 using SchoolCore.DataAccess.Interfaces;
-using SchoolCore.Domain.Entities.Implimentations;
+using SchoolCore.Domain.Entities.Implementations;
 using SchoolCore.Domain.Enums;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.Services.Implimentations
+namespace SchoolManagementSystem.Services.Implementations
 {
     internal class TeacherService : ITeacherService
     {

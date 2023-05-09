@@ -1,5 +1,5 @@
 ﻿using SchoolManagementSystem.Commands.Dashboard;
-using SchoolManagementSystem.Services.Implimentations;
+using SchoolManagementSystem.Services.Implementations;
 using SchoolManagementSystem.Services.Interface;
 using SchoolManagementSystem.Services.Interfaces;
 using System;
