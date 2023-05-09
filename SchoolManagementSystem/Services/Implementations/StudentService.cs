@@ -1,7 +1,7 @@
 ﻿using ClosedXML.Excel;
 using Microsoft.Win32;
 using SchoolCore.DataAccess.Interfaces;
-using SchoolCore.Domain.Entities.Implimentations;
+using SchoolCore.Domain.Entities.Implementations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
