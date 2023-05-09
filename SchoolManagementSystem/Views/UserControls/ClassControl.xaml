@@ -39,10 +39,10 @@
             <TextBlock Style="{StaticResource baseTxtBlock}" Text="Teacher" Grid.Column="4"/>
             <ComboBox Style="{StaticResource myComboBox}" Height="20" Margin="5" 
                                                           ItemsSource="{Binding Teachers}" 
-                                                          SelectedItem="{Binding CurrentValue}"
+                                                          SelectedItem="{Binding CurrentValue.Teacher}"
                                                           DisplayMemberPath="Name"
-                                                          SelectedValuePath="Teacher" 
-                                                          SelectedValue="{Binding SelectedAuthor.Teacher}"
+                                                          SelectedValuePath="Id" 
+                                                          SelectedValue="{Binding CurrentValue.Teacher.Id}"
                                                           Grid.Column="5"/>
             <StackPanel Grid.Column="6">
                 <Button Style="{StaticResource btnAdd}"/>

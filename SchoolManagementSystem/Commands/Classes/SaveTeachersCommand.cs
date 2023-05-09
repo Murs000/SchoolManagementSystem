@@ -31,7 +31,6 @@ namespace SchoolManagementSystem.Commands.Classes
             _viewModel.Classes = new ObservableCollection<ClassModel>(classModels);
 
             _viewModel.SetDefaultValues();
-
         }
     }
 }

@@ -1,13 +1,5 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
-using SchoolCore.Domain.Entities.Implementations;
+﻿using SchoolCore.Domain.Entities.Implementations;
 using SchoolCore.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 
 namespace SchoolManagementSystem.Models
 {
@@ -17,8 +9,7 @@ namespace SchoolManagementSystem.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public Grade Grade { get; set; }
-        public int TeacherId => Teacher.Id;
-        public Teacher Teacher { get; set; }
+        public TeacherModel Teacher { get; set; }
 
         public ClassModel Clone()
         {
@@ -27,7 +18,7 @@ namespace SchoolManagementSystem.Models
                 Id = Id,
                 Name = Name,
                 Grade = Grade,
-                Teacher = Teacher,
+                Teacher = Teacher.Clone(),
             };
 
             return classModel;

@@ -26,7 +26,7 @@ namespace SchoolManagementSystem
         {
             IUnitOfWork db = new SqlUnitOfWork(ConfigurationManager.ConnectionStrings["Default"].ConnectionString);
             ITeacherMapper teacherMapper = new TeacherMapper();
-            IClassMapper classMapper = new ClassMapper();
+            IClassMapper classMapper = new ClassMapper(teacherMapper);
 
             ITeacherService teacherService = new TeacherService(db,teacherMapper);
             IClassService classService = new ClassService(db,classMapper);

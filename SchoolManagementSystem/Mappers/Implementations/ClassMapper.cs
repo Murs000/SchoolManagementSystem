@@ -11,22 +11,32 @@ namespace SchoolManagementSystem.Mappers.Implementations
 {
     internal class ClassMapper : IClassMapper
     {
-        public ClassModel Map(Class clas)
+        private readonly ITeacherMapper _teacherMapper;
+        public ClassMapper(ITeacherMapper teacherMapper)
+        {
+            _teacherMapper = teacherMapper;
+        }
+
+        public ClassModel Map(Class classEntity)
         {
             ClassModel model = new ClassModel();
-            model.Name = clas.Name;
-            model.Grade = clas.Grade;
-            model.Teacher = clas.Teacher;
+
+            model.Name = classEntity.Name;
+            model.Grade = classEntity.Grade;
+            model.Teacher = _teacherMapper.Map(classEntity.Teacher);
+
             return model;
         }
 
         public Class Map(ClassModel classModel)
         {
-            Class clas = new Class();
-            clas.Name = classModel.Name;
-            clas.Grade = classModel.Grade;
-            clas.Teacher = classModel.Teacher;
-            return clas;
+            Class classEntity = new Class();
+
+            classEntity.Name = classModel.Name;
+            classEntity.Grade = classModel.Grade;
+            classEntity.Teacher = _teacherMapper.Map(classModel.Teacher);
+            
+            return classEntity;
         }
     }
 }
