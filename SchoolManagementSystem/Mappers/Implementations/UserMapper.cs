@@ -1,4 +1,4 @@
-using SchoolCore.Domain.Entities.Implementations;
+using SchoolCore.Domain.Entities.Implimentations;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using System;
