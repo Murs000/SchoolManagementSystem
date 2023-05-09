@@ -8,7 +8,7 @@ using System.Text;
 
 namespace SchoolCore.DataAccess.Implimentations.SqlServer
 {
-    internal class SqlClassRepository : IClassRepository
+    public class SqlClassRepository : IClassRepository
     {
         private readonly string _connectionString;
         public SqlClassRepository(string connectionString)

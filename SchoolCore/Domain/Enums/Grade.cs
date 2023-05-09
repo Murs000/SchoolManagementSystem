@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SchoolCore.Domain.Enums
 {
-    internal enum Grade
+    public enum Grade
     {
         I = 1,
         II = 2,

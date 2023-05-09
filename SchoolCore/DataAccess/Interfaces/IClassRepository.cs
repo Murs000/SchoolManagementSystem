@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SchoolCore.DataAccess.Interfaces
 {
-    internal interface IClassRepository
+    public interface IClassRepository
     {
         List<Class> GetAll();
         Class GetById(int id);

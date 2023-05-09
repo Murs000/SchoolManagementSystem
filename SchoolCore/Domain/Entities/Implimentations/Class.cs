@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SchoolCore.Domain.Entities.Implimentations
 {
-    internal class Class : IEntity
+    public class Class : IEntity
     {
         public int Id { get ; set; }
         public string Name { get; set; }

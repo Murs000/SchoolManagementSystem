@@ -9,7 +9,7 @@ namespace SchoolCore.DataAccess.Interfaces
         ITeacherRepository TeacherRepository { get; }
         IStudentRepository StudentRepository { get; }
         
-
+        IClassRepository ClassRepository { get; }
 
 
     }
