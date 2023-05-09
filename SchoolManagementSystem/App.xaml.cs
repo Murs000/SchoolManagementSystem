@@ -23,7 +23,7 @@ namespace SchoolManagementSystem
     {
         public App()
         {
-            IUnitOfWork db = new SqlUnitOfWork("localhost","School");
+            IUnitOfWork db = new SqlUnitOfWork(ConfigurationManager.ConnectionStrings["Default"].ConnectionString);
             ITeacherMapper teacherMapper = new TeacherMapper();
 
             ITeacherService teacherService = new TeacherService(db,teacherMapper);
