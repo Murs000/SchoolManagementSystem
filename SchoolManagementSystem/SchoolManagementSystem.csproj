@@ -153,6 +153,9 @@
     <Compile Include="Views\Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Windows\SureDialogWindow.xaml.cs">
+      <DependentUpon>SureDialogWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\Components\SearchControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -207,6 +210,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Windows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\SureDialogWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

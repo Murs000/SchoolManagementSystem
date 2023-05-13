@@ -2,6 +2,7 @@
 using SchoolManagementSystem.Services.Interface;
 using SchoolManagementSystem.Services.Interfaces;
 using SchoolManagementSystem.ViewModels.UserControls;
+using SchoolManagementSystem.Views.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,6 +25,11 @@ namespace SchoolManagementSystem.Commands.Teachers
 
         public override void Execute(object parameter)
         {
+            SureDialogWindow dialogWindow = new SureDialogWindow();
+            dialogWindow.ShowDialog();
+            if (dialogWindow.DialogResult != true)
+                return;
+
             int id = _viewModel.SelectedValue.Id;
 
             _classService.Delete(id);
