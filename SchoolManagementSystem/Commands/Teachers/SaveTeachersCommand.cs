@@ -26,6 +26,7 @@ namespace SchoolManagementSystem.Commands.Teachers
         public override void Execute(object parameter)
         {
             _teacherService.Save(_viewModel.CurrentValue);
+            _viewModel.CurrentSuccess = "Success";
 
             List<TeacherModel> teacherModels = _teacherService.GetAll();
 
