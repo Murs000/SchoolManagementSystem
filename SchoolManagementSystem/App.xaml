@@ -251,5 +251,36 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+
+        <Style TargetType="Button" x:Key="successTextBlock">
+            <Setter Property="Height" Value="0"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Name="templateBorder">
+                            <TextBlock Name="templateTextBlock" Text="{Binding Path=CurrentSuccess, NotifyOnTargetUpdated=True}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="Binding.TargetUpdated">
+                                <BeginStoryboard>
+                                    <Storyboard AutoReverse="True">
+                                        <DoubleAnimation Storyboard.TargetProperty="Height" To="50" Duration="0:0:.9" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <DataTrigger Binding="{Binding CurrentSuccess}" Value="Success">
+                                <Setter Property="Foreground" Value="#27ae60"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding CurrentSuccess}" Value="Fail">
+                                <Setter Property="Foreground" Value="#e74c3c"/>
+                            </DataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
