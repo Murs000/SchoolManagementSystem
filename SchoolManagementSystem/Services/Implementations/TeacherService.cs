@@ -154,13 +154,7 @@ namespace SchoolManagementSystem.Services.Implementations
             if (teacherModel.BirthDate == null)
                 return false;
 
-            if (teacherModel.Gender == null)
-                return false;
-
-            if (teacherModel.Subject == null)
-                return false;
-
-            if (teacherModel.Position == null)
+            if (teacherModel.Gender == 0)
                 return false;
 
             return true;
