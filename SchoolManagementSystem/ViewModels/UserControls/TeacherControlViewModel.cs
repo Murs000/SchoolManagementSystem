@@ -109,7 +109,7 @@ namespace SchoolManagementSystem.ViewModels.UserControls
                 }
                 else
                 {
-                    var filteredResult = Teachers.Where(x => x.Name.StartsWith(SearchedValue) || x.Surname.StartsWith(SearchedValue));
+                    var filteredResult = AllTeachers.Where(x => x.Name.Contains(SearchedValue) || x.Surname.Contains(SearchedValue) || x.FatherName.Contains(SearchedValue));
 
                     Teachers = new ObservableCollection<TeacherModel>(filteredResult);
                 }

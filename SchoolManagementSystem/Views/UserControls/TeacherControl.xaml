@@ -25,6 +25,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <StackPanel  Grid.Row="0" Background="#34495e">
             <Button Style="{StaticResource successTextBlock}"/>
@@ -93,7 +94,7 @@
         </Grid>
         </StackPanel>
         <Grid Grid.Row="1">
-            <ScrollViewer  VerticalScrollBarVisibility="Auto">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <ListView BorderThickness="0" ItemsSource="{Binding Teachers}" Style="{StaticResource myListView}" SelectedItem="{Binding SelectedValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                     <ListView.View>
                         <GridView>
@@ -112,7 +113,7 @@
                     </ListView.View>
                 </ListView>
             </ScrollViewer>
-            <components:SearchControl Height="50" VerticalAlignment="Bottom"/>
         </Grid>
+        <components:SearchControl VerticalAlignment="Bottom" Grid.Row="2"/>
     </Grid>
 </UserControl>

@@ -1,5 +1,6 @@
 ﻿using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implementations;
+using SchoolCore.Domain.Enums;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interfaces;
@@ -40,13 +41,13 @@ namespace SchoolManagementSystem.Services.Implementations
         {
             Class willSavedClass = _classMapper.Map(classModel);
 
-            willSavedClass.Modifier = new User { Id =1 };
+            willSavedClass.Modifier = new User { Id =4 };
             willSavedClass.ModifiedDate = DateTime.Now;
 
             if (willSavedClass.Id == 0)
             {
                 willSavedClass.CreationDate = DateTime.Now;
-                willSavedClass.Creator = new User() { Id = 1};
+                willSavedClass.Creator = new User() { Id = 4};
 
                 return _db.ClassRepository.Insert(willSavedClass);
             }
@@ -69,7 +70,7 @@ namespace SchoolManagementSystem.Services.Implementations
 
             clas.IsDeleted = true;
             clas.ModifiedDate = DateTime.Now;
-            clas.Modifier = new User { Id = 1 };
+            clas.Modifier = new User { Id = 4 };
 
             return _db.ClassRepository.Update(clas);
         }
@@ -77,6 +78,23 @@ namespace SchoolManagementSystem.Services.Implementations
         public void Exel()
         {
 
+        }
+
+        public bool IsValid(ClassModel classModel)
+        {
+            if(classModel == null)
+                return false;
+
+            if(classModel.Name == null || classModel.Name.Length > 1)
+                return false;
+
+            if(classModel.Grade == 0)
+                return false;
+
+            if(classModel.Teacher.Id == null)
+                return false;
+
+            return true;
         }
     }
 }

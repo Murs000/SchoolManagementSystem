@@ -25,6 +25,16 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         }
 
         #region properties
+        private string _currentSuccess = "Welcome";
+        public string CurrentSuccess
+        {
+            get => _currentSuccess;
+            set
+            {
+                _currentSuccess = value;
+                OnPropertyChanged(nameof(CurrentSuccess));
+            }
+        }
 
         private int _currentSituation = 0;
         public int CurrentSituation
@@ -99,7 +109,7 @@ namespace SchoolManagementSystem.ViewModels.UserControls
                 }
                 else
                 {
-                    var filteredResult = Classes.Where(x => x.Name.StartsWith(SearchedValue));
+                    var filteredResult = AllClasses.Where(x => x.Name.StartsWith(SearchedValue));
 
                     Classes = new ObservableCollection<ClassModel>(filteredResult);
                 }
