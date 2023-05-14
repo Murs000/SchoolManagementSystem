@@ -2,7 +2,6 @@
 using Microsoft.Win32;
 using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implementations;
-using SchoolCore.Domain.Enums;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
@@ -10,9 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Services.Implementations
 {

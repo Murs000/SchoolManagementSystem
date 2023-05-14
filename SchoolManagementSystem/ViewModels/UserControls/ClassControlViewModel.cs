@@ -123,7 +123,7 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         public EditClassCommand Edit => new EditClassCommand(this);
         public CancelClassCommand Cancel => new CancelClassCommand(this);
         public SaveClassCommand Save => new SaveClassCommand(this, _service);
-        public ExelClassCommand Exel => new ExelClassCommand();
+        public ExelClassCommand Exel => new ExelClassCommand(_service);
         #endregion
 
         #region metods

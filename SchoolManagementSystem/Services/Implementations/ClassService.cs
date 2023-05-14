@@ -1,11 +1,15 @@
-﻿using SchoolCore.DataAccess.Interfaces;
+﻿using Microsoft.Win32;
+using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implementations;
-using SchoolCore.Domain.Enums;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interfaces;
 using System;
+using System.Data;
 using System.Collections.Generic;
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
+using System.Diagnostics;
 
 namespace SchoolManagementSystem.Services.Implementations
 {
@@ -77,7 +81,37 @@ namespace SchoolManagementSystem.Services.Implementations
 
         public void Exel()
         {
+            List<ClassModel> classModels = new List<ClassModel>(GetAll());
 
+            SaveFileDialog fileDialog = new SaveFileDialog()
+            {
+                 AddExtension = true,
+                 DefaultExt = "xlsx"
+            };
+            fileDialog.ShowDialog();
+
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.Add("No",typeof(int));
+            dataTable.Columns.Add("Name",typeof(string));
+            dataTable.Columns.Add("Teacher",typeof (int));
+
+            foreach(var classModel in classModels)
+            {
+                DataRow dataRow = dataTable.NewRow();
+
+                dataRow["No"] = classModel.No;
+                dataRow["Name"] = classModel.Name;
+                dataRow["Teacher"] = classModel.Teacher.Id;
+
+                dataTable.Rows.Add(dataRow);
+            }
+
+            XLWorkbook xLWorkbook = new XLWorkbook();
+            xLWorkbook.Worksheets.Add(dataTable, "Data");
+            xLWorkbook.SaveAs(fileDialog.FileName);
+
+            Process.Start(fileDialog.FileName);
         }
 
         public bool IsValid(ClassModel classModel)
@@ -91,7 +125,7 @@ namespace SchoolManagementSystem.Services.Implementations
             if(classModel.Grade == 0)
                 return false;
 
-            if(classModel.Teacher.Id == null)
+            if(classModel.Teacher == null)
                 return false;
 
             return true;
