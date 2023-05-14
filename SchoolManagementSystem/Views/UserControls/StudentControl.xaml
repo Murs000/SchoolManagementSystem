@@ -25,6 +25,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource successTextBlock}"/>
+
             <StackPanel Grid.Column="0">
                 <TextBlock Text="Name" Style="{StaticResource baseTxtBlock}" Foreground="#FFFFFBFB" FontFamily="Times New Roman" HorizontalAlignment="Center" FontSize="20"/>
                 <TextBlock Text="Surname" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
