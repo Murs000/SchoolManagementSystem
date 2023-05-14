@@ -38,6 +38,7 @@ namespace SchoolManagementSystem.Mappers.Implementations
             student.Id = studentModel.Id;
             student.Name = studentModel.Name;
             student.Surname = studentModel.Surname;
+            student.FatherName = studentModel.FatherName;
             student.BirthDate = studentModel.BirthDate;
             student.Gender = studentModel.Gender;
             student.Email = studentModel.Email;

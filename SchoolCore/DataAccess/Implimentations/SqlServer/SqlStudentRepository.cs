@@ -72,7 +72,7 @@ namespace SchoolCore.DataAccess.Implementations.SqlServer
                 connection.Open();
 
                 string cmdText = @"Insert into Students output inserted.id values(@name, @surname,
-                                   @fatherName, @birthDate,@gender,@email,@phone,@subject,@position,
+                                   @fatherName, @birthDate,@gender,@email,@phone,
                                    @isDeleted, @creationDate, @modifiedDate,@creatorId, @modifierId )";
 
                 using (SqlCommand cmd = new SqlCommand(cmdText, connection))
@@ -114,7 +114,7 @@ namespace SchoolCore.DataAccess.Implementations.SqlServer
             {
                 connection.Open();
 
-                string cmdText = @"delete from Teachers where id = @id";
+                string cmdText = @"delete from Students where id = @id";
                 using (SqlCommand cmd = new SqlCommand(cmdText, connection))
                 {
                     cmd.Parameters.AddWithValue("id", id);
