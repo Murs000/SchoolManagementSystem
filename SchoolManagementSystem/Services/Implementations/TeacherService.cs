@@ -130,5 +130,40 @@ namespace SchoolManagementSystem.Services.Implementations
             Process.Start(fileDialog.FileName);
 
         }
+
+        public bool IsValid(TeacherModel teacherModel)
+        {
+            if(teacherModel == null) 
+                return false;  
+
+            if (teacherModel.Name == null || teacherModel.Name.Length > 25) 
+                return false;
+
+            if (teacherModel.Surname == null || teacherModel.Surname.Length > 25 )
+                return false;
+
+            if (teacherModel.FatherName == null || teacherModel.FatherName.Length > 25)
+                return false;
+
+            if (teacherModel.Email == null || teacherModel.Email.Length > 25)
+                return false;
+
+            if (teacherModel.PhoneNumber == null || teacherModel.PhoneNumber.Length > 9 )
+                return false;
+
+            if (teacherModel.BirthDate == null)
+                return false;
+
+            if (teacherModel.Gender == null)
+                return false;
+
+            if (teacherModel.Subject == null)
+                return false;
+
+            if (teacherModel.Position == null)
+                return false;
+
+            return true;
+        }
     }
 }
