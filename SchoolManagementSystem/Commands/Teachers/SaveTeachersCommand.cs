@@ -25,6 +25,12 @@ namespace SchoolManagementSystem.Commands.Teachers
 
         public override void Execute(object parameter)
         {
+            if (!_teacherService.IsValid(_viewModel.CurrentValue))
+            {
+                _viewModel.CurrentSuccess = "Fail";
+                return;
+            }
+                
             _teacherService.Save(_viewModel.CurrentValue);
             _viewModel.CurrentSuccess = "Success";
 

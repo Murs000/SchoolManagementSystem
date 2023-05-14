@@ -2,7 +2,6 @@
 using Microsoft.Win32;
 using SchoolCore.DataAccess.Interfaces;
 using SchoolCore.Domain.Entities.Implementations;
-using SchoolCore.Domain.Enums;
 using SchoolManagementSystem.Mappers.Interfaces;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.Services.Interface;
@@ -10,9 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Services.Implementations
 {
@@ -48,13 +44,13 @@ namespace SchoolManagementSystem.Services.Implementations
         {
             Teacher willSavedTeacher = _teacherMapper.Map(teacherModel);
 
-            willSavedTeacher.Modifier = new User { Id = 1 };
+            willSavedTeacher.Modifier = new User { Id = 4 };
             willSavedTeacher.ModifiedDate = DateTime.Now;
 
             if (willSavedTeacher.Id == 0)
             {
                 willSavedTeacher.CreationDate = DateTime.Now;
-                willSavedTeacher.Creator = new User() { Id = 1 };
+                willSavedTeacher.Creator = new User() { Id = 4 };
 
                 return _db.TeacherRepository.Insert(willSavedTeacher);
             }
@@ -77,7 +73,7 @@ namespace SchoolManagementSystem.Services.Implementations
 
             teacher.IsDeleted = true;
             teacher.ModifiedDate = DateTime.Now;
-            teacher.Modifier = new User { Id = 1 };
+            teacher.Modifier = new User { Id = 4 };
 
             return _db.TeacherRepository.Update(teacher);
         }
@@ -129,6 +125,41 @@ namespace SchoolManagementSystem.Services.Implementations
 
             Process.Start(fileDialog.FileName);
 
+        }
+
+        public bool IsValid(TeacherModel teacherModel)
+        {
+            if(teacherModel == null) 
+                return false;  
+
+            if (teacherModel.Name == null || teacherModel.Name.Length > 25) 
+                return false;
+
+            if (teacherModel.Surname == null || teacherModel.Surname.Length > 25 )
+                return false;
+
+            if (teacherModel.FatherName == null || teacherModel.FatherName.Length > 25)
+                return false;
+
+            if (teacherModel.Email == null || teacherModel.Email.Length > 25)
+                return false;
+
+            if (teacherModel.PhoneNumber == null || teacherModel.PhoneNumber.Length > 9 )
+                return false;
+
+            if (teacherModel.BirthDate == null)
+                return false;
+
+            if (teacherModel.Gender == 0)
+                return false;
+
+            if(teacherModel.Subject == 0)
+                return false;
+
+            if(teacherModel.Position == 0)
+                return false;
+
+            return true;
         }
     }
 }

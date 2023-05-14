@@ -8,7 +8,8 @@ namespace SchoolCore.Domain.Enums
 {
     public enum Subject
     {
-        Math,
+        ChooseSubject = 0,
+        Math = 10,
         MotherLanguace = 20,
         ForeignLanguace = 30,
         Chemistry = 40,

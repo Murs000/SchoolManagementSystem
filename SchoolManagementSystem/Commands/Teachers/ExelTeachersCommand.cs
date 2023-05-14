@@ -11,11 +11,9 @@ namespace SchoolManagementSystem.Commands.Teachers
 {
     internal class ExelTeachersCommand : BaseComand
     {
-        private readonly TeacherControlViewModel _viewModel;
         private readonly ITeacherService _teacherService;
-        public ExelTeachersCommand(TeacherControlViewModel viewModel,ITeacherService teacherService)
+        public ExelTeachersCommand(ITeacherService teacherService)
         {
-            _viewModel = viewModel;
             _teacherService = teacherService;
         }
 

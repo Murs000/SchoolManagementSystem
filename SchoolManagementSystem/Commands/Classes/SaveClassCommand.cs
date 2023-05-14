@@ -24,7 +24,14 @@ namespace SchoolManagementSystem.Commands.Classes
 
         public override void Execute(object parameter)
         {
+            if (!_classService.IsValid(_viewModel.CurrentValue))
+            {
+                _viewModel.CurrentSuccess = "Fail";
+                return;
+            }
+
             _classService.Save(_viewModel.CurrentValue);
+            _viewModel.CurrentSuccess = "Success";
 
             List<ClassModel> classModels = _classService.GetAll();
 

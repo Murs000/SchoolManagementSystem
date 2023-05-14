@@ -2,7 +2,8 @@
 {
     public enum Position
     {
-        Director = 0,
+        ChoosePosition = 0,
+        Director = 10,
         HeadTeacher = 20,
         Teacher = 30
     }
