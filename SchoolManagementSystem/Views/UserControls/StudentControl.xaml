@@ -4,10 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SchoolManagementSystem.Views.UserControls" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:components="clr-namespace:SchoolManagementSystem.Views.Components" 
-             xmlns:usercontrols="clr-namespace:SchoolManagementSystem.ViewModels.UserControls"
              xmlns:enum ="clr-namespace:SchoolCore.Domain.Enums;assembly=SchoolCore"
-             d:DataContext="{d:DesignInstance Type=usercontrols:StudentControlViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -15,7 +14,9 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="#2c3e50">
+        <StackPanel Grid.Row="0" Background="#2c3e50">
+            <Button Style="{StaticResource successTextBlock}"/>
+            <Grid Background="#2c3e50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -25,6 +26,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource successTextBlock}"/>
+
             <StackPanel Grid.Column="0">
                 <TextBlock Text="Name" Style="{StaticResource baseTxtBlock}" Foreground="#FFFFFBFB" FontFamily="Times New Roman" HorizontalAlignment="Center" FontSize="20"/>
                 <TextBlock Text="Surname" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
@@ -78,6 +81,7 @@
                 <Button Style="{StaticResource btnExel}"/>
             </StackPanel>
         </Grid>
+        </StackPanel>
         <Grid Grid.Row="1">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">
                 <ListView BorderThickness="0" ItemsSource="{Binding Students}" Style="{StaticResource myListView}" SelectedItem="{Binding SelectedValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
