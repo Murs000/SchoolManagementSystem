@@ -127,39 +127,39 @@ namespace SchoolManagementSystem.Services.Implementations
 
         }
 
-        public bool IsValid(TeacherModel teacherModel)
+        public string IsValid(TeacherModel teacherModel)
         {
             if(teacherModel == null) 
-                return false;  
+                return "Its empity";  
 
             if (teacherModel.Name == null || teacherModel.Name.Length > 25) 
-                return false;
+                return "False Name";
 
             if (teacherModel.Surname == null || teacherModel.Surname.Length > 25 )
-                return false;
+                return "False surname";
 
             if (teacherModel.FatherName == null || teacherModel.FatherName.Length > 25)
-                return false;
+                return "False Father name";
 
-            if (teacherModel.Email == null || teacherModel.Email.Length > 25)
-                return false;
+            if (teacherModel.Email == null || teacherModel.Email.Length > 25 || teacherModel.Email.IndexOf('@')== -1)
+                return "False Email";
 
             if (teacherModel.PhoneNumber == null || teacherModel.PhoneNumber.Length > 9 )
-                return false;
+                return "False Phone number";
 
             if (teacherModel.BirthDate == null)
-                return false;
+                return "False Birth date";
 
             if (teacherModel.Gender == 0)
-                return false;
+                return "Choose Gender";
 
             if(teacherModel.Subject == 0)
-                return false;
+                return "Choose Subject";
 
             if(teacherModel.Position == 0)
-                return false;
+                return "Choose Position";
 
-            return true;
+            return "Success";
         }
     }
 }

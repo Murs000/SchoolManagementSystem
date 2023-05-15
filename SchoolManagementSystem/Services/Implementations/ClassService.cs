@@ -114,21 +114,21 @@ namespace SchoolManagementSystem.Services.Implementations
             Process.Start(fileDialog.FileName);
         }
 
-        public bool IsValid(ClassModel classModel)
+        public string IsValid(ClassModel classModel)
         {
             if(classModel == null)
-                return false;
+                return "Its empity";
 
             if(classModel.Name == null || classModel.Name.Length > 1)
-                return false;
+                return "Falce Name";
 
             if(classModel.Grade == 0)
-                return false;
+                return "Choose Grade";
 
             if(classModel.Teacher == null)
-                return false;
+                return "Choose Teacher";
 
-            return true;
+            return "Success";
         }
     }
 }

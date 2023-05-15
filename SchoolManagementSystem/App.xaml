@@ -256,7 +256,7 @@
             <Setter Property="Height" Value="0"/>
             <Setter Property="FontSize" Value="40"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="Foreground" Value="#e74c3c"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
@@ -274,8 +274,8 @@
                             <DataTrigger Binding="{Binding CurrentSuccess}" Value="Success">
                                 <Setter Property="Foreground" Value="#27ae60"/>
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding CurrentSuccess}" Value="Fail">
-                                <Setter Property="Foreground" Value="#e74c3c"/>
+                            <DataTrigger Binding="{Binding CurrentSuccess}" Value="Welcome">
+                                <Setter Property="Foreground" Value="WhiteSmoke"/>
                             </DataTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
