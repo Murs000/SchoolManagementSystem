@@ -87,12 +87,13 @@
     <Compile Include="Commands\Classes\ExelClassCommand.cs" />
     <Compile Include="Commands\Classes\SaveClassCommand.cs" />
     <Compile Include="Commands\Dashboard\OpenClassesCommand.cs" />
-    <Compile Include="Commands\Dashboard\OpenMarkComand.cs" />
+    <Compile Include="Commands\Dashboard\OpenMarksComand.cs" />
     <Compile Include="Commands\Dashboard\OpenUserComand.cs" />
     <Compile Include="Commands\Marks\AddMarksComnad.cs" />
     <Compile Include="Commands\Marks\CancelMarksComand.cs" />
     <Compile Include="Commands\Marks\DeleteMarksComand.cs" />
     <Compile Include="Commands\Marks\EditMarksComand.cs" />
+    <Compile Include="Commands\Marks\ExelMarksCommand.cs" />
     <Compile Include="Commands\Marks\SaveMarksComand.cs" />
     <Compile Include="Commands\SignInCommand.cs" />
     <Compile Include="Commands\Students\AddStudentsCommand.cs" />
@@ -135,7 +136,7 @@
     <Compile Include="Services\Interfaces\IUserService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\UserControls\ClassControlViewModel.cs" />
-    <Compile Include="ViewModels\UserControls\MarkControlViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\MarksControlViewModel.cs" />
     <Compile Include="ViewModels\UserControls\UserControlViewModel.cs" />
     <Compile Include="ViewModels\Windows\LoginViewModel.cs" />
     <Compile Include="Views\Components\SearchControl.xaml.cs">

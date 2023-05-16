@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using SchoolCore.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,33 +8,30 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Models
 {
-    public class MarkModel
+    internal class MarkModel
     {
-        public int Id { get; set; }
         public int No { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string FatherName { get; set; }
-        public DateTime BirthDate { get; set; }
-        public int Gender { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public int Id { get; set; }
+        public StudentModel Student { get; set; }
+        public TeacherModel Teacher { get; set; }
+        public ExamType ExamType { get; set; }
+        public MarkEnum MarkEnum { get; set; }
+
 
 
         public MarkModel Clone()
         {
-            return new MarkModel()
+            var markModel = new MarkModel()
             {
                 Id = Id,
-                Name = Name,
-                Surname = Surname,
-                FatherName = FatherName,
-                BirthDate = BirthDate,
-                Gender = Gender,
-                Email = Email,
-                PhoneNumber = PhoneNumber
+                Student = Student.Clone(),
+                Teacher = Teacher.Clone(),
+                ExamType = ExamType,
+                MarkEnum = MarkEnum
 
             };
+
+            return markModel;
         }
     }
 }

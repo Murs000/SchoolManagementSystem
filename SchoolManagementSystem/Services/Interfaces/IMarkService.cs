@@ -12,6 +12,7 @@ namespace SchoolManagementSystem.Services.Interface
         List<MarkModel> GetAll();
         int Save(MarkModel markModel);
         bool Delete(int id);
-        bool IsValid(MarkModel markModel);
+        string IsValid(MarkModel markModel);
+        void Exel();
     }
 }

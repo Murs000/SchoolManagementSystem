@@ -1,5 +1,4 @@
-﻿
-using SchoolCore.Domain.Entities.Implementations;
+﻿using SchoolCore.Domain.Entities.Implementations;
 using SchoolManagementSystem.Models;
 using SchoolManagementSystem.ViewModels.UserControls;
 using System;
@@ -10,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Mappers.Interfaces
 {
-    public interface IMarkMapper
+    internal interface IMarkMapper
     {
         MarkModel Map(Mark mark);
-        Mark Map(MarkModel markmodel);
+        Mark Map(MarkModel markModel);
     }
 }

@@ -25,6 +25,16 @@ namespace SchoolManagementSystem.ViewModels.UserControls
         }
 
         #region properties
+        private string _currentSuccess = "Welcome";
+        public string CurrentSuccess
+        {
+            get => _currentSuccess;
+            set
+            {
+                _currentSuccess = value;
+                OnPropertyChanged(nameof(CurrentSuccess));
+            }
+        }
 
         private int _currentSituation = 0;
         public int CurrentSituation
@@ -36,6 +46,7 @@ namespace SchoolManagementSystem.ViewModels.UserControls
                 OnPropertyChanged(nameof(CurrentSituation));
             }
         }
+
 
 
         private ObservableCollection<StudentModel> _students;

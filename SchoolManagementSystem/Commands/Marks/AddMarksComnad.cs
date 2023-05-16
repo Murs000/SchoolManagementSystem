@@ -9,21 +9,15 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Marks
 {
-    internal class AddMarksComand : ICommand
+    internal class AddMarksCommand : BaseComand
     {
-        public event EventHandler CanExecuteChanged;
-
         private readonly MarksControlViewModel _viewModel;
-        public AddMarksComand(MarksControlViewModel viewModel)
+        public AddMarksCommand(MarksControlViewModel viewModel)
         {
             _viewModel = viewModel;
         }
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
 
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             _viewModel.CurrentSituation = (int)Situation.Add;
         }

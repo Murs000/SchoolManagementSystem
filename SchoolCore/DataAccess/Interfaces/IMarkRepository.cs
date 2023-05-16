@@ -11,6 +11,5 @@ namespace SchoolCore.DataAccess.Interfaces
         Mark GetById(int id);
         int Insert(Mark mark);
         bool Update(Mark mark);
-        bool Delete(int id);
     }
 }

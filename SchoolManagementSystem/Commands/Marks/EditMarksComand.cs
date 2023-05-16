@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SchoolManagementSystem.Enums;
+using SchoolManagementSystem.ViewModels.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,18 +9,17 @@ using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Marks
 {
-    internal class EditMarksComand : ICommand
+    internal class EditMarksCommand : BaseComand
     {
-        public event EventHandler CanExecuteChanged;
-
-        public bool CanExecute(object parameter)
+        private MarksControlViewModel _viewModel;
+        public EditMarksCommand(MarksControlViewModel viewModel)
         {
-            return true;
+            _viewModel = viewModel;
         }
 
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            _viewModel.CurrentSituation = (int)Situation.Edit;
         }
     }
 }
