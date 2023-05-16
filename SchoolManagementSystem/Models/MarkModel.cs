@@ -1,5 +1,4 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
-using SchoolCore.Domain.Enums;
+﻿using SchoolCore.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
