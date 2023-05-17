@@ -17,70 +17,70 @@
         <StackPanel Grid.Row="0" Background="#2c3e50">
             <Button Style="{StaticResource successTextBlock}"/>
             <Grid Background="#2c3e50">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource successTextBlock}"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Style="{StaticResource successTextBlock}"/>
 
-            <StackPanel Grid.Column="0">
-                <TextBlock Text="Name" Style="{StaticResource baseTxtBlock}" Foreground="#FFFFFBFB" FontFamily="Times New Roman" HorizontalAlignment="Center" FontSize="20"/>
-                <TextBlock Text="Surname" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
-                <TextBlock Text="Father Name" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1">
-                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Name,Mode=TwoWay}"/>
-                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Surname,Mode=TwoWay}"/>
-                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.FatherName,Mode=TwoWay}"/>
-            </StackPanel>
-            <StackPanel Grid.Column="2">
-                <TextBlock Text="Birth Date" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
-                <TextBlock Text="Gender" Margin="25" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20" Width="65" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
-            </StackPanel>
-            <StackPanel Grid.Column="3">
-                <DatePicker Margin="5" SelectedDate="{Binding CurrentValue.BirthDate}" Style="{StaticResource myDatePicker}"/>
-                <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" 
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Name" Style="{StaticResource baseTxtBlock}" Foreground="#FFFFFBFB" FontFamily="Times New Roman" HorizontalAlignment="Center" FontSize="20"/>
+                    <TextBlock Text="Surname" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
+                    <TextBlock Text="Father Name" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Name,Mode=TwoWay}"/>
+                    <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Surname,Mode=TwoWay}"/>
+                    <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.FatherName,Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Birth Date" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
+                    <TextBlock Text="Gender" Margin="25" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20" Width="65" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Grid.Column="3">
+                    <DatePicker Margin="5" SelectedDate="{Binding CurrentValue.BirthDate}" Style="{StaticResource myDatePicker}"/>
+                    <RadioButton Margin="5,5,0,5" Content="Woman" Foreground="White" 
                              IsChecked="{Binding Path=CurrentValue.Gender, Converter={StaticResource RdbEnumConverter}, ConverterParameter={x:Static enum:Gender.Woman}}"
                              Style="{StaticResource myRadioButton}"/>
-                <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" 
+                    <RadioButton Margin="5,0,5,5" Content="Man" Foreground="White" 
                              IsChecked="{Binding Path=CurrentValue.Gender, Converter={StaticResource RdbEnumConverter}, ConverterParameter={x:Static enum:Gender.Man}}"
                              Style="{StaticResource myRadioButton}"/>
-            </StackPanel>
-            <StackPanel Grid.Column="4">
-                <TextBlock Text="Email" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
-                <TextBlock Text=" Phone" Margin="0,25,0,0" Style="{StaticResource baseTxtBlock}" Width="56" FontFamily="Times New Roman" FontSize="20" Height="27">
-                    <TextBlock.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="0.271"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </TextBlock.RenderTransform>
-                </TextBlock>
-            </StackPanel>
-            <StackPanel Grid.Column="5">
-                <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Email,Mode=TwoWay}"/>
-            </StackPanel>
-            
-            <StackPanel Grid.Column="5">
-                <TextBox Style="{StaticResource baseTxtBox}" Margin="0,59,0,0" Width="111" Text="{Binding CurrentValue.PhoneNumber,Mode=TwoWay}"/>
-            </StackPanel>
-            
-            <StackPanel Grid.Column="8">
-                <Button Style="{StaticResource btnAdd}"/>
-                <Button Style="{StaticResource btnSave}"/>
-                <Button Style="{StaticResource btnEdit}"/>
-                <Button Style="{StaticResource btnCancel}"/>
-                <Button Style="{StaticResource btnDelete}"/>
-                <Button Style="{StaticResource btnExel}"/>
-            </StackPanel>
-        </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="4">
+                    <TextBlock Text="Email" Style="{StaticResource baseTxtBlock}" FontFamily="Times New Roman" FontSize="20"/>
+                    <TextBlock Text=" Phone" Margin="0,25,0,0" Style="{StaticResource baseTxtBlock}" Width="56" FontFamily="Times New Roman" FontSize="20" Height="27">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.271"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Column="5">
+                    <TextBox Style="{StaticResource baseTxtBox}" Text="{Binding CurrentValue.Email,Mode=TwoWay}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="5">
+                    <TextBox Style="{StaticResource baseTxtBox}" Margin="0,59,0,0" Width="111" Text="{Binding CurrentValue.PhoneNumber,Mode=TwoWay}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="8">
+                    <Button Style="{StaticResource btnAdd}"/>
+                    <Button Style="{StaticResource btnSave}"/>
+                    <Button Style="{StaticResource btnEdit}"/>
+                    <Button Style="{StaticResource btnCancel}"/>
+                    <Button Style="{StaticResource btnDelete}"/>
+                    <Button Style="{StaticResource btnExel}"/>
+                </StackPanel>
+            </Grid>
         </StackPanel>
         <Grid Grid.Row="1">
             <ScrollViewer  VerticalScrollBarVisibility="Auto">

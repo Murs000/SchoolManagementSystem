@@ -12,7 +12,7 @@ namespace SchoolCore.DataAccess.Interfaces
         
         IClassRepository ClassRepository { get; }
 
-        IMarkRepository MarkRepository { get; }
+        //IMarkRepository MarkRepository { get; }
 
 
     }

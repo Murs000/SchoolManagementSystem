@@ -145,9 +145,6 @@
     <Compile Include="Views\UserControls\ClassControl.xaml.cs">
       <DependentUpon>ClassControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserControls\MarkControl.xaml.cs">
-      <DependentUpon>MarkControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\UserControls\AppUserControl.xaml.cs">
       <DependentUpon>AppUserControl.xaml</DependentUpon>
     </Compile>
@@ -162,10 +159,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\ClassControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\UserControls\MarkControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
