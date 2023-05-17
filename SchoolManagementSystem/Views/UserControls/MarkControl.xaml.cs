@@ -18,7 +18,7 @@ namespace SchoolManagementSystem.Views.UserControls
     /// <summary>
     /// MarkControl.xaml etkileşim mantığı
     /// </summary>
-    public partial class MarkControl : Page
+    public partial class MarkControl : UserControl
     {
         public MarkControl()
         {

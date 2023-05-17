@@ -45,13 +45,13 @@ namespace SchoolManagementSystem.Services.Implementations
         {
             Class willSavedClass = _classMapper.Map(classModel);
 
-            willSavedClass.Modifier = new User { Id =4 };
+            willSavedClass.Modifier = new User { Id = 1 };
             willSavedClass.ModifiedDate = DateTime.Now;
 
             if (willSavedClass.Id == 0)
             {
                 willSavedClass.CreationDate = DateTime.Now;
-                willSavedClass.Creator = new User() { Id = 4};
+                willSavedClass.Creator = new User() { Id = 1 };
 
                 return _db.ClassRepository.Insert(willSavedClass);
             }
