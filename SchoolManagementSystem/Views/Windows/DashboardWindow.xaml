@@ -49,9 +49,9 @@
                 <TextBlock Text="Menu" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnStudents" Content="Students" Command="{Binding Path=OpenStudents}"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnTeachers" Content="Teachers" Command="{Binding Path=OpenTeacher}"/>
-                <Button Style="{StaticResource btnDashBoard}" Name="btnExam" Content="Marks"        Command="{Binding Path=OpenMarks}"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnMarks"    Content="Marks"        Command="{Binding Path=OpenMarks}"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnSchadule" Content="Schadule"/>
-                <Button Style="{StaticResource btnDashBoard}" Name="btnSubject" Content="Users"/>
+                <Button Style="{StaticResource btnDashBoard}" Name="btnUsers" Content="Users"/>
                 <Button Style="{StaticResource btnDashBoard}" Name="btnClass" Content="Class" Command="{Binding Path=OpenClasses}"/>
             </StackPanel>
         </Border>

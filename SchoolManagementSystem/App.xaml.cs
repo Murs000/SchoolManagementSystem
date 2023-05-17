@@ -29,16 +29,16 @@ namespace SchoolManagementSystem
             ITeacherMapper teacherMapper = new TeacherMapper();
             IClassMapper classMapper = new ClassMapper(teacherMapper);
             IStudentMapper studentMapper = new StudentMapper();
-            //IMarkMapper markMapper = new MarkMapper(studentMapper,teacherMapper);
+            IMarkMapper markMapper = new MarkMapper(studentMapper, teacherMapper);
 
 
             ITeacherService teacherService = new TeacherService(db,teacherMapper);
             IClassService classService = new ClassService(db,classMapper);
             IStudentService studentService = new StudentService(db, studentMapper);
-            //IMarkService    markService = new MarkService(db, markMapper);
+            IMarkService markService = new MarkService(db, markMapper);
 
             LoginWindow loginWindow = new LoginWindow();
-            LoginViewModel loginViewModel = new LoginViewModel(loginWindow, teacherService, classService, studentService);
+            LoginViewModel loginViewModel = new LoginViewModel(loginWindow, teacherService, classService, studentService,markService);
 
             loginWindow.DataContext = loginViewModel;
 

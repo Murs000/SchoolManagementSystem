@@ -15,22 +15,23 @@ namespace SchoolManagementSystem.ViewModels.Windows
         private readonly ITeacherService _teacherService;
         private readonly IStudentService _studentService;
         private readonly IClassService _classService;
-        //private readonly IMarkService _markService;
+        private readonly IMarkService _markService;
 
         public LoginViewModel(LoginWindow loginWindow,
                               ITeacherService teacherService,
                               IClassService classService,
-                              IStudentService studentService)
+                              IStudentService studentService,
+                              IMarkService    markService)
         {
             _teacherService = teacherService;
             _classService = classService;
             _studentService = studentService;
-            //_markService = markService;
+            _markService = markService;
 
             LoginWindow = loginWindow;
         }
 
-        public SignInCommand SingIn => new SignInCommand(this, _teacherService, _classService, _studentService);
+        public SignInCommand SingIn => new SignInCommand(this, _teacherService, _classService, _studentService,_markService);
         public LoginWindow LoginWindow { get; }
     }
 }

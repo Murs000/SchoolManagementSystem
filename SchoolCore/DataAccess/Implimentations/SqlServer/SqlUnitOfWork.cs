@@ -1,4 +1,5 @@
-﻿using SchoolCore.DataAccess.Interfaces;
+﻿using SchoolCore.DataAccess.Implimentations.SqlServer;
+using SchoolCore.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -16,6 +17,8 @@ namespace SchoolCore.DataAccess.Implementations.SqlServer
         public ITeacherRepository TeacherRepository => new SqlTeacherRepository(_connectionString);
         public IStudentRepository StudentRepository => new SqlStudentRepository(_connectionString);
         public IClassRepository ClassRepository => new SqlClassRepository(_connectionString);
+        public IMarkRepository MarkRepository => new SqlMarkRepository(_connectionString);
+
 
 
     }

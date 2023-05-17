@@ -17,14 +17,14 @@ namespace SchoolManagementSystem.ViewModels.Windows
         private readonly ITeacherService _teacherService;
         private readonly IStudentService _studentService;
         private readonly IClassService _classService;
-        //private readonly IMarkService _markService;
+        private readonly IMarkService _markService;
 
-        public DashboardViewModel(ITeacherService teacherService, IStudentService studentService, IClassService classService )
+        public DashboardViewModel(ITeacherService teacherService, IStudentService studentService, IClassService classService,IMarkService markService)
         {
             _teacherService = teacherService;
             _studentService = studentService;
             _classService = classService;
-            //_markService = markService;
+            _markService = markService;
 
         }
 
@@ -33,7 +33,7 @@ namespace SchoolManagementSystem.ViewModels.Windows
         public OpenStudentsComand OpenStudents => new OpenStudentsComand(this, _studentService);
         public OpenTeacherComand OpenTeacher => new OpenTeacherComand(this, _teacherService);
         public OpenClassesCommand OpenClasses => new OpenClassesCommand(this, _classService,_teacherService);
-        //public OpenMarksCommand OpenMarks => new OpenMarksCommand(this, _markService, _studentService, _teacherService);
+        public OpenMarksCommand OpenMarks => new OpenMarksCommand(this, _markService, _studentService, _teacherService);
 
 
         public event PropertyChangedEventHandler PropertyChanged;
