@@ -124,6 +124,36 @@ namespace SchoolManagementSystem.Services.Implementations
             Process.Start(fileDialog.FileName);
 
         }
+
+
+        public string IsValid(StudentModel studentModel)
+        {
+            if (studentModel == null)
+                return "Its empity";
+
+            if (studentModel.Name == null || studentModel.Name.Length > 25)
+                return "False Name";
+
+            if (studentModel.Surname == null || studentModel.Surname.Length > 25)
+                return "False surname";
+
+            if (studentModel.FatherName == null || studentModel.FatherName.Length > 25)
+                return "False Father name";
+
+            if (studentModel.Email == null || studentModel.Email.Length > 25 || studentModel.Email.IndexOf('@') == -1)
+                return "False Email";
+
+            if (studentModel.PhoneNumber == null || studentModel.PhoneNumber.Length > 9)
+                return "False Phone number";
+
+            if (studentModel.BirthDate == null)
+                return "False Birth date";
+
+            if (studentModel.Gender == 0)
+                return "Choose Gender";
+
+            return "Success";
+        }
     }
 }
 

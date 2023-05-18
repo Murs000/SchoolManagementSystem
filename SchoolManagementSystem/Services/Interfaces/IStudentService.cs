@@ -12,6 +12,7 @@ namespace SchoolManagementSystem.Services.Interface
         List<StudentModel> GetAll();
         int Save(StudentModel studentModel);
         bool Delete(int id);
+        string IsValid(StudentModel studentModel);
         void Exel();
 
     }

@@ -25,7 +25,6 @@ namespace SchoolManagementSystem.Views.UserControls
             InitializeComponent();
         }
 
-  
-
+      
     }
 }

@@ -60,6 +60,8 @@ namespace SchoolManagementSystem.ViewModels.UserControls
             }
         }
 
+        public List<StudentModel> AllStudents { get; set; }
+
         private StudentModel _currentValue;
         public StudentModel CurrentValue
         {

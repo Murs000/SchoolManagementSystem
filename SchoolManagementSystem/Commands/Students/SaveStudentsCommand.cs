@@ -16,6 +16,7 @@ namespace SchoolManagementSystem.Commands.Students
         private readonly StudentControlViewModel _viewModel;
         private readonly IStudentService _studentService;
 
+
         public SaveStudentsCommand(StudentControlViewModel viewModel, IStudentService studentService)
         {
             _viewModel = viewModel;
@@ -24,11 +25,26 @@ namespace SchoolManagementSystem.Commands.Students
 
         public override void Execute(object parameter)
         {
-            _studentService.Save(_viewModel.CurrentValue);
+            string success = _studentService.IsValid(_viewModel.CurrentValue);
+            if (success != "Success")
+            {
+                _viewModel.CurrentSuccess = success;
+                return;
+            }
 
-            _viewModel.Students = new ObservableCollection<StudentModel>(_studentService.GetAll());
+            _studentService.Save(_viewModel.CurrentValue);
+            _viewModel.CurrentSuccess = success;
+
+            List<StudentModel> studentModels = _studentService.GetAll();
+
+            _viewModel.Students = new ObservableCollection<StudentModel>(studentModels);
 
             _viewModel.SetDefaultValues();
+
         }
     }
 }
+
+
+
+

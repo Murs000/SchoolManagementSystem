@@ -1,18 +1,19 @@
-﻿using SchoolManagementSystem.Services.Interface;
+﻿using SchoolManagementSystem.Models;
+using SchoolManagementSystem.Services.Interface;
 using SchoolManagementSystem.ViewModels.UserControls;
 using SchoolManagementSystem.ViewModels.Windows;
 using SchoolManagementSystem.Views.UserControls;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace SchoolManagementSystem.Commands.Dashboard
 {
-    internal class OpenStudentsComand : ICommand
+    internal class OpenStudentsComand : BaseComand
     {
-        public event EventHandler CanExecuteChanged;
         private readonly DashboardViewModel _mainViewModel;
         private readonly IStudentService _studentService;
-        //private DashboardViewModel dashboardViewModel;
 
         public OpenStudentsComand(DashboardViewModel mainViewModel, IStudentService studentService)
         {
@@ -20,15 +21,15 @@ namespace SchoolManagementSystem.Commands.Dashboard
             _studentService = studentService;
         }
 
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
-
-        public void Execute(object parameter)
+        public override void Execute(object parameter)
         {
             StudentControl control = new StudentControl();
             StudentControlViewModel viewModel = new StudentControlViewModel(_studentService);
+
+            List<StudentModel> model = _studentService.GetAll();
+
+            viewModel.AllStudents = model;
+            viewModel.Students = new ObservableCollection<StudentModel>(model);
 
             control.DataContext = viewModel;
 

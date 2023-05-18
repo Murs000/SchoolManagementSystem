@@ -121,17 +121,17 @@ namespace SchoolManagementSystem.Services.Implementations
             if (markModel == null)
                 return "Its empity";
 
+            if (markModel.ExamType == 0)
+                return "False ExamType";
+
+            if (markModel.MarkEnum == 0)
+                return "False Mark";
+
             if (markModel.Student == null)
                 return "Choose Student";
 
             if (markModel.Teacher == null)
                 return "Choose Teacher";
-
-            if (markModel.ExamType == 0)
-                return "Choose Examtype";
-
-            if (markModel.MarkEnum == 0)
-                return "Choose Mark";
 
             return "Success";
         }
