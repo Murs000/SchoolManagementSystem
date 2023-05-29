@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementSystem", "SchoolManagementSystem\SchoolManagementSystem.csproj", "{7A471992-E315-4763-B655-E74ADAA946C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolCore", "SchoolCore\SchoolCore.csproj", "{81B410A4-C1F9-4F3A-826C-4F913414DF59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolCore", "SchoolCore\SchoolCore.csproj", "{81B410A4-C1F9-4F3A-826C-4F913414DF59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolWeb", "SchoolWeb\SchoolWeb.csproj", "{DAE1AD6D-A19F-4307-9764-DA25B3CFDC2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{81B410A4-C1F9-4F3A-826C-4F913414DF59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81B410A4-C1F9-4F3A-826C-4F913414DF59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81B410A4-C1F9-4F3A-826C-4F913414DF59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE1AD6D-A19F-4307-9764-DA25B3CFDC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE1AD6D-A19F-4307-9764-DA25B3CFDC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE1AD6D-A19F-4307-9764-DA25B3CFDC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE1AD6D-A19F-4307-9764-DA25B3CFDC2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
